@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Baños de la Encina - Audioguía Oficial</title>
+  <meta name="description" content="Guía y audioguía oficial de los hitos y monumentos históricos de Baños de la Encina.">
+
+  <!-- Iconos y PWA -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/Icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/Icon-512.png">
+  <link rel="apple-touch-icon" href="assets/icons/Icon-192.png">
+  <meta name="theme-color" content="#8b3a1b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- CABECERA PRINCIPAL -->
+  <header class="app-header">
+    <div class="header-left">
+      <a href="#/" id="header-btn-back" class="btn-icon" style="display: none;" title="Atrás">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </a>
+      <a href="#/" class="header-title" id="header-title-text">Baños de la Encina</a>
+    </div>
+
+    <div class="header-right">
+      <a href="#/map" id="header-btn-map" class="btn-icon" title="Ver mapa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+      </a>
+      <div class="lang-switch">
+        <button id="btn-es" class="lang-btn active">ES</button>
+        <button id="btn-en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO DE LA VISTA -->
+  <main class="main-container" id="app-content">
+    <!-- El contenido se inyecta dinámicamente mediante app.js -->
+  </main>
+
+  <!-- MODAL LIGHTBOX PARA AMPLIAR IMÁGENES -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close" title="Cerrar">&times;</button>
+    <img id="lightbox-img" src="" alt="Vista ampliada">
+  </div>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Datos de los hitos y lógica de la webapp -->
+  <script src="js/hitos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
