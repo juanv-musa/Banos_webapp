@@ -17,7 +17,7 @@ const AppState = {
 const UI_TEXTS = {
   es: {
     appTitle: "Baños de la Encina",
-    welcomeBadge: "Audioguía Oficial",
+    welcomeBadge: "Historias Contadas",
     homeTitle: "Descubre Baños de la Encina",
     homeSubtitle: "Un viaje a través de la historia milenaria de uno de los pueblos más bonitos de España.",
     btnStart: "Ver lista de hitos",
@@ -38,11 +38,14 @@ const UI_TEXTS = {
     credits: "Créditos",
     notFoundTitle: "Hito no disponible",
     notFoundText: "Este punto de interés está en preparación para futuras ampliaciones.",
-    backToList: "Volver al listado"
+    backToList: "Volver al listado",
+    allRoutes: "Todas las rutas",
+    viewAllPoints: "Ver todos los puntos de interés",
+    filterByRoute: "Filtrar por ruta:"
   },
   en: {
     appTitle: "Baños de la Encina",
-    welcomeBadge: "Official Audio Guide",
+    welcomeBadge: "Storytelling",
     homeTitle: "Discover Baños de la Encina",
     homeSubtitle: "A journey through the millenary history of one of the prettiest villages in Spain.",
     btnStart: "Explore Landmarks",
@@ -63,7 +66,10 @@ const UI_TEXTS = {
     credits: "Credits",
     notFoundTitle: "Landmark Not Available",
     notFoundText: "This point of interest is being prepared for upcoming extensions.",
-    backToList: "Back to list"
+    backToList: "Back to list",
+    allRoutes: "All routes",
+    viewAllPoints: "View all points of interest",
+    filterByRoute: "Filter by route:"
   }
 };
 
@@ -108,15 +114,19 @@ function handleRoute() {
     return;
   }
 
-  if (hash === "#/" || hash === "") {
+  const [path, queryString] = hash.split("?");
+  const params = new URLSearchParams(queryString || "");
+  const rutaParam = params.get("ruta");
+
+  if (path === "#/" || path === "") {
     renderHome();
-  } else if (hash === "#/list") {
-    renderList();
-  } else if (hash.startsWith("#/detail/")) {
-    const id = parseInt(hash.replace("#/detail/", ""), 10);
+  } else if (path === "#/list") {
+    renderList(rutaParam);
+  } else if (path.startsWith("#/detail/")) {
+    const id = parseInt(path.replace("#/detail/", ""), 10);
     renderDetail(id);
-  } else if (hash === "#/map") {
-    renderMap();
+  } else if (path === "#/map") {
+    renderMap(rutaParam);
   } else {
     renderHome();
   }
@@ -144,13 +154,17 @@ function setLanguage(lang) {
 
   // Re-renderizar la vista actual con el nuevo idioma
   const hash = window.location.hash || "#/";
-  if (hash.startsWith("#/detail/")) {
-    const id = parseInt(hash.replace("#/detail/", ""), 10);
+  const [path, queryString] = hash.split("?");
+  const params = new URLSearchParams(queryString || "");
+  const rutaParam = params.get("ruta");
+
+  if (path.startsWith("#/detail/")) {
+    const id = parseInt(path.replace("#/detail/", ""), 10);
     renderDetail(id);
-  } else if (hash === "#/list") {
-    renderList();
-  } else if (hash === "#/map") {
-    renderMap();
+  } else if (path === "#/list") {
+    renderList(rutaParam);
+  } else if (path === "#/map") {
+    renderMap(rutaParam);
   } else {
     renderHome();
   }
@@ -177,6 +191,22 @@ function renderHome() {
   const container = document.getElementById("app-content");
   updateHeaderBar({ showBack: false, showMap: true, title: t("appTitle") });
 
+  const rutasKeys = typeof RUTAS !== 'undefined' ? Object.keys(RUTAS) : [];
+  const routeButtonsHtml = rutasKeys.map(key => {
+    const r = RUTAS[key];
+    const count = HITOS.filter(h => (h.ruta || 'paseando') === r.id).length;
+    const name = AppState.lang === 'en' ? r.nombre_en : r.nombre_es;
+    return `
+      <a href="#/list?ruta=${r.id}" class="route-btn route-bg-${r.id}">
+        <div class="route-btn-left">
+          <span class="route-btn-icon">${r.icono}</span>
+          <span class="route-btn-title">${name}</span>
+        </div>
+        <span class="route-btn-count">${count}</span>
+      </a>
+    `;
+  }).join("");
+
   container.innerHTML = `
     <div class="home-hero">
       <img src="assets/images/cabecera.png" alt="Baños de la Encina" onerror="this.src='assets/images/cabecera_2.png'">
@@ -184,10 +214,18 @@ function renderHome() {
     <div class="home-content">
       <span class="home-badge">${t("welcomeBadge")}</span>
 
-      <div class="home-actions">
-        <a href="#/list" class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          ${t("btnStart")} (${HITOS.length})
+      <div class="routes-menu">
+        ${routeButtonsHtml}
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 4px;">
+        <a href="#/list" class="btn-primary" style="background: var(--color-surface); color: var(--color-primary-dark); border: 1.5px solid var(--color-border); box-shadow: var(--shadow-sm); font-weight: 700;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          ${t("viewAllPoints")} (${HITOS.length})
+        </a>
+        <a href="#/map" class="btn-primary" style="background: transparent; color: var(--color-text); border: 1.5px solid var(--color-border); box-shadow: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+          ${t("btnMap")}
         </a>
       </div>
 
@@ -201,23 +239,62 @@ function renderHome() {
 // ========================================================
 // VISTA: LISTA DE HITOS
 // ========================================================
-function renderList() {
+function renderList(rutaFilter = null) {
   AppState.activeDetailHito = null;
   const container = document.getElementById("app-content");
-  updateHeaderBar({ showBack: true, backHash: "#/", showMap: true, title: t("listTitle") });
+  
+  const activeRuta = (rutaFilter && typeof RUTAS !== 'undefined' && RUTAS[rutaFilter]) ? RUTAS[rutaFilter] : null;
+  const pageTitle = activeRuta ? (AppState.lang === 'en' ? activeRuta.nombre_en : activeRuta.nombre_es) : t("listTitle");
+
+  updateHeaderBar({ showBack: true, backHash: "#/", showMap: true, title: pageTitle });
+
+  const hitosToShow = activeRuta 
+    ? HITOS.filter(h => (h.ruta || 'paseando') === activeRuta.id)
+    : HITOS;
+
+  // Barra de pestañas de filtro de ruta
+  const rutasKeys = typeof RUTAS !== 'undefined' ? Object.keys(RUTAS) : [];
+  const tabsHtml = `
+    <div class="route-tabs-container">
+      <div class="route-tabs">
+        <a href="#/list" class="route-tab ${!activeRuta ? 'active' : ''}" style="${!activeRuta ? 'background-color: #4a3429; color: white;' : ''}">
+          ${t("allRoutes")} (${HITOS.length})
+        </a>
+        ${rutasKeys.map(key => {
+          const r = RUTAS[key];
+          const count = HITOS.filter(h => (h.ruta || 'paseando') === r.id).length;
+          const name = AppState.lang === 'en' ? r.nombre_en : r.nombre_es;
+          const isCurrent = activeRuta && activeRuta.id === r.id;
+          const style = isCurrent ? `background-color: ${r.color}; color: white; border-color: ${r.color};` : '';
+          return `
+            <a href="#/list?ruta=${r.id}" class="route-tab ${isCurrent ? 'active' : ''}" style="${style}">
+              <span>${r.icono}</span>
+              <span>${name}</span>
+              <span style="opacity: 0.8; font-size: 0.72rem;">(${count})</span>
+            </a>
+          `;
+        }).join("")}
+      </div>
+    </div>
+  `;
 
   let cardsHtml = "";
-  HITOS.forEach(h => {
+  hitosToShow.forEach(h => {
     const title = AppState.lang === 'en' ? (h.titulo_en || h.titulo_es) : h.titulo_es;
     const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "assets/images/placeholder.png";
+    const ruta = (typeof RUTAS !== 'undefined' && RUTAS[h.ruta]) ? RUTAS[h.ruta] : RUTAS['paseando'];
+    const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
     cardsHtml += `
       <a href="#/detail/${h.id}" class="landmark-card">
         <div class="landmark-card-thumb">
           <img src="${thumb}" alt="${title}" loading="lazy" onerror="this.src='assets/images/fondo.png'">
-          <div class="landmark-card-badge">${h.id}</div>
+          <div class="landmark-card-badge" style="background-color: ${ruta.color};">${h.id}</div>
         </div>
         <div class="landmark-card-info">
+          <span class="landmark-route-tag" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1px solid ${ruta.color}35;">
+            ${ruta.icono} ${rutaName}
+          </span>
           <h3 class="landmark-card-title">${title}</h3>
           <span class="landmark-card-audio-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
@@ -229,10 +306,11 @@ function renderList() {
   });
 
   container.innerHTML = `
-    <div class="list-header">
-      <h2>${t("listTitle")}</h2>
-      <span class="list-count">${HITOS.length} ${t("listSubtitle")}</span>
+    <div class="list-header" style="${activeRuta ? `border-left: 4px solid ${activeRuta.color}; padding-left: 12px;` : ''}">
+      <h2>${pageTitle}</h2>
+      <span class="list-count">${hitosToShow.length} ${t("listSubtitle")}</span>
     </div>
+    ${tabsHtml}
     <div class="landmarks-grid">
       ${cardsHtml}
     </div>
@@ -263,8 +341,10 @@ function renderDetail(id) {
   const title = AppState.lang === 'en' ? (hito.titulo_en || hito.titulo_es) : hito.titulo_es;
   const text = AppState.lang === 'en' ? (hito.texto_en || hito.texto_es) : hito.texto_es;
   const audioFile = AppState.lang === 'en' ? (hito.audio_en || hito.audio_es) : hito.audio_es;
+  const ruta = (typeof RUTAS !== 'undefined' && RUTAS[hito.ruta]) ? RUTAS[hito.ruta] : RUTAS['paseando'];
+  const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
-  updateHeaderBar({ showBack: true, backHash: "#/list", showMap: true, title: `${t("landmarkBadge")} ${hito.id}` });
+  updateHeaderBar({ showBack: true, backHash: `#/list?ruta=${ruta.id}`, showMap: true, title: `${t("landmarkBadge")} ${hito.id}` });
 
   // Galería de fotos
   let carouselHtml = "";
@@ -290,7 +370,11 @@ function renderDetail(id) {
     <div class="detail-view">
       ${carouselHtml}
       <div class="detail-body">
-        <div class="detail-number">${t("landmarkBadge")} ${hito.id} / ${HITOS.length}</div>
+        <a href="#/list?ruta=${ruta.id}" class="detail-route-badge" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1.5px solid ${ruta.color}45; text-decoration: none;">
+          <span>${ruta.icono}</span>
+          <span>${rutaName}</span>
+        </a>
+        <div class="detail-number" style="color: ${ruta.color};">${t("landmarkBadge")} ${hito.id} / ${HITOS.length}</div>
         <h1 class="detail-title">${title}</h1>
 
         <!-- REPRODUCTOR DE AUDIO -->
@@ -502,14 +586,44 @@ function goToSlide(index) {
 // ========================================================
 // VISTA: MAPA INTERACTIVO (LEAFLET)
 // ========================================================
-function renderMap() {
+function renderMap(rutaFilter = null) {
   AppState.activeDetailHito = null;
   const container = document.getElementById("app-content");
-  updateHeaderBar({ showBack: true, backHash: "#/list", showMap: false, title: t("btnMap") });
+  
+  const activeRuta = (rutaFilter && typeof RUTAS !== 'undefined' && RUTAS[rutaFilter]) ? RUTAS[rutaFilter] : null;
+  const pageTitle = activeRuta ? (AppState.lang === 'en' ? activeRuta.nombre_en : activeRuta.nombre_es) : t("btnMap");
+
+  updateHeaderBar({ showBack: true, backHash: "#/", showMap: false, title: pageTitle });
+
+  const rutasKeys = typeof RUTAS !== 'undefined' ? Object.keys(RUTAS) : [];
+  const routesTabsHtml = `
+    <div class="route-tabs-container" style="background: white; border-bottom: 1px solid var(--color-border); padding: 8px 12px; margin-bottom: 0;">
+      <div class="route-tabs">
+        <a href="#/map" class="route-tab ${!activeRuta ? 'active' : ''}" style="${!activeRuta ? 'background-color: #4a3429; color: white;' : ''}">
+          ${t("allRoutes")} (${HITOS.length})
+        </a>
+        ${rutasKeys.map(key => {
+          const r = RUTAS[key];
+          const count = HITOS.filter(h => (h.ruta || 'paseando') === r.id).length;
+          const name = AppState.lang === 'en' ? r.nombre_en : r.nombre_es;
+          const isCurrent = activeRuta && activeRuta.id === r.id;
+          const style = isCurrent ? `background-color: ${r.color}; color: white; border-color: ${r.color};` : '';
+          return `
+            <a href="#/map?ruta=${r.id}" class="route-tab ${isCurrent ? 'active' : ''}" style="${style}">
+              <span>${r.icono}</span>
+              <span>${name}</span>
+              <span style="opacity: 0.8; font-size: 0.72rem;">(${count})</span>
+            </a>
+          `;
+        }).join("")}
+      </div>
+    </div>
+  `;
 
   container.innerHTML = `
-    <div class="map-container">
-      <div id="leaflet-map"></div>
+    <div class="map-container" style="display: flex; flex-direction: column;">
+      ${routesTabsHtml}
+      <div id="leaflet-map" style="flex: 1; min-height: calc(100vh - 120px);"></div>
       <button class="btn-locate" onclick="locateUser()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon></svg>
         ${t("locateMe")}
@@ -518,10 +632,10 @@ function renderMap() {
   `;
 
   // Cargar mapa
-  setTimeout(initLeafletMap, 50);
+  setTimeout(() => initLeafletMap(rutaFilter), 50);
 }
 
-function initLeafletMap() {
+function initLeafletMap(rutaFilter = null) {
   if (typeof L === 'undefined') {
     console.error("Leaflet not loaded");
     return;
@@ -556,27 +670,37 @@ function initLeafletMap() {
   };
   L.control.layers(baseLayers, null, { position: 'topleft' }).addTo(map);
 
-  // Añadir marcadores de todos los hitos
-  HITOS.forEach(h => {
+  const hitosToShow = (rutaFilter && typeof RUTAS !== 'undefined' && RUTAS[rutaFilter])
+    ? HITOS.filter(h => (h.ruta || 'paseando') === rutaFilter)
+    : HITOS;
+
+  const markerBounds = [];
+
+  // Añadir marcadores con los colores específicos de sus rutas
+  hitosToShow.forEach(h => {
     if (!h.lat || !h.lng) return;
 
+    const ruta = (typeof RUTAS !== 'undefined' && RUTAS[h.ruta]) ? RUTAS[h.ruta] : RUTAS['paseando'];
     const title = AppState.lang === 'en' ? (h.titulo_en || h.titulo_es) : h.titulo_es;
     const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "";
+    const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
     const customIcon = L.divIcon({
       className: 'custom-pin-wrapper',
-      html: `<div class="custom-map-pin">${h.id}</div>`,
+      html: `<div class="custom-map-pin" style="background-color: ${ruta.color}; border: 2px solid white; box-shadow: 0 3px 6px rgba(0,0,0,0.35); color: white;">${h.id}</div>`,
       iconSize: [28, 28],
       iconAnchor: [14, 14]
     });
 
     const marker = L.marker([h.lat, h.lng], { icon: customIcon }).addTo(map);
+    markerBounds.push([h.lat, h.lng]);
 
     const popupContent = `
-      <div style="font-family: 'Nunito', sans-serif; text-align: center; max-width: 180px;">
-        ${thumb ? `<img src="${thumb}" style="width: 100%; height: 80px; object-fit: cover; border-radius: 6px; margin-bottom: 6px;">` : ""}
-        <b style="font-size: 0.9rem; color: #8b3a1b; display: block; margin-bottom: 8px;">${h.id}. ${title}</b>
-        <a href="#/detail/${h.id}" style="display: inline-block; background: #8b3a1b; color: white; text-decoration: none; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;">
+      <div style="font-family: 'Nunito', sans-serif; text-align: center; max-width: 190px;">
+        ${thumb ? `<img src="${thumb}" style="width: 100%; height: 85px; object-fit: cover; border-radius: 6px; margin-bottom: 6px;">` : ""}
+        <span style="display: block; font-size: 0.72rem; font-weight: 800; color: ${ruta.color}; margin-bottom: 3px;">${ruta.icono} ${rutaName}</span>
+        <b style="font-size: 0.9rem; color: #222; display: block; margin-bottom: 8px;">${h.id}. ${title}</b>
+        <a href="#/detail/${h.id}" style="display: inline-block; background: ${ruta.color}; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;">
           ${t("viewDetail")}
         </a>
       </div>
@@ -584,6 +708,12 @@ function initLeafletMap() {
 
     marker.bindPopup(popupContent);
   });
+
+  if (rutaFilter && markerBounds.length > 0) {
+    try {
+      map.fitBounds(markerBounds, { padding: [40, 40] });
+    } catch (e) {}
+  }
 }
 
 function locateUser() {

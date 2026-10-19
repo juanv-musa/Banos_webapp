@@ -6,6 +6,7 @@
 let hitosData = [];
 let editingHitoId = null;
 let currentQrId = null;
+let currentRutaFilter = "";
 let modalMap = null;
 let modalMarker = null;
 
@@ -42,6 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
   if (hitosData.length === 0 && typeof HITOS !== 'undefined' && Array.isArray(HITOS)) {
     hitosData = JSON.parse(JSON.stringify(HITOS));
+  }
+
+  // Asegurar que todos los hitos tienen el campo ruta
+  if (hitosData.length > 0 && typeof HITOS !== 'undefined' && Array.isArray(HITOS)) {
+    hitosData.forEach(h => {
+      if (!h.ruta) {
+        const match = HITOS.find(orig => orig.id === h.id);
+        h.ruta = (match && match.ruta) ? match.ruta : 'paseando';
+      }
+    });
   }
   
   renderCards();
@@ -106,6 +117,14 @@ async function handleLoginSubmit(event) {
 }
 
 // ========================================================
+function handleRutaFilterChange() {
+  const sel = document.getElementById("filter-ruta");
+  currentRutaFilter = sel ? sel.value : "";
+  const searchInput = document.getElementById("search-input");
+  renderCards(searchInput ? searchInput.value.trim() : "");
+}
+
+// ========================================================
 // RENDERIZADO DE TARJETAS
 // ========================================================
 function renderCards(filterText = "") {
@@ -114,6 +133,9 @@ function renderCards(filterText = "") {
   if (!container) return;
 
   const filtered = hitosData.filter(h => {
+    if (currentRutaFilter && (h.ruta || 'paseando') !== currentRutaFilter) {
+      return false;
+    }
     if (!filterText) return true;
     const q = filterText.toLowerCase();
     return (
@@ -138,13 +160,20 @@ function renderCards(filterText = "") {
   container.innerHTML = filtered.map(h => {
     const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "assets/images/placeholder.png";
     const previewText = h.texto_es ? (h.texto_es.substring(0, 100) + "...") : "Sin texto descriptivo.";
+    const rutaKey = h.ruta || 'paseando';
+    const rutaObj = (typeof RUTAS !== 'undefined' && RUTAS[rutaKey]) ? RUTAS[rutaKey] : { nombre_es: "Paseando por Baños", color: "#8b3a1b", icono: "🏛️" };
 
     return `
       <div class="hito-card">
         <div class="hito-card-top">
           <img src="${thumb}" class="hito-card-img" alt="${h.titulo_es}" onerror="this.src='assets/images/placeholder.png'">
           <div class="hito-card-details">
-            <span class="hito-card-badge">Hito ${h.id}</span>
+            <span class="hito-card-badge" style="background-color: ${rutaObj.color};">Hito ${h.id}</span>
+            <div style="margin-top: 4px;">
+              <span style="display: inline-block; font-size: 0.72rem; font-weight: 800; color: ${rutaObj.color}; background: ${rutaObj.color}15; padding: 2px 8px; border-radius: 6px; border: 1px solid ${rutaObj.color}35;">
+                ${rutaObj.icono} ${rutaObj.nombre_es}
+              </span>
+            </div>
             <h3 class="hito-card-title">${h.titulo_es}</h3>
             <p class="hito-card-title-en">${h.titulo_en || ""}</p>
           </div>
@@ -219,6 +248,9 @@ function openCreateModal() {
   const numPad = String(nextId).padStart(2, "0");
 
   document.getElementById("form-id").value = nextId;
+  const rutaSelect = document.getElementById("form-ruta");
+  if (rutaSelect) rutaSelect.value = currentRutaFilter || "paseando";
+
   document.getElementById("form-titulo-es").value = "";
   document.getElementById("form-titulo-en").value = "";
   document.getElementById("form-texto-es").value = "";
@@ -247,6 +279,9 @@ function openEditModal(id) {
   document.getElementById("modal-title").textContent = `Editar Hito ${hito.id}: ${hito.titulo_es}`;
 
   document.getElementById("form-id").value = hito.id;
+  const rutaSelect = document.getElementById("form-ruta");
+  if (rutaSelect) rutaSelect.value = hito.ruta || "paseando";
+
   document.getElementById("form-titulo-es").value = hito.titulo_es || "";
   document.getElementById("form-titulo-en").value = hito.titulo_en || "";
   document.getElementById("form-texto-es").value = hito.texto_es || "";
@@ -482,6 +517,8 @@ function saveHitoForm(event) {
 
   const idInput = document.getElementById("form-id");
   const id = idInput ? parseInt(idInput.value, 10) : 1;
+  const rutaSelect = document.getElementById("form-ruta");
+  const ruta = (rutaSelect ? rutaSelect.value : "paseando") || "paseando";
   const titulo_es = (document.getElementById("form-titulo-es")?.value || "").trim();
   const titulo_en = (document.getElementById("form-titulo-en")?.value || "").trim();
   const texto_es = (document.getElementById("form-texto-es")?.value || "").trim();
@@ -509,6 +546,7 @@ function saveHitoForm(event) {
 
   const hitoObj = {
     id,
+    ruta,
     titulo_es,
     titulo_en,
     texto_es,
@@ -675,6 +713,14 @@ async function saveAllChanges() {
 }
 
 function generateHitosJsContent() {
+  const rutasObj = (typeof RUTAS !== 'undefined') ? RUTAS : {
+    paseando: { id: "paseando", nombre_es: "Paseando por Baños", nombre_en: "Strolling through Baños", color: "#8b3a1b", colorBg: "#fbf5f2", colorBorder: "#d4a896", icono: "🏛️" },
+    castillo: { id: "castillo", nombre_es: "Castillo de Baños", nombre_en: "Baños Castle", color: "#1565c0", colorBg: "#f0f7ff", colorBorder: "#90caf9", icono: "🏰" },
+    penalosa: { id: "penalosa", nombre_es: "Peñalosa", nombre_en: "Peñalosa", color: "#7b1fa2", colorBg: "#faf4fc", colorBorder: "#ce93d8", icono: "🏺" },
+    gr286: { id: "gr286", nombre_es: "Sendero GR286", nombre_en: "GR286 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab", icono: "🥾" },
+    piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7", icono: "🌿" }
+  };
+
   return `/**
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
@@ -682,7 +728,9 @@ function generateHitosJsContent() {
  * Fecha de actualización: ${new Date().toLocaleString()}
  */
 
-const HITOS = ${JSON.stringify(hitosData, null, 2)};
+const RUTAS = ${JSON.stringify(rutasObj, null, 2)};
+
+let HITOS = ${JSON.stringify(hitosData, null, 2)};
 `;
 }
 

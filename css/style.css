@@ -802,3 +802,138 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* ========================================================
+   RUTAS TEMÁTICAS Y BOTONES DE COLOR
+   ======================================================== */
+.routes-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.route-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: none;
+  color: white !important;
+}
+
+.route-btn:hover, .route-btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  filter: brightness(1.05);
+}
+
+.route-btn-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.route-btn-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.route-btn-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.route-btn-count {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+
+/* Colores específicos de las rutas */
+.route-bg-paseando { background-color: #8b3a1b !important; }
+.route-bg-castillo { background-color: #1565c0 !important; }
+.route-bg-penalosa { background-color: #7b1fa2 !important; }
+.route-bg-gr286    { background-color: #c2883d !important; }
+.route-bg-piedra_viva { background-color: #2e7d32 !important; }
+
+/* Pestañas de filtro de ruta en el listado y mapa */
+.route-tabs-container {
+  margin-bottom: 18px;
+}
+
+.route-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 10px 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.route-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.route-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.route-tab:hover {
+  background: #fdfaf8;
+  border-color: #d8cfc7;
+}
+
+.route-tab.active {
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.landmark-route-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: fit-content;
+  border: 1px solid transparent;
+}
+
+.detail-route-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+

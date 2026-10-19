@@ -1,11 +1,56 @@
 /**
- * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
- * ==============================================================
- * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 19/10/2026, 19:21:17
+ * DEFINICIÓN DE RUTAS TEMÁTICAS - BAÑOS DE LA ENCINA
+ * ===================================================
  */
+const RUTAS = {
+  paseando: {
+    id: "paseando",
+    nombre_es: "Paseando por Baños",
+    nombre_en: "Strolling through Baños",
+    color: "#8b3a1b",
+    colorBg: "#fbf5f2",
+    colorBorder: "#d4a896",
+    icono: "🏛️"
+  },
+  castillo: {
+    id: "castillo",
+    nombre_es: "Castillo de Baños",
+    nombre_en: "Baños Castle",
+    color: "#1565c0",
+    colorBg: "#f0f7ff",
+    colorBorder: "#90caf9",
+    icono: "🏰"
+  },
+  penalosa: {
+    id: "penalosa",
+    nombre_es: "Peñalosa",
+    nombre_en: "Peñalosa",
+    color: "#7b1fa2",
+    colorBg: "#faf4fc",
+    colorBorder: "#ce93d8",
+    icono: "🏺"
+  },
+  gr286: {
+    id: "gr286",
+    nombre_es: "Sendero GR286",
+    nombre_en: "GR286 Trail",
+    color: "#c2883d",
+    colorBg: "#fdf8f0",
+    colorBorder: "#eed5ab",
+    icono: "🥾"
+  },
+  piedra_viva: {
+    id: "piedra_viva",
+    nombre_es: "Baños en Piedra Viva",
+    nombre_en: "Baños in Living Stone",
+    color: "#2e7d32",
+    colorBg: "#f1f8f2",
+    colorBorder: "#a5d6a7",
+    icono: "🌿"
+  }
+};
 
-const HITOS = [
+let HITOS = [
   {
     "id": 1,
     "titulo_es": "Plaza Mayor y Casa del Concejo",
@@ -25,7 +70,8 @@ const HITOS = [
     "audio_es": "webapp_BE_01_ES.mp3",
     "audio_en": "webapp_BE_01_EN.mp3",
     "lat": 38.171104932,
-    "lng": -3.774186888
+    "lng": -3.774186888,
+    "ruta": "paseando"
   },
   {
     "id": 2,
@@ -46,7 +92,8 @@ const HITOS = [
     "audio_es": "webapp_BE_02_ES.mp3",
     "audio_en": "webapp_BE_02_EN.mp3",
     "lat": 38.171076663,
-    "lng": -3.774422323
+    "lng": -3.774422323,
+    "ruta": "paseando"
   },
   {
     "id": 3,
@@ -66,7 +113,8 @@ const HITOS = [
     "audio_es": "webapp_BE_03_ES.mp3",
     "audio_en": "webapp_BE_03_EN.mp3",
     "lat": 38.17002608,
-    "lng": -3.775056197
+    "lng": -3.775056197,
+    "ruta": "paseando"
   },
   {
     "id": 4,
@@ -86,7 +134,8 @@ const HITOS = [
     "audio_es": "webapp_BE_04_ES.mp3",
     "audio_en": "webapp_BE_04_EN.mp3",
     "lat": 38.169877886,
-    "lng": -3.775368596
+    "lng": -3.775368596,
+    "ruta": "castillo"
   },
   {
     "id": 5,
@@ -106,7 +155,8 @@ const HITOS = [
     "audio_es": "webapp_BE_05_ES.mp3",
     "audio_en": "webapp_BE_05_EN.mp3",
     "lat": 38.170992514,
-    "lng": -3.774869541
+    "lng": -3.774869541,
+    "ruta": "castillo"
   },
   {
     "id": 6,
@@ -126,7 +176,8 @@ const HITOS = [
     "audio_es": "webapp_BE_06_ES.mp3",
     "audio_en": "webapp_BE_06_EN.mp3",
     "lat": 38.171314809,
-    "lng": -3.774443514
+    "lng": -3.774443514,
+    "ruta": "paseando"
   },
   {
     "id": 7,
@@ -146,7 +197,8 @@ const HITOS = [
     "audio_es": "webapp_BE_07_ES.mp3",
     "audio_en": "webapp_BE_07_EN.mp3",
     "lat": 38.171452732,
-    "lng": -3.773808941
+    "lng": -3.773808941,
+    "ruta": "paseando"
   },
   {
     "id": 8,
@@ -166,7 +218,8 @@ const HITOS = [
     "audio_es": "webapp_BE_08_ES.mp3",
     "audio_en": "webapp_BE_08_EN.mp3",
     "lat": 38.171340646,
-    "lng": -3.77348069
+    "lng": -3.77348069,
+    "ruta": "paseando"
   },
   {
     "id": 9,
@@ -186,7 +239,8 @@ const HITOS = [
     "audio_es": "webapp_BE_09_ES.mp3",
     "audio_en": "webapp_BE_09_EN.mp3",
     "lat": 38.171432217,
-    "lng": -3.773331294
+    "lng": -3.773331294,
+    "ruta": "paseando"
   },
   {
     "id": 10,
@@ -206,7 +260,8 @@ const HITOS = [
     "audio_es": "webapp_BE_10_ES.mp3",
     "audio_en": "webapp_BE_10_EN.mp3",
     "lat": 38.171060408,
-    "lng": -3.773750192
+    "lng": -3.773750192,
+    "ruta": "paseando"
   },
   {
     "id": 11,
@@ -226,7 +281,8 @@ const HITOS = [
     "audio_es": "webapp_BE_11_ES.mp3",
     "audio_en": "webapp_BE_11_EN.mp3",
     "lat": 38.170378483,
-    "lng": -3.773293234
+    "lng": -3.773293234,
+    "ruta": "paseando"
   },
   {
     "id": 12,
@@ -246,7 +302,8 @@ const HITOS = [
     "audio_es": "webapp_BE_12_ES.mp3",
     "audio_en": "webapp_BE_12_EN.mp3",
     "lat": 38.170629627,
-    "lng": -3.774249595
+    "lng": -3.774249595,
+    "ruta": "paseando"
   },
   {
     "id": 13,
@@ -267,7 +324,8 @@ const HITOS = [
     "audio_es": "webapp_BE_13_ES.mp3",
     "audio_en": "webapp_BE_13_EN.mp3",
     "lat": 38.17481555,
-    "lng": -3.774831325
+    "lng": -3.774831325,
+    "ruta": "paseando"
   },
   {
     "id": 14,
@@ -287,7 +345,8 @@ const HITOS = [
     "audio_es": "webapp_BE_14_ES.mp3",
     "audio_en": "webapp_BE_14_EN.mp3",
     "lat": 38.171462938,
-    "lng": -3.775081884
+    "lng": -3.775081884,
+    "ruta": "paseando"
   },
   {
     "id": 15,
@@ -307,7 +366,8 @@ const HITOS = [
     "audio_es": "webapp_BE_15_ES.mp3",
     "audio_en": "webapp_BE_15_EN.mp3",
     "lat": 38.171650231,
-    "lng": -3.774000961
+    "lng": -3.774000961,
+    "ruta": "paseando"
   },
   {
     "id": 16,
@@ -327,7 +387,8 @@ const HITOS = [
     "audio_es": "webapp_BE_16_ES.mp3",
     "audio_en": "webapp_BE_16_EN.mp3",
     "lat": 38.171454107,
-    "lng": -3.773139607
+    "lng": -3.773139607,
+    "ruta": "paseando"
   },
   {
     "id": 17,
@@ -347,7 +408,8 @@ const HITOS = [
     "audio_es": "webapp_BE_17_ES.mp3",
     "audio_en": "webapp_BE_17_EN.mp3",
     "lat": 38.170632784,
-    "lng": -3.773707537
+    "lng": -3.773707537,
+    "ruta": "paseando"
   },
   {
     "id": 18,
@@ -367,7 +429,8 @@ const HITOS = [
     "audio_es": "webapp_BE_18_ES.mp3",
     "audio_en": "webapp_BE_18_EN.mp3",
     "lat": 38.170271702,
-    "lng": -3.774906123
+    "lng": -3.774906123,
+    "ruta": "paseando"
   },
   {
     "id": 19,
@@ -387,7 +450,8 @@ const HITOS = [
     "audio_es": "webapp_BE_19_ES.mp3",
     "audio_en": "webapp_BE_19_EN.mp3",
     "lat": 38.170135696,
-    "lng": -3.774416142
+    "lng": -3.774416142,
+    "ruta": "paseando"
   },
   {
     "id": 20,
@@ -408,7 +472,8 @@ const HITOS = [
     "audio_es": "webapp_BE_20_ES.mp3",
     "audio_en": "webapp_BE_20_EN.mp3",
     "lat": 38.169013,
-    "lng": -3.776035
+    "lng": -3.776035,
+    "ruta": "paseando"
   },
   {
     "id": 21,
@@ -429,7 +494,8 @@ const HITOS = [
     "audio_es": "webapp_BE_21_ES.mp3",
     "audio_en": "webapp_BE_21_EN.mp3",
     "lat": 38.168557,
-    "lng": -3.773739
+    "lng": -3.773739,
+    "ruta": "paseando"
   },
   {
     "id": 22,
@@ -450,7 +516,8 @@ const HITOS = [
     "audio_es": "webapp_BE_22_ES.mp3",
     "audio_en": "webapp_BE_22_EN.mp3",
     "lat": 38.166297,
-    "lng": -3.773975
+    "lng": -3.773975,
+    "ruta": "paseando"
   },
   {
     "id": 23,
@@ -467,7 +534,8 @@ const HITOS = [
     "audio_es": "",
     "audio_en": "",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "paseando"
   },
   {
     "id": 24,
@@ -484,7 +552,8 @@ const HITOS = [
     "audio_es": "webapp_BE_24_ES.mp3",
     "audio_en": "webapp_BE_24_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "paseando"
   },
   {
     "id": 25,
@@ -501,7 +570,8 @@ const HITOS = [
     "audio_es": "webapp_BE_25_ES.mp3",
     "audio_en": "webapp_BE_25_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "paseando"
   },
   {
     "id": 26,
@@ -518,7 +588,8 @@ const HITOS = [
     "audio_es": "webapp_BE_26_ES.mp3",
     "audio_en": "webapp_BE_26_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "paseando"
   },
   {
     "id": 27,
@@ -535,7 +606,8 @@ const HITOS = [
     "audio_es": "webapp_BE_27_ES.mp3",
     "audio_en": "webapp_BE_27_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "penalosa"
   },
   {
     "id": 28,
@@ -552,7 +624,8 @@ const HITOS = [
     "audio_es": "webapp_BE_28_ES.mp3",
     "audio_en": "webapp_BE_28_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "penalosa"
   },
   {
     "id": 29,
@@ -569,7 +642,8 @@ const HITOS = [
     "audio_es": "webapp_BE_29_ES.mp3",
     "audio_en": "webapp_BE_29_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "penalosa"
   },
   {
     "id": 30,
@@ -586,7 +660,8 @@ const HITOS = [
     "audio_es": "webapp_BE_30_ES.mp3",
     "audio_en": "webapp_BE_30_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "penalosa"
   },
   {
     "id": 31,
@@ -603,7 +678,8 @@ const HITOS = [
     "audio_es": "webapp_BE_31_ES.mp3",
     "audio_en": "webapp_BE_31_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "gr286"
   },
   {
     "id": 32,
@@ -620,7 +696,8 @@ const HITOS = [
     "audio_es": "webapp_BE_32_ES.mp3",
     "audio_en": "webapp_BE_32_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "gr286"
   },
   {
     "id": 33,
@@ -637,7 +714,8 @@ const HITOS = [
     "audio_es": "webapp_BE_33_ES.mp3",
     "audio_en": "webapp_BE_33_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "gr286"
   },
   {
     "id": 34,
@@ -654,7 +732,8 @@ const HITOS = [
     "audio_es": "webapp_BE_34_ES.mp3",
     "audio_en": "webapp_BE_34_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "gr286"
   },
   {
     "id": 35,
@@ -671,7 +750,8 @@ const HITOS = [
     "audio_es": "webapp_BE_35_ES.mp3",
     "audio_en": "webapp_BE_35_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "gr286"
   },
   {
     "id": 36,
@@ -688,7 +768,8 @@ const HITOS = [
     "audio_es": "webapp_BE_36_ES.mp3",
     "audio_en": "webapp_BE_36_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   },
   {
     "id": 37,
@@ -705,7 +786,8 @@ const HITOS = [
     "audio_es": "webapp_BE_37_ES.mp3",
     "audio_en": "webapp_BE_37_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   },
   {
     "id": 38,
@@ -720,7 +802,8 @@ const HITOS = [
     "audio_es": "webapp_BE_38_ES.mp3",
     "audio_en": "webapp_BE_38_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   },
   {
     "id": 39,
@@ -737,7 +820,8 @@ const HITOS = [
     "audio_es": "webapp_BE_39_ES.mp3",
     "audio_en": "webapp_BE_39_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   },
   {
     "id": 40,
@@ -754,7 +838,8 @@ const HITOS = [
     "audio_es": "webapp_BE_40_ES.mp3",
     "audio_en": "webapp_BE_40_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   },
   {
     "id": 41,
@@ -771,6 +856,7 @@ const HITOS = [
     "audio_es": "webapp_BE_41_ES.mp3",
     "audio_en": "webapp_BE_41_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742
+    "lng": -3.7742,
+    "ruta": "piedra_viva"
   }
 ];
