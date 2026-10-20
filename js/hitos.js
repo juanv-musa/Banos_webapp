@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 13:55:46
+ * Fecha de actualización: 20/10/2026, 14:01:22
  */
 
 const RUTAS = {
@@ -811,7 +811,7 @@ let HITOS = [
     "texto_es": "Estamos en el Pozo de la Vega, una muestra del patrimonio hidráulico tradicional de Baños de la Encina. Durante siglos, estos puntos de agua abastecieron al ganado y facilitaron el tránsito por los caminos rurales.\nSituado en el barrio de las Eras, junto a la vega y la calle Trinidad, formaba parte de una extensa red de pozos y fuentes del municipio, entre ellos los de Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas y Ciego, además de la Alcubilla y el pilar de la Virgen, también conocido como fuente de Juanico el\nSapo.\nEl conjunto conserva el brocal de piedra, el empedrado que lo rodea y varias pilas utilizadas como abrevaderos. Cada una tenía su función: la de arenisca servía para las bestias de labor y carga, mientras que la de granito se destinaba a cerdos, cabras y ovejas.\nLas ordenanzas municipales de 1742 ya regulaban su uso para proteger el empedrado y mantener el agua en buenas condiciones.",
     "texto_en": "Pozo de la Vega is part of Baños de la Encina’s traditional water heritage. For centuries, wells and springs like this one provided water for livestock and served travellers along rural routes.\nLocated in the Las Eras neighbourhood, beside the fertile plain and Calle Trinidad, the well was part of an extensive network of wells and springs across the municipality. These included Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas and Ciego, as well as La Alcubilla and Pilar de la Virgen, also known as Juanico el Sapo Spring.\nThe site retains its stone wellhead, cobbled surround and several stone troughs used to water livestock. Each trough had a specific purpose: the sandstone trough was used for working animals and pack animals, while the granite trough served pigs, goats and sheep.\nMunicipal regulations dating back to 1742 already governed the use of the well, protecting the cobbled surface and helping to keep the water clean.",
     "imagenes": [
-      "panel-39_1.jpg"
+      "panel-39_1.png"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
