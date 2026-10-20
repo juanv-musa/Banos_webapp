@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 19:09:55
+ * Fecha de actualización: 20/10/2026, 19:10:59
  */
 
 const RUTAS = {
@@ -475,8 +475,9 @@ let HITOS = [
   },
   {
     "id": 21,
-    "titulo_es": "El viejo ‘CAMINO ROMANO’ del cordel de Bailen",
-    "titulo_en": "The old “ROMAN ROAD” of the cordel de Bailen",
+    "ruta": "paseando",
+    "titulo_es": "El viejo ‘camino romano’ del cordel de Bailen",
+    "titulo_en": "The old “roman road” of the cordel de Bailen",
     "texto_es": "Vicky, no lo creerás, pero durante siglos, ya desde el XIII, nuestra sierra fue destino de miles y miles de ovejas merinas que procedían del norte, más concretamente de la Serranía de Cuenca, del Señorío de Molina y las sierras de Albarracín. Claro que lo creo. Y sé, que hasta la segunda mitad del siglo XX, Baños de la Encina fue lo que se llamó “extremo de invernada”, es decir, el lugar donde llegaban del norte pastores y ganados para aprovecharse de los pastos de otoño y la primavera. Muy cierto. Para ello, protegidos por una institución, el Honrado Concejo de la Mesta, se establecieron abrevaderos, como este, y se acondicionaron miles de kilómetros de cañadas, cordeles, veredas y coladas, según el ancho de la vía pecuaria. De tal manera, los ganados podían pastar durante el camino. Es lo que se llama trashumancia o ‘vereda’. Pero fíjate, en el siglo XX, cuando entró en crisis el mercado de la lana merina, nuestro pueblo se especializó en otro tipo de ganado trashumante, la cría del toro bravo. Y tal fue su éxito, que en 1978 llegó a contar con 28 hierros taurinos.",
     "texto_en": "Vicky, believe it or not, since the 13th century, our mountains were the winter destination for thousands of merino sheep from the north—from Cuenca, Molina, and Albarracín. I do believe it! And I know that until the late 20th century, Baños de la Encina was a key wintering area, where herders brought their flocks to graze. Exactly. Protected by the Honrado Concejo de la Mesta, the kingdom’s livestock guild, thousands of kilometers of trails were prepared—some wide, some narrow—for the animals to graze along the way. This seasonal movement is known as transhumance. And when the wool trade declined in the 20th century, the town shifted to raising fighting bulls. It became so successful that in 1978 there were 28 different cattle brands here!",
     "imagenes": [
@@ -492,8 +493,7 @@ let HITOS = [
     "audio_es": "webapp_BE_21_ES.mp3",
     "audio_en": "webapp_BE_21_EN.mp3",
     "lat": 38.168557,
-    "lng": -3.773739,
-    "ruta": "paseando"
+    "lng": -3.773739
   },
   {
     "id": 22,
