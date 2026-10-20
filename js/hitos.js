@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 13:32:38
+ * Fecha de actualización: 20/10/2026, 13:55:46
  */
 
 const RUTAS = {
@@ -790,36 +790,36 @@ let HITOS = [
   {
     "id": 38,
     "ruta": "paseando",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
+    "titulo_es": "Molino del Santo Cristo",
+    "titulo_en": "Santo Cristo Mill",
     "texto_es": "",
     "texto_en": "",
     "imagenes": [],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_38_ES.mp3",
-    "audio_en": "webapp_BE_38_EN.mp3",
-    "lat": 38.1711,
-    "lng": -3.7742
+    "audio_es": "",
+    "audio_en": "",
+    "lat": 38.175406,
+    "lng": -3.771658
   },
   {
     "id": 39,
     "ruta": "paseando",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Pozo de la Vega",
+    "titulo_en": "La Vega Well",
+    "texto_es": "Estamos en el Pozo de la Vega, una muestra del patrimonio hidráulico tradicional de Baños de la Encina. Durante siglos, estos puntos de agua abastecieron al ganado y facilitaron el tránsito por los caminos rurales.\nSituado en el barrio de las Eras, junto a la vega y la calle Trinidad, formaba parte de una extensa red de pozos y fuentes del municipio, entre ellos los de Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas y Ciego, además de la Alcubilla y el pilar de la Virgen, también conocido como fuente de Juanico el\nSapo.\nEl conjunto conserva el brocal de piedra, el empedrado que lo rodea y varias pilas utilizadas como abrevaderos. Cada una tenía su función: la de arenisca servía para las bestias de labor y carga, mientras que la de granito se destinaba a cerdos, cabras y ovejas.\nLas ordenanzas municipales de 1742 ya regulaban su uso para proteger el empedrado y mantener el agua en buenas condiciones.",
+    "texto_en": "Pozo de la Vega is part of Baños de la Encina’s traditional water heritage. For centuries, wells and springs like this one provided water for livestock and served travellers along rural routes.\nLocated in the Las Eras neighbourhood, beside the fertile plain and Calle Trinidad, the well was part of an extensive network of wells and springs across the municipality. These included Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas and Ciego, as well as La Alcubilla and Pilar de la Virgen, also known as Juanico el Sapo Spring.\nThe site retains its stone wellhead, cobbled surround and several stone troughs used to water livestock. Each trough had a specific purpose: the sandstone trough was used for working animals and pack animals, while the granite trough served pigs, goats and sheep.\nMunicipal regulations dating back to 1742 already governed the use of the well, protecting the cobbled surface and helping to keep the water clean.",
     "imagenes": [
       "panel-39_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_39_ES.mp3",
-    "audio_en": "webapp_BE_39_EN.mp3",
-    "lat": 38.1711,
-    "lng": -3.7742
+    "audio_es": "",
+    "audio_en": "",
+    "lat": 38.169536,
+    "lng": -3.771594
   },
   {
     "id": 40,
