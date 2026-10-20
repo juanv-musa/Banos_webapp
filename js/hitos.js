@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 19:15:59
+ * Fecha de actualización: 20/10/2026, 19:28:43
  */
 
 const RUTAS = {
@@ -521,9 +521,9 @@ let HITOS = [
     "id": 23,
     "ruta": "castillo",
     "titulo_es": "Edificio romano",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_en": "Roman Building",
+    "texto_es": "Además de la escalinata y los capiteles, hay otros elementos romanos desplazados o reutilizados en los muros y suelos del castillo que, junto con nuevos materiales aparecidos, fechan el edificio romano en época altoimperial.\n\nEn las distintas actividades arqueológicas llevadas a cabo en el castillo han aparecido varios restos de época romana: tres capiteles, un ara fragmentada dedicada a \"ILICIA\" y una escalinata de sillares. Al levantar el edificio se trabajó la roca geológica cortándola y puliéndola para utilizarla como suelo del mismo.\n\nEl edificio fue construido en época romana altoimperial -siglo a II-. Se cree que estuvo relacionado con funciones religiosas o funerarias por el tipo de materiales que han aparecido asociados a él.",
+    "texto_en": "Apart from the staircase and the capitals, there are some other romans elements displaced or reused in the castle walls and floors which, along with new materials appeared, date the Roman building to the Early Imperial Roman period.\n\nIn the various archaeological activities carried out in the castle, several Roman remains have appeared: three capitals, a fragmented altar dedicated to \"ILICIA\" and an ashlar staircase. In the construction of the building, geological rock was cut and polished in order to use it as the floor of the building.\n\nIt was built in the Early Imperial Roman period -1st to 3rd century-. It is believed that the building was related to religious or funeral functions due to the materials that have appeared linked to it.",
     "imagenes": [
       "panel-23_1.jpg"
     ],
@@ -532,8 +532,8 @@ let HITOS = [
     "logos": [],
     "audio_es": "",
     "audio_en": "",
-    "lat": 38.1711,
-    "lng": -3.7742
+    "lat": 38.169943,
+    "lng": -3.775606
   },
   {
     "id": 24,
