@@ -161,7 +161,7 @@ function renderCards(filterText = "") {
     const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "assets/images/placeholder.png";
     const previewText = h.texto_es ? (h.texto_es.substring(0, 100) + "...") : "Sin texto descriptivo.";
     const rutaKey = h.ruta || 'paseando';
-    const rutaObj = (typeof RUTAS !== 'undefined' && RUTAS[rutaKey]) ? RUTAS[rutaKey] : { nombre_es: "Paseando por Baños", color: "#8b3a1b", icono: "🏛️" };
+    const rutaObj = (typeof RUTAS !== 'undefined' && RUTAS[rutaKey]) ? RUTAS[rutaKey] : { nombre_es: "Paseando por Baños", color: "#8b3a1b" };
 
     return `
       <div class="hito-card">
@@ -171,7 +171,7 @@ function renderCards(filterText = "") {
             <span class="hito-card-badge" style="background-color: ${rutaObj.color}; color: #ffffff !important;">Hito ${h.id}</span>
             <div style="margin-top: 4px;">
               <span style="display: inline-block; font-size: 0.72rem; font-weight: 800; color: ${rutaObj.color}; background: ${rutaObj.color}15; padding: 2px 8px; border-radius: 6px; border: 1px solid ${rutaObj.color}35;">
-                ${rutaObj.icono} ${rutaObj.nombre_es}
+                ${rutaObj.nombre_es}
               </span>
             </div>
             <h3 class="hito-card-title">${h.titulo_es}</h3>
@@ -714,11 +714,11 @@ async function saveAllChanges() {
 
 function generateHitosJsContent() {
   const rutasObj = (typeof RUTAS !== 'undefined') ? RUTAS : {
-    paseando: { id: "paseando", nombre_es: "Paseando por Baños", nombre_en: "Strolling through Baños", color: "#8b3a1b", colorBg: "#fbf5f2", colorBorder: "#d4a896", icono: "🏛️" },
-    castillo: { id: "castillo", nombre_es: "Castillo de Baños", nombre_en: "Baños Castle", color: "#1565c0", colorBg: "#f0f7ff", colorBorder: "#90caf9", icono: "🏰" },
-    penalosa: { id: "penalosa", nombre_es: "Peñalosa", nombre_en: "Peñalosa", color: "#7b1fa2", colorBg: "#faf4fc", colorBorder: "#ce93d8", icono: "🏺" },
-    gr286: { id: "gr286", nombre_es: "Sendero GR286", nombre_en: "GR286 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab", icono: "🥾" },
-    piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7", icono: "🌿" }
+    paseando: { id: "paseando", nombre_es: "Paseando por Baños", nombre_en: "Strolling through Baños", color: "#8b3a1b", colorBg: "#fbf5f2", colorBorder: "#d4a896" },
+    castillo: { id: "castillo", nombre_es: "Castillo de Baños", nombre_en: "Baños Castle", color: "#1565c0", colorBg: "#f0f7ff", colorBorder: "#90caf9" },
+    penalosa: { id: "penalosa", nombre_es: "Peñalosa", nombre_en: "Peñalosa", color: "#7b1fa2", colorBg: "#faf4fc", colorBorder: "#ce93d8" },
+    gr286: { id: "gr286", nombre_es: "Sendero GR286", nombre_en: "GR286 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
+    piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7" }
   };
 
   return `/**

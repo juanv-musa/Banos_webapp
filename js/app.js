@@ -252,7 +252,6 @@ function renderList(rutaFilter = null) {
           const style = isCurrent ? `background-color: ${r.color}; color: white; border-color: ${r.color};` : '';
           return `
             <a href="#/list?ruta=${r.id}" class="route-tab ${isCurrent ? 'active' : ''}" style="${style}">
-              <span>${r.icono}</span>
               <span>${name}</span>
               <span style="opacity: 0.8; font-size: 0.72rem;">(${count})</span>
             </a>
@@ -277,7 +276,7 @@ function renderList(rutaFilter = null) {
         </div>
         <div class="landmark-card-info">
           <span class="landmark-route-tag" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1px solid ${ruta.color}35;">
-            ${ruta.icono} ${rutaName}
+            ${rutaName}
           </span>
           <h3 class="landmark-card-title">${title}</h3>
           <span class="landmark-card-audio-tag">
@@ -355,7 +354,6 @@ function renderDetail(id) {
       ${carouselHtml}
       <div class="detail-body">
         <a href="#/list?ruta=${ruta.id}" class="detail-route-badge" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1.5px solid ${ruta.color}45; text-decoration: none;">
-          <span>${ruta.icono}</span>
           <span>${rutaName}</span>
         </a>
         <div class="detail-number" style="color: ${ruta.color};">${t("landmarkBadge")} ${hito.id} / ${HITOS.length}</div>
@@ -593,7 +591,6 @@ function renderMap(rutaFilter = null) {
           const style = isCurrent ? `background-color: ${r.color}; color: white; border-color: ${r.color};` : '';
           return `
             <a href="#/map?ruta=${r.id}" class="route-tab ${isCurrent ? 'active' : ''}" style="${style}">
-              <span>${r.icono}</span>
               <span>${name}</span>
               <span style="opacity: 0.8; font-size: 0.72rem;">(${count})</span>
             </a>
@@ -681,7 +678,7 @@ function initLeafletMap(rutaFilter = null) {
     const popupContent = `
       <div style="font-family: 'Nunito', sans-serif; text-align: center; max-width: 190px;">
         ${thumb ? `<img src="${thumb}" style="width: 100%; height: 85px; object-fit: cover; border-radius: 6px; margin-bottom: 6px;">` : ""}
-        <span style="display: block; font-size: 0.72rem; font-weight: 800; color: ${ruta.color}; margin-bottom: 3px;">${ruta.icono} ${rutaName}</span>
+        <span style="display: block; font-size: 0.72rem; font-weight: 800; color: ${ruta.color}; margin-bottom: 3px;">${rutaName}</span>
         <b style="font-size: 0.9rem; color: #222; display: block; margin-bottom: 8px;">${h.id}. ${title}</b>
         <a href="#/detail/${h.id}" style="display: inline-block; background: ${ruta.color}; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;">
           ${t("viewDetail")}

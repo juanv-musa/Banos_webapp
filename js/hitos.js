@@ -9,8 +9,7 @@ const RUTAS = {
     nombre_en: "Strolling through Baños",
     color: "#8b3a1b",
     colorBg: "#fbf5f2",
-    colorBorder: "#d4a896",
-    icono: "🏛️"
+    colorBorder: "#d4a896"
   },
   castillo: {
     id: "castillo",
@@ -18,8 +17,7 @@ const RUTAS = {
     nombre_en: "Baños Castle",
     color: "#1565c0",
     colorBg: "#f0f7ff",
-    colorBorder: "#90caf9",
-    icono: "🏰"
+    colorBorder: "#90caf9"
   },
   penalosa: {
     id: "penalosa",
@@ -27,8 +25,7 @@ const RUTAS = {
     nombre_en: "Peñalosa",
     color: "#7b1fa2",
     colorBg: "#faf4fc",
-    colorBorder: "#ce93d8",
-    icono: "🏺"
+    colorBorder: "#ce93d8"
   },
   gr286: {
     id: "gr286",
@@ -36,8 +33,7 @@ const RUTAS = {
     nombre_en: "GR286 Trail",
     color: "#c2883d",
     colorBg: "#fdf8f0",
-    colorBorder: "#eed5ab",
-    icono: "🥾"
+    colorBorder: "#eed5ab"
   },
   piedra_viva: {
     id: "piedra_viva",
@@ -45,8 +41,7 @@ const RUTAS = {
     nombre_en: "Baños in Living Stone",
     color: "#2e7d32",
     colorBg: "#f1f8f2",
-    colorBorder: "#a5d6a7",
-    icono: "🌿"
+    colorBorder: "#a5d6a7"
   }
 };
 
