@@ -362,8 +362,8 @@ function openCreateModal() {
   document.getElementById("form-subvencion-es").value = "";
   document.getElementById("form-subvencion-en").value = "";
   document.getElementById("form-imagenes").value = `panel-${nextId}_1.jpg`;
-  document.getElementById("form-audio-es").value = `webapp_BE_${numPad}_ES.mp3`;
-  document.getElementById("form-audio-en").value = `webapp_BE_${numPad}_EN.mp3`;
+  document.getElementById("form-audio-es").value = "";
+  document.getElementById("form-audio-en").value = "";
   document.getElementById("form-lat").value = 38.1711;
   document.getElementById("form-lng").value = -3.7742;
 

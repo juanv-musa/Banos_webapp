@@ -268,6 +268,10 @@ function renderList(rutaFilter = null) {
     const ruta = (typeof RUTAS !== 'undefined' && RUTAS[h.ruta]) ? RUTAS[h.ruta] : RUTAS['paseando'];
     const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
+    const hasAudio = AppState.lang === 'en'
+      ? Boolean((h.audio_en && h.audio_en.trim()) || (h.audio_es && h.audio_es.trim()))
+      : Boolean(h.audio_es && h.audio_es.trim());
+
     cardsHtml += `
       <a href="#/detail/${h.id}" class="landmark-card">
         <div class="landmark-card-thumb">
@@ -279,10 +283,12 @@ function renderList(rutaFilter = null) {
             ${rutaName}
           </span>
           <h3 class="landmark-card-title">${title}</h3>
+          ${hasAudio ? `
           <span class="landmark-card-audio-tag">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
             ${t("audioGuide")}
           </span>
+          ` : ''}
         </div>
       </a>
     `;
@@ -323,7 +329,8 @@ function renderDetail(id) {
   AppState.activeDetailHito = hito;
   const title = AppState.lang === 'en' ? (hito.titulo_en || hito.titulo_es) : hito.titulo_es;
   const text = AppState.lang === 'en' ? (hito.texto_en || hito.texto_es) : hito.texto_es;
-  const audioFile = AppState.lang === 'en' ? (hito.audio_en || hito.audio_es) : hito.audio_es;
+  const rawAudio = AppState.lang === 'en' ? (hito.audio_en || hito.audio_es) : hito.audio_es;
+  const audioFile = (rawAudio && typeof rawAudio === 'string' && rawAudio.trim().length > 0) ? rawAudio.trim() : null;
   const ruta = (typeof RUTAS !== 'undefined' && RUTAS[hito.ruta]) ? RUTAS[hito.ruta] : RUTAS['paseando'];
   const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
@@ -345,20 +352,10 @@ function renderDetail(id) {
     `;
   }
 
-  // Navegación anterior / siguiente
-  const prevHito = HITOS.find(h => h.id === id - 1);
-  const nextHito = HITOS.find(h => h.id === id + 1);
-
-  container.innerHTML = `
-    <div class="detail-view">
-      ${carouselHtml}
-      <div class="detail-body">
-        <a href="#/list?ruta=${ruta.id}" class="detail-route-badge" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1.5px solid ${ruta.color}45; text-decoration: none;">
-          <span>${rutaName}</span>
-        </a>
-        <div class="detail-number" style="color: ${ruta.color};">${t("landmarkBadge")} ${hito.id} / ${HITOS.length}</div>
-        <h1 class="detail-title">${title}</h1>
-
+  // Reproductor de audio (solo si tiene archivo asignado)
+  let audioPlayerHtml = "";
+  if (audioFile) {
+    audioPlayerHtml = `
         <!-- REPRODUCTOR DE AUDIO -->
         <div class="audio-player-card">
           <div class="audio-player-header">
@@ -381,6 +378,24 @@ function renderDetail(id) {
             </div>
           </div>
         </div>
+    `;
+  }
+
+  // Navegación anterior / siguiente
+  const prevHito = HITOS.find(h => h.id === id - 1);
+  const nextHito = HITOS.find(h => h.id === id + 1);
+
+  container.innerHTML = `
+    <div class="detail-view">
+      ${carouselHtml}
+      <div class="detail-body">
+        <a href="#/list?ruta=${ruta.id}" class="detail-route-badge" style="background-color: ${ruta.color}15; color: ${ruta.color}; border: 1.5px solid ${ruta.color}45; text-decoration: none;">
+          <span>${rutaName}</span>
+        </a>
+        <div class="detail-number" style="color: ${ruta.color};">${t("landmarkBadge")} ${hito.id} / ${HITOS.length}</div>
+        <h1 class="detail-title">${title}</h1>
+
+        ${audioPlayerHtml}
 
         <!-- BARRA DE ACCESIBILIDAD (TAMAÑO DE FUENTE) -->
         <div class="detail-toolbar">
@@ -411,8 +426,12 @@ function renderDetail(id) {
     </div>
   `;
 
-  // Iniciar audio
-  setupAudioElement(`assets/audio/${audioFile}`);
+  // Iniciar audio si existe
+  if (audioFile) {
+    setupAudioElement(`assets/audio/${audioFile}`);
+  } else {
+    stopCurrentAudio();
+  }
 }
 
 function setFontSize(size) {
@@ -471,6 +490,13 @@ function setupAudioElement(src) {
   const audio = new Audio(src);
   AppState.currentAudio = audio;
   AppState.isPlaying = false;
+
+  audio.addEventListener("error", () => {
+    // Si el archivo de audio no existe en el servidor o da error de carga, ocultar el reproductor
+    const playerCard = document.querySelector(".audio-player-card");
+    if (playerCard) playerCard.style.display = "none";
+    stopCurrentAudio();
+  });
 
   audio.addEventListener("loadedmetadata", () => {
     const totalEl = document.getElementById("audio-total-time");
