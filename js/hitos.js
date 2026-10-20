@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 19:28:43
+ * Fecha de actualización: 20/10/2026, 19:37:33
  */
 
 const RUTAS = {
@@ -548,8 +548,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_24_ES.mp3",
+    "audio_en": "webapp_BE_24_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -566,8 +566,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_25_ES.mp3",
+    "audio_en": "webapp_BE_25_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -584,8 +584,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_26_ES.mp3",
+    "audio_en": "webapp_BE_26_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -602,8 +602,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_27_ES.mp3",
+    "audio_en": "webapp_BE_27_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -620,8 +620,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_28_ES.mp3",
+    "audio_en": "webapp_BE_28_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -638,8 +638,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_29_ES.mp3",
+    "audio_en": "webapp_BE_29_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -656,8 +656,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_30_ES.mp3",
+    "audio_en": "webapp_BE_30_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -674,8 +674,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_31_ES.mp3",
+    "audio_en": "webapp_BE_31_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -692,8 +692,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_32_ES.mp3",
+    "audio_en": "webapp_BE_32_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -710,8 +710,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_33_ES.mp3",
+    "audio_en": "webapp_BE_33_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -728,8 +728,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_34_ES.mp3",
+    "audio_en": "webapp_BE_34_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -746,8 +746,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_35_ES.mp3",
+    "audio_en": "webapp_BE_35_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -764,8 +764,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_36_ES.mp3",
+    "audio_en": "webapp_BE_36_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -781,8 +781,8 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "",
-    "audio_en": "",
+    "audio_es": "webapp_BE_37_ES.mp3",
+    "audio_en": "webapp_BE_37_EN.mp3",
     "lat": 38.1711,
     "lng": -3.7742,
     "ruta": "piedra_viva"
