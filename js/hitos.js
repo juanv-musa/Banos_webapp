@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 14:01:22
+ * Fecha de actualización: 20/10/2026, 14:14:53
  */
 
 const RUTAS = {
@@ -808,10 +808,10 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Pozo de la Vega",
     "titulo_en": "La Vega Well",
-    "texto_es": "Estamos en el Pozo de la Vega, una muestra del patrimonio hidráulico tradicional de Baños de la Encina. Durante siglos, estos puntos de agua abastecieron al ganado y facilitaron el tránsito por los caminos rurales.\nSituado en el barrio de las Eras, junto a la vega y la calle Trinidad, formaba parte de una extensa red de pozos y fuentes del municipio, entre ellos los de Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas y Ciego, además de la Alcubilla y el pilar de la Virgen, también conocido como fuente de Juanico el\nSapo.\nEl conjunto conserva el brocal de piedra, el empedrado que lo rodea y varias pilas utilizadas como abrevaderos. Cada una tenía su función: la de arenisca servía para las bestias de labor y carga, mientras que la de granito se destinaba a cerdos, cabras y ovejas.\nLas ordenanzas municipales de 1742 ya regulaban su uso para proteger el empedrado y mantener el agua en buenas condiciones.",
+    "texto_es": "Estamos en el Pozo de la Vega, una muestra del patrimonio hidráulico tradicional de Baños de la Encina. Durante siglos, estos puntos de agua abastecieron al ganado y facilitaron el tránsito por los caminos rurales.\nSituado en el barrio de las Eras, junto a la vega y la calle Trinidad, formaba parte de una extensa red de pozos y fuentes del municipio, entre ellos los de Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas y Ciego, además de la Alcubilla y el pilar de la Virgen, también conocido como fuente de Juanico el Sapo.\nEl conjunto conserva el brocal de piedra, el empedrado que lo rodea y varias pilas utilizadas como abrevaderos. Cada una tenía su función: la de arenisca servía para las bestias de labor y carga, mientras que la de granito se destinaba a cerdos, cabras y ovejas.\nLas ordenanzas municipales de 1742 ya regulaban su uso para proteger el empedrado y mantener el agua en buenas condiciones.",
     "texto_en": "Pozo de la Vega is part of Baños de la Encina’s traditional water heritage. For centuries, wells and springs like this one provided water for livestock and served travellers along rural routes.\nLocated in the Las Eras neighbourhood, beside the fertile plain and Calle Trinidad, the well was part of an extensive network of wells and springs across the municipality. These included Nuevo, Charcones, Vilches, Serna, Cotanillo, Luzonas and Ciego, as well as La Alcubilla and Pilar de la Virgen, also known as Juanico el Sapo Spring.\nThe site retains its stone wellhead, cobbled surround and several stone troughs used to water livestock. Each trough had a specific purpose: the sandstone trough was used for working animals and pack animals, while the granite trough served pigs, goats and sheep.\nMunicipal regulations dating back to 1742 already governed the use of the well, protecting the cobbled surface and helping to keep the water clean.",
     "imagenes": [
-      "panel-39_1.png"
+      "img_39_01.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
@@ -842,18 +842,19 @@ let HITOS = [
   {
     "id": 41,
     "ruta": "paseando",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Santuario de la Virgen de la Encina",
+    "titulo_en": "Sanctuary of the Virgin of the Encina",
+    "texto_es": "Junto a los antiguos caminos que comunicaban el Alto Guadalquivir con la Meseta, este santuario se alza en un paisaje de olivares entre la Campiña y Sierra Morena. El recorrido, de unos 4 km, pasa por la ermita\nde Jesús del Camino.\nEn su entorno se conservan los restos de una posible villa romana (siglos I-V d. C.), con espacios residenciales, agrícolas y unas pequeñas termas (balnea).\nA finales de la Edad Media, el enclave recuperó importancia con la construcción de una casa fuerte, con ermita y un torreón, vinculada al control del camino y a la defensa del territorio frente a las incursiones nazaríes.\nEntre los siglos XVII y XVIII, el santuario adquirió su aspecto actual, integrando el torreón medieval como crucero de la planta basilical. Destacan sus bóvedas decoradas con estucos y el camarín barroco de la Virgen, reflejo de su transformación en lugar de devoción mariana.",
+    "texto_en": "Located beside ancient routes linking the Upper Guadalquivir Valley with Spain’s central plateau, the sanctuary stands among olive groves between the Campiña countryside and the Sierra Morena hills. The 4 km trail passes the Chapel of Jesús del Camino.\nNearby are the remains of a possible Roman villa (1st–5th centuries AD), with residential and agricultural areas and a small bathhouse (balnea).\nIn the late Middle Ages, the site regained importance with the construction of a fortified manor house, a tower and a chapel, built to control and defend the route and defend the area against Nasrid raids.\nBetween the 17th and 18th centuries, the sanctuary took on its present form, incorporating the medieval tower as its transept. Highlights include its stucco-decorated vaults and the Baroque chapel housing the image of the Virgin, reflecting the site's transformation into a place of Marian devotion.",
     "imagenes": [
-      "panel-41_1.jpg"
+      "img_41_01.jpg",
+      "img_41_02.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_41_ES.mp3",
-    "audio_en": "webapp_BE_41_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   }
