@@ -22,7 +22,7 @@ const UI_TEXTS = {
     homeSubtitle: "Un viaje a través de la historia milenaria de uno de los pueblos más bonitos de España.",
     btnStart: "Ver lista de hitos",
     btnMap: "Ver mapa interactivo",
-    fontSizeLabel: "Tamaño letra:",
+    fontSizeLabel: "",
     subvencionesLabel: "Proyecto subvencionado por:",
     listTitle: "Ruta de los Hitos",
     listSubtitle: "monumentos y puntos de interés",
@@ -50,7 +50,7 @@ const UI_TEXTS = {
     homeSubtitle: "A journey through the millenary history of one of the prettiest villages in Spain.",
     btnStart: "Explore Landmarks",
     btnMap: "Interactive Map",
-    fontSizeLabel: "Text size:",
+    fontSizeLabel: "",
     subvencionesLabel: "Project sponsored by:",
     listTitle: "Landmarks Route",
     listSubtitle: "monuments & points of interest",
@@ -387,7 +387,6 @@ function renderDetail(id) {
         <!-- BARRA DE ACCESIBILIDAD (TAMAÑO DE FUENTE) -->
         <div class="detail-toolbar">
           <div class="font-size-control">
-            <span class="font-size-label">${t("fontSizeLabel")}</span>
             <button class="font-size-btn ${AppState.fontSize === 'normal' ? 'active' : ''}" data-size="normal" onclick="setFontSize('normal')">A</button>
             <button class="font-size-btn ${AppState.fontSize === 'large' ? 'active' : ''}" data-size="large" onclick="setFontSize('large')">A+</button>
             <button class="font-size-btn ${AppState.fontSize === 'xlarge' ? 'active' : ''}" data-size="xlarge" onclick="setFontSize('xlarge')">A++</button>
