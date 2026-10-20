@@ -149,12 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Asegurar que todos los hitos tienen el campo ruta
+  // Asegurar que todos los hitos tienen el campo ruta y no tienen audios ficticios
   if (hitosData.length > 0 && typeof HITOS !== 'undefined' && Array.isArray(HITOS)) {
     hitosData.forEach(h => {
       if (!h.ruta) {
         const match = HITOS.find(orig => orig.id === h.id);
         h.ruta = (match && match.ruta) ? match.ruta : 'paseando';
+      }
+      if (h.id >= 23) {
+        if (h.audio_es && h.audio_es.startsWith('webapp_BE_')) h.audio_es = "";
+        if (h.audio_en && h.audio_en.startsWith('webapp_BE_')) h.audio_en = "";
       }
     });
   }
