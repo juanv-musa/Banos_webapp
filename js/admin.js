@@ -168,7 +168,7 @@ function renderCards(filterText = "") {
         <div class="hito-card-top">
           <img src="${thumb}" class="hito-card-img" alt="${h.titulo_es}" onerror="this.src='assets/images/placeholder.png'">
           <div class="hito-card-details">
-            <span class="hito-card-badge" style="background-color: ${rutaObj.color};">Hito ${h.id}</span>
+            <span class="hito-card-badge" style="background-color: ${rutaObj.color}; color: #ffffff !important;">Hito ${h.id}</span>
             <div style="margin-top: 4px;">
               <span style="display: inline-block; font-size: 0.72rem; font-weight: 800; color: ${rutaObj.color}; background: ${rutaObj.color}15; padding: 2px 8px; border-radius: 6px; border: 1px solid ${rutaObj.color}35;">
                 ${rutaObj.icono} ${rutaObj.nombre_es}

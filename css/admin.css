@@ -239,12 +239,17 @@ body {
 }
 
 .hito-card-badge {
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.74rem;
   font-weight: 800;
-  color: var(--admin-primary);
+  color: #ffffff !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 2px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  margin-bottom: 4px;
 }
 
 .hito-card-title {
