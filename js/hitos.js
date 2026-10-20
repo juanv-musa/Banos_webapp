@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 14:14:53
+ * Fecha de actualización: 20/10/2026, 14:42:35
  */
 
 const RUTAS = {
@@ -792,12 +792,16 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Molino del Santo Cristo",
     "titulo_en": "Santo Cristo Mill",
-    "texto_es": "",
-    "texto_en": "",
-    "imagenes": [],
+    "texto_es": "Estamos ante el molino de estilo manchego situado más al sur de la Península. Construido en sillares de arenisca de la zona, interiormente se divide en tres niveles: cuadra, camareta y sala de molienda.\nEn lo alto de la villa de Baños de la Encina, aprovechando la fuerza del viento y cercano a las antiguas eras donde se aventaba el grano, se encuentra el molino de harina. Se sabe que es anterior al siglo XVIII, ya que en el catastro del Marqués de Ensenada de 1752 ya aparecía en desuso.\nEl cultivo de cereales fue la base de la agricultura local hasta la llegada del monocultivo del olivar. Las cosechas de grano, en parte gracias a la regulación de los usos de la tierra establecida por las \"Ordenanzas Municipales de 1742\", y los lazos culturales con los vecinos de la Mancha influyeron en la construcción de este ingenio de molienda.",
+    "texto_en": "We are in front of the mill of La Mancha style located more to the south of the Peninsula. Built in sandstone ashlars of the area, the interior is divided into three levels: stable, chamber and milling room.\nAt the top of the village of Baños de la Encina, taking advantage of the force of the wind and close to the old threshing floors where the grain was winnowed, is the flour mill. It is known to predate the eighteenth century, since in the land registry of the Marquis of Ensenada of 1752 it appears in disuse.\nThe cultivation of cereals was the basis of local agriculture until the arrival of olive monoculture. The grain crops, partly thanks to the regulation of land uses established by the “Ordenanzas Municipales de 1742”, and the cultural ties with the neighbors of La Mancha influenced the construction of this milling mill.",
+    "imagenes": [
+      "img_38_01.jpg"
+    ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_03.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "lat": 38.175406,
@@ -815,7 +819,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_03.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "lat": 38.169536,
@@ -824,27 +830,29 @@ let HITOS = [
   {
     "id": 40,
     "ruta": "paseando",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Pozo Nuevo",
+    "titulo_en": "New Well",
+    "texto_es": "Situado junto a la vereda de Linares, frente a la desaparecida ermita de San Marcos, el Pozo Nuevo fue un punto clave en los antiguos caminos ganaderos. Durante siglos, sirvió como abrevadero para el ganado y como lugar de abastecimiento de agua.\nTambién conocido como Pozo del Berrocal, toma su nombre del terreno granítico donde nace el arroyo de Las Huertas. El pozo capta el agua del subsuelo y conserva su interior revestido de granito, mientras que el brocal y el empedrado que lo rodea se construyeron con arenisca local. En la piedra aún se aprecian las marcas de las sogas y los cántaros utilizados para extraer agua.\nLa ganadería fue fundamental en la economía local. Junto a la trashumancia de ovejas merinas, se criaban cabras, ovejas y cerdos. En verano, cuando escaseaban los pastos de la sierra, el ganado descendía hacia la campiña para alimentarse de los rastrojos. Aunque hoy predomina el olivar, Baños de la Encina fue también tierra de viñedos y cereal, con cerca de treinta eras donde se trillaba el grano.",
+    "texto_en": "Located beside the Linares drovers’ route, opposite the now-vanished Chapel of San Marcos, Pozo Nuevo was an important stopping point along historic livestock routes. For centuries, it provided water for animals travelling through the area.\nAlso known as Pozo del Berrocal, the well takes its name from the granite outcrop where the Las Huertas stream rises. It draws water from underground and retains its granite-lined interior, while the wellhead and surrounding cobbled surface are made of local sandstone. The stone still bears the marks left by the ropes and earthenware jugs once used to draw water.\nLivestock farming was central to the local economy. Alongside the seasonal migration of Merino sheep, goats, sheep and pigs were raised locally. In summer, when mountain pastures dried out, herds descended to the lowlands to feed on crop stubble. Although olive groves now dominate the landscape, Baños de la Encina was once also known for its vineyards and cereal crops, with nearly thirty threshing floors used to separate grain from straw.",
     "imagenes": [
-      "panel-40_1.jpg"
+      "img_40_01.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
-    "audio_es": "webapp_BE_40_ES.mp3",
-    "audio_en": "webapp_BE_40_EN.mp3",
-    "lat": 38.1711,
-    "lng": -3.7742
+    "logos": [
+      "logos_03.png"
+    ],
+    "audio_es": "",
+    "audio_en": "",
+    "lat": 38.17463,
+    "lng": -3.767045
   },
   {
     "id": 41,
     "ruta": "paseando",
     "titulo_es": "Santuario de la Virgen de la Encina",
     "titulo_en": "Sanctuary of the Virgin of the Encina",
-    "texto_es": "Junto a los antiguos caminos que comunicaban el Alto Guadalquivir con la Meseta, este santuario se alza en un paisaje de olivares entre la Campiña y Sierra Morena. El recorrido, de unos 4 km, pasa por la ermita\nde Jesús del Camino.\nEn su entorno se conservan los restos de una posible villa romana (siglos I-V d. C.), con espacios residenciales, agrícolas y unas pequeñas termas (balnea).\nA finales de la Edad Media, el enclave recuperó importancia con la construcción de una casa fuerte, con ermita y un torreón, vinculada al control del camino y a la defensa del territorio frente a las incursiones nazaríes.\nEntre los siglos XVII y XVIII, el santuario adquirió su aspecto actual, integrando el torreón medieval como crucero de la planta basilical. Destacan sus bóvedas decoradas con estucos y el camarín barroco de la Virgen, reflejo de su transformación en lugar de devoción mariana.",
+    "texto_es": "Junto a los antiguos caminos que comunicaban el Alto Guadalquivir con la Meseta, este santuario se alza en un paisaje de olivares entre la Campiña y Sierra Morena. El recorrido, de unos 4 km, pasa por la ermita de Jesús del Camino.\nEn su entorno se conservan los restos de una posible villa romana (siglos I-V d. C.), con espacios residenciales, agrícolas y unas pequeñas termas (balnea).\nA finales de la Edad Media, el enclave recuperó importancia con la construcción de una casa fuerte, con ermita y un torreón, vinculada al control del camino y a la defensa del territorio frente a las incursiones nazaríes.\nEntre los siglos XVII y XVIII, el santuario adquirió su aspecto actual, integrando el torreón medieval como crucero de la planta basilical. Destacan sus bóvedas decoradas con estucos y el camarín barroco de la Virgen, reflejo de su transformación en lugar de devoción mariana.",
     "texto_en": "Located beside ancient routes linking the Upper Guadalquivir Valley with Spain’s central plateau, the sanctuary stands among olive groves between the Campiña countryside and the Sierra Morena hills. The 4 km trail passes the Chapel of Jesús del Camino.\nNearby are the remains of a possible Roman villa (1st–5th centuries AD), with residential and agricultural areas and a small bathhouse (balnea).\nIn the late Middle Ages, the site regained importance with the construction of a fortified manor house, a tower and a chapel, built to control and defend the route and defend the area against Nasrid raids.\nBetween the 17th and 18th centuries, the sanctuary took on its present form, incorporating the medieval tower as its transept. Highlights include its stucco-decorated vaults and the Baroque chapel housing the image of the Virgin, reflecting the site's transformation into a place of Marian devotion.",
     "imagenes": [
       "img_41_01.jpg",
@@ -852,10 +860,12 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_03.png"
+    ],
     "audio_es": "",
     "audio_en": "",
-    "lat": 38.1711,
-    "lng": -3.7742
+    "lat": 38.174748,
+    "lng": -3.76595
   }
 ];
