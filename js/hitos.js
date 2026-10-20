@@ -1,47 +1,50 @@
 /**
- * DEFINICIÓN DE RUTAS TEMÁTICAS - BAÑOS DE LA ENCINA
- * ===================================================
+ * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
+ * ==============================================================
+ * Archivo generado automáticamente por el Gestor Visual.
+ * Fecha de actualización: 20/10/2026, 13:32:38
  */
+
 const RUTAS = {
-  paseando: {
-    id: "paseando",
-    nombre_es: "Paseando por Baños",
-    nombre_en: "Strolling through Baños",
-    color: "#8b3a1b",
-    colorBg: "#fbf5f2",
-    colorBorder: "#d4a896"
+  "paseando": {
+    "id": "paseando",
+    "nombre_es": "Paseando por Baños",
+    "nombre_en": "Strolling through Baños",
+    "color": "#8b3a1b",
+    "colorBg": "#fbf5f2",
+    "colorBorder": "#d4a896"
   },
-  castillo: {
-    id: "castillo",
-    nombre_es: "Castillo de Baños",
-    nombre_en: "Baños Castle",
-    color: "#1565c0",
-    colorBg: "#f0f7ff",
-    colorBorder: "#90caf9"
+  "castillo": {
+    "id": "castillo",
+    "nombre_es": "Castillo de Baños",
+    "nombre_en": "Baños Castle",
+    "color": "#1565c0",
+    "colorBg": "#f0f7ff",
+    "colorBorder": "#90caf9"
   },
-  penalosa: {
-    id: "penalosa",
-    nombre_es: "Peñalosa",
-    nombre_en: "Peñalosa",
-    color: "#7b1fa2",
-    colorBg: "#faf4fc",
-    colorBorder: "#ce93d8"
+  "penalosa": {
+    "id": "penalosa",
+    "nombre_es": "Peñalosa",
+    "nombre_en": "Peñalosa",
+    "color": "#7b1fa2",
+    "colorBg": "#faf4fc",
+    "colorBorder": "#ce93d8"
   },
-  gr286: {
-    id: "gr286",
-    nombre_es: "Sendero GR286",
-    nombre_en: "GR286 Trail",
-    color: "#c2883d",
-    colorBg: "#fdf8f0",
-    colorBorder: "#eed5ab"
+  "gr286": {
+    "id": "gr286",
+    "nombre_es": "Sendero GR286",
+    "nombre_en": "GR286 Trail",
+    "color": "#c2883d",
+    "colorBg": "#fdf8f0",
+    "colorBorder": "#eed5ab"
   },
-  piedra_viva: {
-    id: "piedra_viva",
-    nombre_es: "Baños en Piedra Viva",
-    nombre_en: "Baños in Living Stone",
-    color: "#2e7d32",
-    colorBg: "#f1f8f2",
-    colorBorder: "#a5d6a7"
+  "piedra_viva": {
+    "id": "piedra_viva",
+    "nombre_es": "Baños en Piedra Viva",
+    "nombre_en": "Baños in Living Stone",
+    "color": "#2e7d32",
+    "colorBg": "#f1f8f2",
+    "colorBorder": "#a5d6a7"
   }
 };
 
@@ -113,6 +116,7 @@ let HITOS = [
   },
   {
     "id": 4,
+    "ruta": "paseando",
     "titulo_es": "El Castillo de Baños de la Encina y su entorno histórico",
     "titulo_en": "The Castle of Baños de la Encina and its surroundings",
     "texto_es": "– José María, los bañuscos estamos tremendamente orgullosos de nuestro castillo. Se trata de una de las edificaciones defensivas más singulares y de las mejores conservadas de la península ibérica.\n– Muy cierto, Vicky. Siendo una verdadera joya monumental, en su muralla hay pequeños detalles decorativos que pasan desapercibidos para los visitantes. Vicky, ¿nos los podrías enseñar y darnos alguna pista?\n– Claro que sí. Mira, tienes que fijarte muy bien en las torres y verás que hay representaciones o dibujitos, que nosotros llamamos el falso despiece. Son incisiones que se pueden hacer en horizontal, en vertical, en zigzag… y en su representación total intentan simular sillares. Como si tú tuvieras un castillo de piedra que realmente estaba hecho en barro. También puedes ver, pues por ejemplo, varias aspas, cruces de San Andrés, lo que parece una espiga de cereal. Y si miras con mucho más detalle podrás encontrarte lo que fuera un diminuto capitel, una basa de columna o un alquerque de doce. Uno de los juegos más interesantes que podemos ver en nuestro territorio. Es curioso a que sí. Te invitamos a que lo encuentres en los lienzos de muralla.",
@@ -129,11 +133,11 @@ let HITOS = [
     "audio_es": "webapp_BE_04_ES.mp3",
     "audio_en": "webapp_BE_04_EN.mp3",
     "lat": 38.169877886,
-    "lng": -3.775368596,
-    "ruta": "castillo"
+    "lng": -3.775368596
   },
   {
     "id": 5,
+    "ruta": "paseando",
     "titulo_es": "El Castillo de Baños de la Encina y su entorno histórico",
     "titulo_en": "The Castle of Baños de la Encina and its surroundings",
     "texto_es": "–Que digo yo que puede parecer extraño, por los muchos siglos que tiene el castillo, pero que sus muros que están elaborados en tapial o tabilla y tiene más de 800 años y ahí está… ¡en pié!\n– Oye Vicky y la torre del homenaje, la conocida popularmente como almena gorda. ¿Por qué es tan diferentes a las demás?\n– No es tan diferente. Dentro tiene una torre igual de tapial. Lo que pasa es que cuando conquistar los castellanos, el castillo, pues cubren con mampostería, esta torre le hace más beta y más alta. Podemos ver dos claras partes. En el siglo XIII, hay una primera parte que la hacen con piedras enormes y poco talladas. Y luego, una segunda parte que se ven unos sillares mejor hechos, pero que son más pequeños, que esa se hace a finales del siglo XV. Y hacen que la torre tenga el aspecto actual. Por cierto, lo de la forma redondeada, responde a la introducción de la artillería. No es lo mismo que un proyectil caiga sobre una esquina, que sobre una parte redondeada, el impacto era menor.",
@@ -150,8 +154,7 @@ let HITOS = [
     "audio_es": "webapp_BE_05_ES.mp3",
     "audio_en": "webapp_BE_05_EN.mp3",
     "lat": 38.170992514,
-    "lng": -3.774869541,
-    "ruta": "castillo"
+    "lng": -3.774869541
   },
   {
     "id": 6,
@@ -516,6 +519,7 @@ let HITOS = [
   },
   {
     "id": 23,
+    "ruta": "castillo",
     "titulo_es": "construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -529,11 +533,11 @@ let HITOS = [
     "audio_es": "",
     "audio_en": "",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "paseando"
+    "lng": -3.7742
   },
   {
     "id": 24,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -547,11 +551,11 @@ let HITOS = [
     "audio_es": "webapp_BE_24_ES.mp3",
     "audio_en": "webapp_BE_24_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "paseando"
+    "lng": -3.7742
   },
   {
     "id": 25,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -565,11 +569,11 @@ let HITOS = [
     "audio_es": "webapp_BE_25_ES.mp3",
     "audio_en": "webapp_BE_25_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "paseando"
+    "lng": -3.7742
   },
   {
     "id": 26,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -583,11 +587,11 @@ let HITOS = [
     "audio_es": "webapp_BE_26_ES.mp3",
     "audio_en": "webapp_BE_26_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "paseando"
+    "lng": -3.7742
   },
   {
     "id": 27,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -601,11 +605,11 @@ let HITOS = [
     "audio_es": "webapp_BE_27_ES.mp3",
     "audio_en": "webapp_BE_27_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "penalosa"
+    "lng": -3.7742
   },
   {
     "id": 28,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -619,11 +623,11 @@ let HITOS = [
     "audio_es": "webapp_BE_28_ES.mp3",
     "audio_en": "webapp_BE_28_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "penalosa"
+    "lng": -3.7742
   },
   {
     "id": 29,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -637,11 +641,11 @@ let HITOS = [
     "audio_es": "webapp_BE_29_ES.mp3",
     "audio_en": "webapp_BE_29_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "penalosa"
+    "lng": -3.7742
   },
   {
     "id": 30,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -655,11 +659,11 @@ let HITOS = [
     "audio_es": "webapp_BE_30_ES.mp3",
     "audio_en": "webapp_BE_30_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "penalosa"
+    "lng": -3.7742
   },
   {
     "id": 31,
+    "ruta": "castillo",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -673,11 +677,11 @@ let HITOS = [
     "audio_es": "webapp_BE_31_ES.mp3",
     "audio_en": "webapp_BE_31_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "gr286"
+    "lng": -3.7742
   },
   {
     "id": 32,
+    "ruta": "penalosa",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -691,11 +695,11 @@ let HITOS = [
     "audio_es": "webapp_BE_32_ES.mp3",
     "audio_en": "webapp_BE_32_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "gr286"
+    "lng": -3.7742
   },
   {
     "id": 33,
+    "ruta": "penalosa",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -709,11 +713,11 @@ let HITOS = [
     "audio_es": "webapp_BE_33_ES.mp3",
     "audio_en": "webapp_BE_33_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "gr286"
+    "lng": -3.7742
   },
   {
     "id": 34,
+    "ruta": "penalosa",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -727,11 +731,11 @@ let HITOS = [
     "audio_es": "webapp_BE_34_ES.mp3",
     "audio_en": "webapp_BE_34_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "gr286"
+    "lng": -3.7742
   },
   {
     "id": 35,
+    "ruta": "penalosa",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -745,11 +749,11 @@ let HITOS = [
     "audio_es": "webapp_BE_35_ES.mp3",
     "audio_en": "webapp_BE_35_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "gr286"
+    "lng": -3.7742
   },
   {
     "id": 36,
+    "ruta": "gr286",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -763,8 +767,7 @@ let HITOS = [
     "audio_es": "webapp_BE_36_ES.mp3",
     "audio_en": "webapp_BE_36_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   },
   {
     "id": 37,
@@ -786,6 +789,7 @@ let HITOS = [
   },
   {
     "id": 38,
+    "ruta": "paseando",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -797,11 +801,11 @@ let HITOS = [
     "audio_es": "webapp_BE_38_ES.mp3",
     "audio_en": "webapp_BE_38_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   },
   {
     "id": 39,
+    "ruta": "paseando",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -815,11 +819,11 @@ let HITOS = [
     "audio_es": "webapp_BE_39_ES.mp3",
     "audio_en": "webapp_BE_39_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   },
   {
     "id": 40,
+    "ruta": "paseando",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -833,11 +837,11 @@ let HITOS = [
     "audio_es": "webapp_BE_40_ES.mp3",
     "audio_en": "webapp_BE_40_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   },
   {
     "id": 41,
+    "ruta": "paseando",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",
@@ -851,7 +855,6 @@ let HITOS = [
     "audio_es": "webapp_BE_41_ES.mp3",
     "audio_en": "webapp_BE_41_EN.mp3",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   }
 ];
