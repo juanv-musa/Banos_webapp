@@ -29,20 +29,115 @@ function getLogoSrc(name) {
   return `assets/images/${name}`;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Cargar primero desde localStorage si hay datos editados recientemente
-  const savedData = localStorage.getItem('encina_hitos_data');
-  if (savedData) {
-    try {
-      const parsed = JSON.parse(savedData);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        hitosData = parsed;
-      }
-    } catch (e) {}
+// ========================================================
+// INTEGRACIÓN GITHUB API (PARA GITHUB PAGES)
+// ========================================================
+const GH_CONFIG = {
+  owner: "juanv-musa",
+  repo: "Banos_webapp",
+  branch: "main"
+};
+
+function isGitHubPages() {
+  return window.location.hostname.includes("github.io");
+}
+
+function getGitHubToken() {
+  return localStorage.getItem("encina_github_token") || "";
+}
+
+function configureGitHubToken() {
+  const current = getGitHubToken();
+  const token = prompt("Introduce tu Personal Access Token (PAT) de GitHub para guardar automáticamente desde GitHub Pages:", current);
+  if (token !== null) {
+    if (token.trim()) {
+      localStorage.setItem("encina_github_token", token.trim());
+      showToast("🔑 Token de GitHub guardado en este navegador.");
+    } else {
+      localStorage.removeItem("encina_github_token");
+      showToast("Token de GitHub eliminado.");
+    }
   }
-  
-  if (hitosData.length === 0 && typeof HITOS !== 'undefined' && Array.isArray(HITOS)) {
+}
+
+async function ensureGitHubToken() {
+  let token = getGitHubToken();
+  if (!token) {
+    token = prompt("Para publicar fotos y cambios directamente en GitHub Pages, introduce tu Token de GitHub (se guardará solo en tu navegador):");
+    if (token && token.trim()) {
+      token = token.trim();
+      localStorage.setItem("encina_github_token", token);
+    }
+  }
+  return token || "";
+}
+
+function utf8ToBase64(str) {
+  return window.btoa(unescape(encodeURIComponent(str)));
+}
+
+async function githubGetFileSha(path) {
+  const token = await ensureGitHubToken();
+  if (!token) throw new Error("Se requiere token de GitHub para guardar en GitHub Pages.");
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${GH_CONFIG.owner}/${GH_CONFIG.repo}/contents/${path}?ref=${GH_CONFIG.branch}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.sha || null;
+    }
+  } catch (e) {}
+  return null;
+}
+
+async function githubPutFile(path, base64Content, commitMessage) {
+  const token = await ensureGitHubToken();
+  if (!token) throw new Error("Se requiere token de GitHub para guardar en GitHub Pages.");
+
+  const sha = await githubGetFileSha(path);
+  const payload = {
+    message: commitMessage,
+    content: base64Content,
+    branch: GH_CONFIG.branch
+  };
+  if (sha) payload.sha = sha;
+
+  const res = await fetch(`https://api.github.com/repos/${GH_CONFIG.owner}/${GH_CONFIG.repo}/contents/${path}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `Error ${res.status} al guardar en GitHub`);
+  }
+  return await res.json();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Cargar siempre primero desde la base oficial HITOS de hitos.js
+  if (typeof HITOS !== 'undefined' && Array.isArray(HITOS) && HITOS.length > 0) {
     hitosData = JSON.parse(JSON.stringify(HITOS));
+  } else {
+    const savedData = localStorage.getItem('encina_hitos_data');
+    if (savedData) {
+      try {
+        const parsed = JSON.parse(savedData);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          hitosData = parsed;
+        }
+      } catch (e) {}
+    }
   }
 
   // Asegurar que todos los hitos tienen el campo ruta
@@ -339,7 +434,7 @@ async function handleLogoUpload(event) {
 
   // 1. Guardar Data URL para previsualización instantánea garantizada
   const reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = async function(e) {
     const dataUrl = e.target.result;
     saveLogoCache(finalName, dataUrl);
 
@@ -347,35 +442,49 @@ async function handleLogoUpload(event) {
       modalLogos.push(finalName);
       renderLogosChips();
     }
+
+    if (isGitHubPages()) {
+      const base64Pure = dataUrl.split(',')[1];
+      try {
+        await githubPutFile(`assets/images/${finalName}`, base64Pure, `Subir logo ${finalName} desde admin`);
+        if (statusEl) statusEl.textContent = `✅ Subido a GitHub: ${finalName}`;
+        showToast(`☁️ Logotipo ${finalName} subido a GitHub`);
+      } catch (err) {
+        if (statusEl) statusEl.textContent = `❌ Error: ${err.message}`;
+        alert("Error al subir logotipo a GitHub: " + err.message);
+      }
+      return;
+    }
+
     if (statusEl) statusEl.textContent = `✅ Añadido: ${finalName}`;
     showToast(`📁 Logotipo cargado: ${finalName}`);
   };
   reader.readAsDataURL(file);
 
-  // 2. Subir archivo físicamente al servidor / gestor
-  const formData = new FormData();
-  formData.append('file', file);
-  formData.append('type', 'image');
-  formData.append('filename', finalName);
+  // 2. Subir archivo físicamente al servidor / gestor (Servidor PHP final)
+  if (!isGitHubPages()) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('type', 'image');
+    formData.append('filename', finalName);
 
-  try {
-    const res = await fetch('api.php?action=upload', {
-      method: 'POST',
-      body: formData
-    });
+    try {
+      const res = await fetch('api.php?action=upload', {
+        method: 'POST',
+        body: formData
+      });
 
-    if (res.ok) {
-      const data = await res.json();
-      const savedName = data.filename || finalName;
-      if (savedName !== finalName && !modalLogos.includes(savedName)) {
-        modalLogos.push(savedName);
-        renderLogosChips();
+      if (res.ok) {
+        const data = await res.json();
+        const savedName = data.filename || finalName;
+        if (savedName !== finalName && !modalLogos.includes(savedName)) {
+          modalLogos.push(savedName);
+          renderLogosChips();
+        }
+      } else if (res.status === 401) {
+        showLoginModal();
       }
-    } else if (res.status === 401) {
-      showLoginModal();
-    }
-  } catch (err) {
-    // Si no hay conexión HTTP, el Data URL en logoCache garantiza la visualización
+    } catch (err) {}
   }
 
   // Limpiar input para permitir seleccionar el mismo archivo si se desea
@@ -466,6 +575,38 @@ async function handleDirectUpload(event, typeKey) {
 
   const statusEl = document.getElementById(statusTargetId);
   if (statusEl) statusEl.textContent = "Subiendo...";
+
+  // Si estamos en GitHub Pages, subir directamente a GitHub mediante su API
+  if (isGitHubPages()) {
+    if (statusEl) statusEl.textContent = "Subiendo a GitHub...";
+    const reader = new FileReader();
+    reader.onload = async function(e) {
+      const dataUrl = e.target.result;
+      const base64Pure = dataUrl.split(',')[1];
+      const folder = (targetType === 'image') ? 'assets/images' : 'assets/audio';
+      const remotePath = `${folder}/${defaultName}`;
+
+      try {
+        await githubPutFile(remotePath, base64Pure, `Subir ${defaultName} desde panel admin`);
+        if (typeKey === 'logo') {
+          saveLogoCache(defaultName, dataUrl);
+          if (!modalLogos.includes(defaultName)) {
+            modalLogos.push(defaultName);
+            renderLogosChips();
+          }
+        } else if (inputTargetId && document.getElementById(inputTargetId)) {
+          document.getElementById(inputTargetId).value = defaultName;
+        }
+        if (statusEl) statusEl.textContent = `✅ Subido a GitHub (${defaultName})`;
+        showToast(`☁️ Archivo ${defaultName} subido directamente a GitHub`);
+      } catch (ghErr) {
+        if (statusEl) statusEl.textContent = `❌ Error: ${ghErr.message}`;
+        alert("Error al subir archivo a GitHub: " + ghErr.message);
+      }
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
 
   const formData = new FormData();
   formData.append('file', file);
@@ -584,6 +725,18 @@ function saveHitoForm(event) {
 
 async function autoSaveToServer() {
   const content = generateHitosJsContent();
+
+  if (isGitHubPages()) {
+    try {
+      const b64 = utf8ToBase64(content);
+      await githubPutFile('js/hitos.js', b64, 'Actualización automática de hitos');
+      showToast('☁️ Guardado automáticamente en GitHub');
+    } catch (err) {
+      console.warn('GitHub auto-save:', err.message);
+    }
+    return;
+  }
+
   try {
     await fetch('api.php?action=save', {
       method: 'POST',
@@ -670,6 +823,18 @@ function downloadQrCodePng() {
 // ========================================================
 async function saveAllChanges() {
   const content = generateHitosJsContent();
+
+  if (isGitHubPages()) {
+    showToast('⏳ Publicando en GitHub...');
+    try {
+      const b64 = utf8ToBase64(content);
+      await githubPutFile('js/hitos.js', b64, 'Publicación manual de hitos desde panel de administración');
+      showToast('🎉 ¡Publicado en GitHub con éxito! En ~1 min se verá en GitHub Pages.');
+      return;
+    } catch (err) {
+      alert('Error al publicar en GitHub: ' + err.message);
+    }
+  }
 
   try {
     const res = await fetch('api.php?action=save', {
