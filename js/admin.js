@@ -81,10 +81,14 @@ async function githubGetFileSha(path) {
   if (!token) throw new Error("Se requiere token de GitHub para guardar en GitHub Pages.");
 
   try {
-    const res = await fetch(`https://api.github.com/repos/${GH_CONFIG.owner}/${GH_CONFIG.repo}/contents/${path}?ref=${GH_CONFIG.branch}`, {
+    const timestamp = Date.now();
+    const res = await fetch(`https://api.github.com/repos/${GH_CONFIG.owner}/${GH_CONFIG.repo}/contents/${path}?ref=${GH_CONFIG.branch}&_t=${timestamp}`, {
+      cache: 'no-store',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Accept': 'application/vnd.github.v3+json'
+        'Accept': 'application/vnd.github.v3+json',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache'
       }
     });
     if (res.ok) {
@@ -95,7 +99,7 @@ async function githubGetFileSha(path) {
   return null;
 }
 
-async function githubPutFile(path, base64Content, commitMessage) {
+async function githubPutFile(path, base64Content, commitMessage, retryCount = 0) {
   const token = await ensureGitHubToken();
   if (!token) throw new Error("Se requiere token de GitHub para guardar en GitHub Pages.");
 
@@ -119,6 +123,11 @@ async function githubPutFile(path, base64Content, commitMessage) {
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
+    // Si hay conflicto de versión/sha (409) debido a guardados consecutivos o caché, reintentar obteniendo el sha en vivo
+    if (res.status === 409 && retryCount < 2) {
+      await new Promise(r => setTimeout(r, 1000));
+      return await githubPutFile(path, base64Content, commitMessage, retryCount + 1);
+    }
     throw new Error(err.message || `Error ${res.status} al guardar en GitHub`);
   }
   return await res.json();
