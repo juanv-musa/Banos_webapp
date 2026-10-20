@@ -16,7 +16,7 @@ const AppState = {
 // Textos de interfaz bilingües
 const UI_TEXTS = {
   es: {
-    appTitle: "Baños de la Encina",
+    appTitle: "",
     welcomeBadge: "Historias Contadas",
     homeTitle: "Descubre Baños de la Encina",
     homeSubtitle: "Un viaje a través de la historia milenaria de uno de los pueblos más bonitos de España.",
@@ -44,8 +44,8 @@ const UI_TEXTS = {
     filterByRoute: "Filtrar por ruta:"
   },
   en: {
-    appTitle: "Baños de la Encina",
-    welcomeBadge: "Storytelling",
+    appTitle: "",
+    welcomeBadge: "Told Stories",
     homeTitle: "Discover Baños de la Encina",
     homeSubtitle: "A journey through the millenary history of one of the prettiest villages in Spain.",
     btnStart: "Explore Landmarks",
@@ -189,20 +189,15 @@ function t(key) {
 function renderHome() {
   AppState.activeDetailHito = null;
   const container = document.getElementById("app-content");
-  updateHeaderBar({ showBack: false, showMap: true, title: t("appTitle") });
+  updateHeaderBar({ showBack: false, showMap: true, title: "" });
 
   const rutasKeys = typeof RUTAS !== 'undefined' ? Object.keys(RUTAS) : [];
   const routeButtonsHtml = rutasKeys.map(key => {
     const r = RUTAS[key];
-    const count = HITOS.filter(h => (h.ruta || 'paseando') === r.id).length;
     const name = AppState.lang === 'en' ? r.nombre_en : r.nombre_es;
     return `
       <a href="#/list?ruta=${r.id}" class="route-btn route-bg-${r.id}">
-        <div class="route-btn-left">
-          <span class="route-btn-icon">${r.icono}</span>
-          <span class="route-btn-title">${name}</span>
-        </div>
-        <span class="route-btn-count">${count}</span>
+        ${name}
       </a>
     `;
   }).join("");
@@ -216,17 +211,6 @@ function renderHome() {
 
       <div class="routes-menu">
         ${routeButtonsHtml}
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 4px;">
-        <a href="#/list" class="btn-primary" style="background: var(--color-surface); color: var(--color-primary-dark); border: 1.5px solid var(--color-border); box-shadow: var(--shadow-sm); font-weight: 700;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          ${t("viewAllPoints")} (${HITOS.length})
-        </a>
-        <a href="#/map" class="btn-primary" style="background: transparent; color: var(--color-text); border: 1.5px solid var(--color-border); box-shadow: none;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
-          ${t("btnMap")}
-        </a>
       </div>
 
       <div class="home-logos">
@@ -768,6 +752,6 @@ function updateHeaderBar({ showBack, backHash, showMap, title }) {
     btnMap.style.display = showMap ? "flex" : "none";
   }
   if (titleEl) {
-    titleEl.textContent = title || t("appTitle");
+    titleEl.textContent = title !== undefined && title !== null ? title : "";
   }
 }

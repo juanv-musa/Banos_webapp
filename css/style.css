@@ -818,11 +818,14 @@ body {
 .route-btn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   padding: 16px 20px;
   border-radius: var(--radius-md);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.08rem;
+  letter-spacing: -0.2px;
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   border: none;
