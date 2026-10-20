@@ -2,7 +2,7 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 19:10:59
+ * Fecha de actualización: 20/10/2026, 19:13:42
  */
 
 const RUTAS = {
@@ -497,8 +497,9 @@ let HITOS = [
   },
   {
     "id": 22,
-    "titulo_es": "EL PUENTE DE LOS CHARCONES O DEL ARROYO DE VALDELOSHUERTOS",
-    "titulo_en": "THE BRIDGE OF LOS CHARCONES OR VALDELOSHUERTOS BROOK",
+    "ruta": "paseando",
+    "titulo_es": "El puente de los Charcones o del arroyo de Valdeloshuertos",
+    "titulo_en": "The bridge of Los Charcones or Valdeloshuertos brook",
     "texto_es": "José María, hoy, un enorme mar de olivos domina la campiña que descansa a los pies de nuestro pueblo. Pero, ¿siempre fue así? ¡Qué va! Hasta bien entrada la segunda mitad del siglo XX el paisaje agrario fue muy diferente. Siempre hubo olivos, ¡Siempre! Y ademas, ¡muchos! Pero el cereal y las legumbres tuvieron mayor protagonismo económico, sobre todo las habas y los garbanzos. Y en menor número, también hubo tierras dedicadas a la viña. Y justo en este lugar, entre Los Charcones y Cantalasranas, ocupando una franja de buena tierra y agua abundante, se localizaban las huertas que abastecían de verduras al pueblo y que luego vendían las mujeres en la plaza mayor. Así es. Es por eso que aún podemos apreciar un buen número de norias, algunas casi monumentales. Aquí mismo nos rodean varias. Las de Antero, Liborio y Los Cucos, pero a tiro de piedra se alzan las de Zambrana, Matigüelas, Morito o Los Gatos. Tenemos inventariadas más de treinta. ¡Casi ná!",
     "texto_en": "José María, today the olive groves seem endless, covering the countryside. But was it always like this? Not at all! Until the mid-20th century, the landscape was quite different. There were always olive trees—many, in fact—but cereals and legumes were more economically important, especially broad beans and chickpeas. Yes, and there were vineyards too, though fewer. Right here, between Los Charcones and Cantalasranas, fertile land and water supported market gardens that supplied the village and were managed by local women. Exactly. That’s why we still see so many norias—some are almost monumental. Around here we find those of Antero, Liborio, and Los Cucos, and nearby, Zambrana, Matigüelas, Morito, and Los Gatos. We’ve recorded over thirty in total!",
     "imagenes": [
@@ -514,8 +515,7 @@ let HITOS = [
     "audio_es": "webapp_BE_22_ES.mp3",
     "audio_en": "webapp_BE_22_EN.mp3",
     "lat": 38.166297,
-    "lng": -3.773975,
-    "ruta": "paseando"
+    "lng": -3.773975
   },
   {
     "id": 23,
