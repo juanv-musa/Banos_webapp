@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:46
+ * Fecha de actualización: 21/10/2026, 20:14:50
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:46.334Z";
+const HITOS_VERSION = "2026-10-21T18:14:50.274Z";
 
 const RUTAS = {
   "paseando": {
@@ -265,6 +265,7 @@ let HITOS = [
   },
   {
     "id": 11,
+    "ruta": "paseando",
     "titulo_es": "Casa Caridad Zambrana",
     "titulo_en": "Casa Caridad Zambrana",
     "texto_es": "Aunque hoy no lo parece, estamos en uno de los barrios antiguos e industriales del pueblo. Estaba dedicada a la obtención del mejor aceite de oliva virgen, el bañusco ¡seguro!. Se trata de una barriada que conforma las calles Trinidad, la calle Eras y la travesía Trinidad.\n Muy cierto, Vicky. Si miramos a nuestro alrededor, si miramos con detalle, podríamos observar que en los muros de las casas vecinas hay incrustadas muelas de granito. Ruedas de piedra enormes que formaban parte de aquellas viejas almazaras.\n Y además, este barrio esconde otros secretos. Es muy interesante el Hospital de Transeúntes que encontramos en la calle abajo. También podemos ver la bodega de la hospedería, el antiguo mesón ¡que se excavó en la misma roca! Este espacio estaba destinado a la conservación de los productos, o también era conocido como una zona de fresquera, que tuvo su máximo desarrollo en el siglo XVIII cuando ya se empezaron a utilizar en la calle Mestanza, en la calle Amargura, en la calle Huérfanos o del Pilar.",
@@ -280,9 +281,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_11_ES.mp3",
     "audio_en": "webapp_BE_11_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170378483,
-    "lng": -3.773293234,
-    "ruta": "paseando"
+    "lng": -3.773293234
   },
   {
     "id": 12,
