@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:39
+ * Fecha de actualización: 21/10/2026, 20:14:46
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:39.458Z";
+const HITOS_VERSION = "2026-10-21T18:14:46.334Z";
 
 const RUTAS = {
   "paseando": {
@@ -286,6 +286,7 @@ let HITOS = [
   },
   {
     "id": 12,
+    "ruta": "paseando",
     "titulo_es": "Calle Cestería o Conquista",
     "titulo_en": "Cestería or Conquista Street",
     "texto_es": "Al pasar por la calle Conquista, llama la atención la presencia de unos mojinetes de piedra. Son piedras cilíndricas que hay junto a las puertas de sus casas. ¿Qué es?\n Pues mira, tuvieron una función súper importante. De hecho, la industria que lo usaba era la cestería, que dio nombre luego a la calle. Pero lo que no sé es cómo se elaboraba.\n Pues muy sencillo. Tras conseguir el esparto, seguramente lo traían de un pueblo vecino, de Jódar, en la zona de Mágina, las fibras eran cocidas al sol en las aguas del río Rumblar durante 21 días. Cuando, con una ordenanza municipal, se prohibió este tipo de cocido, pasó a cocerse enterrado en estiércol. Una vez secas y limpias, las hebras se machacaban en estos mojinetes de piedra hasta hacerlas muy flexibles, hasta que podían doblegarse. Después elaboraban pleitas y tomizas, bases de todo tipo de cesta y cordelería, esenciales para la economía local y la construcción. ¡Qué interesante!",
@@ -301,9 +302,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_12_ES.mp3",
     "audio_en": "webapp_BE_12_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170629627,
-    "lng": -3.774249595,
-    "ruta": "paseando"
+    "lng": -3.774249595
   },
   {
     "id": 13,
