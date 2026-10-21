@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:13:57
+ * Fecha de actualización: 21/10/2026, 20:14:01
  */
 
-const HITOS_VERSION = "2026-10-21T18:13:57.649Z";
+const HITOS_VERSION = "2026-10-21T18:14:01.274Z";
 
 const RUTAS = {
   "paseando": {
@@ -455,6 +455,7 @@ let HITOS = [
   },
   {
     "id": 20,
+    "ruta": "paseando",
     "titulo_es": "La Cueva de la Mona, que realmente es de la Niña Bonita",
     "titulo_en": "The Cave of “La Mona”, actually “La Niña Bonita”",
     "texto_es": "José María, estamos en una zona minera que comenzó a explotarse ¡hace más de 4000 años! Si miramos hacia el oeste, en el cerro que llamamos del Golgota, se observa una franja de terreno como si se tratara de una escombrera alargada, ¿Eso era también una mina? Así es Vicky. Se trata de una rafa o trinchera minera, una mina a cielo abierto con más de 500 metros de longitud que fue abierta en la Edad del Bronce por los habitantes del poblado argárico de Peñalosa. De ella, se obtenía mineral de cobre, concretamente malaquita y azurita. También las investigaciones arqueológicas han podido documentar enormes mazas o martillos mineros fabricados con granito. Y su historia no queda ahí. Fíjate, con Roma se profundizó la trinchera para obtener galena argentífera, un mineral que contiene plomo y plata, y después, ya en el siglo XX, se horadó un pozo minero. Una vez abandonada la explotación, bastantes vecinos, los llamados ‘sacagéneros’, rebuscaron en las antiguas escombreras para conseguir algunos gramos de mineral y un sueldo mísero que les permitía sacar la familia adelante.",
@@ -471,9 +472,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_20_ES.mp3",
     "audio_en": "webapp_BE_20_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.169013,
-    "lng": -3.776035,
-    "ruta": "paseando"
+    "lng": -3.776035
   },
   {
     "id": 21,
