@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:12
+ * Fecha de actualización: 21/10/2026, 20:14:15
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:12.325Z";
+const HITOS_VERSION = "2026-10-21T18:14:15.827Z";
 
 const RUTAS = {
   "paseando": {
@@ -371,6 +371,7 @@ let HITOS = [
   },
   {
     "id": 16,
+    "ruta": "paseando",
     "titulo_es": "Avenida Linares",
     "titulo_en": "Avenida Linares",
     "texto_es": "José María, fíjate. Tengo la impresión de que esta… es la calle que no es de las más monumentales del pueblo, sino que es que encima es de las más bonitas que tiene el pueblo.\n Así es, yo tengo la misma sensación. Esta calle, que de antiguas fue llamada del Pozo Vilches por la existencia de un pozo caminero, no cuenta con monumentos muy extraordinarios, pero está formada por casonas de magnífica planta. El Palacete de los Escalantes, el Casino Viejo, los Herrera Cárdenas, la Casa Lechuga y un largo etcétera.\n Y no solamente su fachada, sino que lo más valioso está en el interior. Nada más pasar el zaguán encontramos una sucesión de portales, estancias que están a distintas alturas, unas escaleras que suben, otras que bajan, una doble arcada que separa la parte noble de la antigua zona de servicio. ¡Realmente es un laberinto doméstico! El zaguán de Herrera Cárdenas casi siempre está abierto, así que… podríamos acercarnos y ver lo que te estoy contando.",
@@ -386,9 +387,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_16_ES.mp3",
     "audio_en": "webapp_BE_16_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171454107,
-    "lng": -3.773139607,
-    "ruta": "paseando"
+    "lng": -3.773139607
   },
   {
     "id": 17,
