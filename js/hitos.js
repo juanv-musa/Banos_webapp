@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:58
+ * Fecha de actualización: 21/10/2026, 20:15:02
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:58.004Z";
+const HITOS_VERSION = "2026-10-21T18:15:02.473Z";
 
 const RUTAS = {
   "paseando": {
@@ -202,6 +202,7 @@ let HITOS = [
   },
   {
     "id": 8,
+    "ruta": "paseando",
     "titulo_es": "Torreón Poblaciones-Dávalos",
     "titulo_en": "Torreon Poblaciones-Dávalos",
     "texto_es": "– José María hemos llegado a la plazoleta del del Rosario. Hoy la vemos bastante desangelada, pero fue un lugar muy importante del callejero bañusco.\n– ¡Y tanto, y tanto, Vicky! Frente al torreón desembocaban los diferentes caminos que llegaban al pueblo y se encontraban justo antes de penetrar en el núcleo principal de la villa, la plaza mayor.\n– Es posible que en el torreón se recaudaran algunos impuestos. Es decir, que fuera como una zona para cobrar el portazgo. Y luego encima, enfrente de él, pues tenemos lo que era la antigua posada. Hoy día no está, claro ha desaparecido. Pero durante muchos siglos fue el único alojamiento que tuvo el pueblo. Su propietario, Francisco Caridad Villalobos, fue prior de San Mateo y ¡fue un auténtico magnate del turismo de la época! Él era dueño también de dos mesones, uno que estaba aquí en la posada y otro que tenemos en la cercana calle Trinidad.",
@@ -217,9 +218,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_08_ES.mp3",
     "audio_en": "webapp_BE_08_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171340646,
-    "lng": -3.77348069,
-    "ruta": "paseando"
+    "lng": -3.77348069
   },
   {
     "id": 9,
