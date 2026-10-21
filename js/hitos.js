@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:08
+ * Fecha de actualización: 21/10/2026, 20:14:12
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:08.755Z";
+const HITOS_VERSION = "2026-10-21T18:14:12.325Z";
 
 const RUTAS = {
   "paseando": {
@@ -392,6 +392,7 @@ let HITOS = [
   },
   {
     "id": 17,
+    "ruta": "paseando",
     "titulo_es": "Palacete José Pérez Caballero",
     "titulo_en": "Palacete José Pérez Caballero",
     "texto_es": "Oye Vicky, ¡que llamativa esta casona! Siendo tan bonita como todas las del entorno, me llama la atención la singularidad de su puerta. Cierra con un arco de medio punto. Algo singular en este pueblo, ¿no es verdad?\n Claro que sí, porque, mira, realmente este tipo de puertas se ven mucho en los edificios religiosos, en la iglesia o en el propio ayuntamiento, pero en las casas y edificios civiles, pues no es muy característico. Pero que, vamos, no debe extrañarnos que su propietario, José Pérez Caballero, a finales del siglo XIX se convirtió en el mayor terrateniente del pueblo.\n Cierto, cierto. Era todo un personaje. Residente en Madrid y miembro del Consejo Real de Hacienda, invirtió en Baños una suma ¡uff! estratosférica, ¡430.000 reales! Con ello compró 48 olivares pertenecientes a la iglesia y 21 de particulares. ¡Una barbaridad! Sabiendo que por entonces casi toda la tierra de nuestro pueblo estaba sembrada para granos y legumbres. También compró ocho parcelas de granos, dos casas y un molino de aceite. ¡Vamos! una hacienda.",
@@ -407,9 +408,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_17_ES.mp3",
     "audio_en": "webapp_BE_17_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170632784,
-    "lng": -3.773707537,
-    "ruta": "paseando"
+    "lng": -3.773707537
   },
   {
     "id": 18,
