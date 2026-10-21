@@ -32,10 +32,18 @@ const RUTAS = {
     "colorBg": "#faf4fc",
     "colorBorder": "#ce93d8"
   },
+  "pr289": {
+    "id": "pr289",
+    "nombre_es": "Sendero PR289",
+    "nombre_en": "PR289 Trail",
+    "color": "#c2883d",
+    "colorBg": "#fdf8f0",
+    "colorBorder": "#eed5ab"
+  },
   "gr286": {
-    "id": "gr286",
-    "nombre_es": "Sendero GR286",
-    "nombre_en": "GR286 Trail",
+    "id": "pr289",
+    "nombre_es": "Sendero PR289",
+    "nombre_en": "PR289 Trail",
     "color": "#c2883d",
     "colorBg": "#fdf8f0",
     "colorBorder": "#eed5ab"
@@ -527,7 +535,8 @@ let HITOS = [
     "texto_es": "Además de la escalinata y los capiteles, hay otros elementos romanos desplazados o reutilizados en los muros y suelos del castillo que, junto con nuevos materiales aparecidos, fechan el edificio romano en época altoimperial.\n\nEn las distintas actividades arqueológicas llevadas a cabo en el castillo han aparecido varios restos de época romana: tres capiteles, un ara fragmentada dedicada a \"ILICIA\" y una escalinata de sillares. Al levantar el edificio se trabajó la roca geológica cortándola y puliéndola para utilizarla como suelo del mismo.\n\nEl edificio fue construido en época romana altoimperial -siglo a II-. Se cree que estuvo relacionado con funciones religiosas o funerarias por el tipo de materiales que han aparecido asociados a él.",
     "texto_en": "Apart from the staircase and the capitals, there are some other romans elements displaced or reused in the castle walls and floors which, along with new materials appeared, date the Roman building to the Early Imperial Roman period.\n\nIn the various archaeological activities carried out in the castle, several Roman remains have appeared: three capitals, a fragmented altar dedicated to \"ILICIA\" and an ashlar staircase. In the construction of the building, geological rock was cut and polished in order to use it as the floor of the building.\n\nIt was built in the Early Imperial Roman period -1st to 3rd century-. It is believed that the building was related to religious or funeral functions due to the materials that have appeared linked to it.",
     "imagenes": [
-      "panel-23_1.jpg"
+      "panel-23_1.jpg",
+      "panel-23_2.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
@@ -653,7 +662,8 @@ let HITOS = [
     "texto_es": "En los últimos siglos, tras perder su ocupación militar, el Castillo de Baños pasó a tener otras funciones: fue cementerio durante los siglos XIX y XX y, más tarde, sería utilizado como espacio para celebrar fiestas y conciertos e incluso como escenario de películas.\n\nTras un largo abandono, a finales del siglo XIX y hasta 1928, el Castillo de Baños es utilizado por sus vecinos como el cementerio de la localidad, usando el interior de las torres como criptas familiares y adosando los nichos a las murallas.\n\nEn 1945 se construye a las afueras del municipio un nuevo cementerio y, a mediados de los años 50, se lleva a cabo un minucioso trabajo de extracción de las inhumaciones. Finalmente, será en la actuación de 2007 cuando se exhumen completamente los cadáveres enterrados en el castillo.\n\nLa torre circular, donde estamos, fue usada como escenario de conciertos y bailes.",
     "texto_en": "In the last centuries, after losing its military occupation, the Castle of Baños started to have other functions: it was a cemetery during the 19th and 20th centuries and, later on, it would be used as a space for celebrations and concerts and even as scene for films.\n\nThe circular tower, where we are now, was used as a stage for concerts and dances.",
     "imagenes": [
-      "panel-30_1.jpg"
+      "panel-30_1.jpg",
+      "panel-30_2.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
@@ -767,7 +777,7 @@ let HITOS = [
   },
   {
     "id": 36,
-    "ruta": "gr286",
+    "ruta": "pr289",
     "titulo_es": "En construcción",
     "titulo_en": "",
     "texto_es": "",

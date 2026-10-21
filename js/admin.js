@@ -21,11 +21,35 @@ function saveLogoCache(name, dataUrl) {
   try {
     logoCache[name] = dataUrl;
     localStorage.setItem('encina_logo_cache', JSON.stringify(logoCache));
-  } catch (e) {}
+  } catch (e) {
+    // Si la imagen es muy grande para localStorage, mantenerla solo en memoria durante la sesión
+    logoCache[name] = dataUrl;
+  }
 }
 
 function getLogoSrc(name) {
   if (logoCache[name]) return logoCache[name];
+  return `assets/images/${name}`;
+}
+
+// Caché de imágenes de hitos (Data URLs para previsualización inmediata de JPG y PNG)
+let imgCache = {};
+try {
+  const cachedImgs = localStorage.getItem('encina_img_cache');
+  if (cachedImgs) imgCache = JSON.parse(cachedImgs);
+} catch (e) {}
+
+function saveImgCache(name, dataUrl) {
+  try {
+    imgCache[name] = dataUrl;
+    localStorage.setItem('encina_img_cache', JSON.stringify(imgCache));
+  } catch (e) {
+    imgCache[name] = dataUrl;
+  }
+}
+
+function getImgSrc(name) {
+  if (imgCache[name]) return imgCache[name];
   return `assets/images/${name}`;
 }
 
@@ -134,22 +158,53 @@ async function githubPutFile(path, base64Content, commitMessage, retryCount = 0)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Cargar siempre primero desde la base oficial HITOS de hitos.js
+  // 1. Cargar base oficial desde HITOS de hitos.js
   if (typeof HITOS !== 'undefined' && Array.isArray(HITOS) && HITOS.length > 0) {
     hitosData = JSON.parse(JSON.stringify(HITOS));
   } else {
-    const savedData = localStorage.getItem('encina_hitos_data');
-    if (savedData) {
-      try {
-        const parsed = JSON.parse(savedData);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          hitosData = parsed;
-        }
-      } catch (e) {}
-    }
+    hitosData = [];
   }
 
-  // Asegurar que todos los hitos tienen el campo ruta y no tienen audios ficticios
+  // 2. RECUPERAR Y FUSIONAR CAMBIOS GUARDADOS POR EL USUARIO (localStorage)
+  // De este modo, si el usuario movió coordenadas en el mapa, asignó logotipos o fotos,
+  // NUNCA se pierden sus cambios al recargar la página.
+  try {
+    const savedData = localStorage.getItem('encina_hitos_data');
+    if (savedData) {
+      const parsed = JSON.parse(savedData);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        parsed.forEach(savedHito => {
+          const target = hitosData.find(h => h.id === savedHito.id);
+          if (target) {
+            // Preservar coordenadas si el usuario las movió (distintas del default 38.1711, -3.7742)
+            if (savedHito.lat && (savedHito.lat !== 38.1711 || savedHito.lng !== -3.7742)) {
+              target.lat = savedHito.lat;
+              target.lng = savedHito.lng;
+            }
+            // Preservar logotipos asignados por el usuario
+            if (Array.isArray(savedHito.logos) && savedHito.logos.length > 0) {
+              target.logos = savedHito.logos;
+            }
+            // Preservar fotos añadidas por el usuario (segunda imagen, nombres propios, etc.)
+            if (Array.isArray(savedHito.imagenes) && savedHito.imagenes.length > 0) {
+              target.imagenes = savedHito.imagenes;
+            }
+            // Preservar enlace externo / PDF
+            if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
+            if (savedHito.enlace_texto_es) target.enlace_texto_es = savedHito.enlace_texto_es;
+            if (savedHito.enlace_texto_en) target.enlace_texto_en = savedHito.enlace_texto_en;
+            if (savedHito.texto_subvencion_es) target.texto_subvencion_es = savedHito.texto_subvencion_es;
+            if (savedHito.texto_subvencion_en) target.texto_subvencion_en = savedHito.texto_subvencion_en;
+            if (savedHito.ruta) target.ruta = savedHito.ruta;
+          } else {
+            hitosData.push(savedHito);
+          }
+        });
+      }
+    }
+  } catch (e) {}
+
+  // 3. Asegurar que todos los hitos tienen el campo ruta y no tienen audios ficticios
   if (hitosData.length > 0 && typeof HITOS !== 'undefined' && Array.isArray(HITOS)) {
     hitosData.forEach(h => {
       if (!h.ruta) {
@@ -266,7 +321,7 @@ function renderCards(filterText = "") {
   }
 
   container.innerHTML = filtered.map(h => {
-    const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "assets/images/placeholder.png";
+    const thumb = h.imagenes && h.imagenes.length > 0 ? getImgSrc(h.imagenes[0]) : "assets/images/placeholder.png";
     const previewText = h.texto_es ? (h.texto_es.substring(0, 100) + "...") : "Sin texto descriptivo.";
     const rutaKey = h.ruta || 'paseando';
     const rutaObj = (typeof RUTAS !== 'undefined' && RUTAS[rutaKey]) ? RUTAS[rutaKey] : { nombre_es: "Paseando por Baños", color: "#8b3a1b" };
@@ -289,6 +344,10 @@ function renderCards(filterText = "") {
 
         <div class="hito-card-body">
           <p style="color: var(--admin-text-muted); line-height: 1.4; margin-bottom: 6px;">${previewText}</p>
+          <div class="hito-card-info-row">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <span>Fotos: <b>${h.imagenes ? h.imagenes.length : 0}</b> (${(h.imagenes || []).join(", ") || 'Ninguna'})</span>
+          </div>
           <div class="hito-card-info-row">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
             <span>ES: ${h.audio_es || "No asignado"} | EN: ${h.audio_en || "No asignado"}</span>
@@ -344,6 +403,135 @@ function setupSearch() {
 
 // ========================================================
 let modalLogos = [];
+let modalImagenes = [];
+
+function renderImagesChips() {
+  const container = document.getElementById("imagenes-chips-container");
+  if (!container) return;
+
+  if (modalImagenes.length === 0) {
+    container.innerHTML = `<span style="font-size: 0.8rem; color: var(--admin-text-muted); font-style: italic;">Sin imágenes asignadas</span>`;
+    syncImagesInputFromChips();
+    return;
+  }
+
+  container.innerHTML = modalImagenes.map((img, idx) => {
+    const src = getImgSrc(img);
+    return `
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--admin-border); padding: 5px 12px; border-radius: 8px; font-size: 0.82rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+        <img src="${src}" style="height: 32px; width: 32px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd;" onerror="this.src='assets/images/placeholder.png';">
+        <span style="font-weight: 700; color: var(--admin-primary-dark);">${idx === 0 ? '📷 1ª' : `📷 ${idx + 1}ª`}:</span>
+        <span style="font-weight: 600;">${img}</span>
+        <button type="button" onclick="removeImageChip(${idx})" title="Quitar imagen" style="background: none; border: none; cursor: pointer; color: var(--admin-danger); font-size: 1.1rem; line-height: 1; padding: 0 4px; font-weight: bold;">&times;</button>
+      </div>
+    `;
+  }).join("");
+
+  syncImagesInputFromChips();
+}
+
+function removeImageChip(idx) {
+  modalImagenes.splice(idx, 1);
+  renderImagesChips();
+}
+
+function syncImagesInputFromChips() {
+  const input = document.getElementById("form-imagenes");
+  if (input) input.value = modalImagenes.join(", ");
+}
+
+function syncImagesFromInput() {
+  const input = document.getElementById("form-imagenes");
+  if (!input) return;
+  modalImagenes = input.value.split(",").map(s => s.trim()).filter(Boolean);
+  renderImagesChips();
+}
+
+async function handleImageAddUpload(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const idInput = document.getElementById("form-id");
+  const id = idInput ? idInput.value : 1;
+  const statusEl = document.getElementById("upload-status-image");
+  if (statusEl) statusEl.textContent = "Cargando imagen...";
+
+  // Detectar extensión exacta (.png, .jpg, .webp, etc.)
+  const rawExt = file.name.substring(file.name.lastIndexOf('.')).toLowerCase() || '.jpg';
+  const cleanExt = (rawExt === '.jpeg') ? '.jpg' : rawExt;
+
+  // Determinar nombre objetivo: si ya tiene panel-X_1, asignar panel-X_2, etc.
+  let targetName = "";
+  if (modalImagenes.length === 0) {
+    targetName = `panel-${id}_1${cleanExt}`;
+  } else if (modalImagenes.length === 1 && modalImagenes[0].startsWith(`panel-${id}_`)) {
+    targetName = `panel-${id}_2${cleanExt}`;
+  } else {
+    targetName = `panel-${id}_${modalImagenes.length + 1}${cleanExt}`;
+  }
+
+  // Si el archivo subido ya tiene un nombre descriptivo limpio, respetarlo
+  if (file.name.startsWith("img_") || file.name.startsWith("panel-")) {
+    targetName = file.name;
+  }
+
+  // 1. Previsualización inmediata mediante Data URL
+  const reader = new FileReader();
+  reader.onload = async function(e) {
+    const dataUrl = e.target.result;
+    saveImgCache(targetName, dataUrl);
+
+    if (!modalImagenes.includes(targetName)) {
+      modalImagenes.push(targetName);
+    }
+    renderImagesChips();
+
+    // Si estamos en GitHub Pages, subir directo a GitHub
+    if (isGitHubPages()) {
+      if (statusEl) statusEl.textContent = "Subiendo a GitHub...";
+      const base64Pure = dataUrl.split(',')[1];
+      try {
+        await githubPutFile(`assets/images/${targetName}`, base64Pure, `Subir foto ${targetName} desde admin`);
+        if (statusEl) statusEl.textContent = `✅ Subida a GitHub: ${targetName}`;
+        showToast(`☁️ Imagen ${targetName} subida a GitHub`);
+      } catch (ghErr) {
+        if (statusEl) statusEl.textContent = `❌ Error: ${ghErr.message}`;
+        alert("Error al subir imagen a GitHub: " + ghErr.message);
+      }
+      return;
+    }
+
+    if (statusEl) statusEl.textContent = `✅ Foto añadida: ${targetName}`;
+    showToast(`📸 Foto añadida: ${targetName}`);
+  };
+  reader.readAsDataURL(file);
+
+  // 2. Subir al servidor si no es GitHub Pages
+  if (!isGitHubPages()) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('type', 'image');
+    formData.append('filename', targetName);
+
+    try {
+      const res = await fetch('api.php?action=upload', {
+        method: 'POST',
+        body: formData
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const finalServerName = data.filename || targetName;
+        if (finalServerName !== targetName) {
+          const idx = modalImagenes.indexOf(targetName);
+          if (idx !== -1) modalImagenes[idx] = finalServerName;
+          renderImagesChips();
+        }
+      }
+    } catch (e) {}
+  }
+
+  event.target.value = "";
+}
 
 // ========================================================
 // MODAL EDITOR (CREAR / EDITAR)
@@ -366,6 +554,9 @@ function openCreateModal() {
   document.getElementById("form-subvencion-es").value = "";
   document.getElementById("form-subvencion-en").value = "";
   document.getElementById("form-imagenes").value = `panel-${nextId}_1.jpg`;
+  modalImagenes = [`panel-${nextId}_1.jpg`];
+  renderImagesChips();
+
   document.getElementById("form-audio-es").value = "";
   document.getElementById("form-audio-en").value = "";
   document.getElementById("form-enlace-url").value = "";
@@ -399,7 +590,10 @@ function openEditModal(id) {
   document.getElementById("form-texto-en").value = hito.texto_en || "";
   document.getElementById("form-subvencion-es").value = hito.texto_subvencion_es || "";
   document.getElementById("form-subvencion-en").value = hito.texto_subvencion_en || "";
-  document.getElementById("form-imagenes").value = (hito.imagenes || []).join(", ");
+  const rawImgs = (hito.imagenes && Array.isArray(hito.imagenes)) ? [...hito.imagenes] : (hito.imagenes ? [hito.imagenes] : []);
+  modalImagenes = rawImgs;
+  renderImagesChips();
+  document.getElementById("form-imagenes").value = rawImgs.join(", ");
   document.getElementById("form-audio-es").value = hito.audio_es || "";
   document.getElementById("form-audio-en").value = hito.audio_en || "";
   document.getElementById("form-enlace-url").value = hito.enlace_url || hito.enlace_externo || "";
@@ -700,7 +894,9 @@ function saveHitoForm(event) {
     return;
   }
 
-  const imagenes = imagenesStr ? imagenesStr.split(",").map(s => s.trim()).filter(s => s.length > 0) : [];
+  const imagenes = (modalImagenes && modalImagenes.length > 0)
+    ? [...modalImagenes]
+    : (imagenesStr ? imagenesStr.split(",").map(s => s.trim()).filter(s => s.length > 0) : []);
   const subEspEl = document.getElementById("form-subvencion-es");
   const subEnEl = document.getElementById("form-subvencion-en");
   const texto_subvencion_es = subEspEl ? subEspEl.value.trim() : "";
@@ -915,7 +1111,8 @@ function generateHitosJsContent() {
     paseando: { id: "paseando", nombre_es: "Paseando por Baños", nombre_en: "Strolling through Baños", color: "#8b3a1b", colorBg: "#fbf5f2", colorBorder: "#d4a896" },
     castillo: { id: "castillo", nombre_es: "Castillo de Baños", nombre_en: "Baños Castle", color: "#1565c0", colorBg: "#f0f7ff", colorBorder: "#90caf9" },
     penalosa: { id: "penalosa", nombre_es: "Peñalosa", nombre_en: "Peñalosa", color: "#7b1fa2", colorBg: "#faf4fc", colorBorder: "#ce93d8" },
-    gr286: { id: "gr286", nombre_es: "Sendero GR286", nombre_en: "GR286 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
+    pr289: { id: "pr289", nombre_es: "Sendero PR289", nombre_en: "PR289 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
+    gr286: { id: "pr289", nombre_es: "Sendero PR289", nombre_en: "PR289 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
     piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7" }
   };
 

@@ -56,41 +56,69 @@ class GestorHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_error(500, str(e))
             return
 
-        # 3. Endpoint para subir fotos y audios
+        # 3. Endpoint para subir fotos, audios y documentos
         if self.path.startswith('/api.php?action=upload') or self.path == '/api/upload':
             try:
-                ctype, pdict = cgi.parse_header(self.headers.get('content-type', ''))
-                if ctype == 'multipart/form-data':
-                    pdict['boundary'] = bytes(pdict['boundary'], "utf-8")
-                    content_len = self.headers.get('content-length')
-                    if content_len:
-                        pdict['CONTENT-LENGTH'] = str(content_len)
-                    fields = cgi.parse_multipart(self.rfile, pdict)
-                    file_items = fields.get('file')
-                    
-                    type_raw = fields.get('type', ['image'])[0]
-                    type_val = type_raw.decode('utf-8') if isinstance(type_raw, bytes) else str(type_raw)
-                    
-                    name_raw = fields.get('filename', [''])[0]
-                    custom_name = (name_raw.decode('utf-8') if isinstance(name_raw, bytes) else str(name_raw)).strip()
+                import email.parser, re
+                ctype = self.headers.get('content-type', '')
+                content_len = int(self.headers.get('content-length', 0))
+                body = self.rfile.read(content_len)
 
-                    if file_items:
-                        file_data = file_items[0]
-                        if isinstance(file_data, str):
-                            file_data = file_data.encode('utf-8')
-                        dest_dir = os.path.join(DIRECTORY, 'assets', 'images' if type_val == 'image' else 'audio')
-                        os.makedirs(dest_dir, exist_ok=True)
-                        target_path = os.path.join(dest_dir, custom_name)
-                        with open(target_path, 'wb') as f:
-                            f.write(file_data)
-                        
-                        self.send_response(200)
-                        self.send_header('Content-Type', 'application/json')
-                        self.end_headers()
-                        self.wfile.write(json.dumps({'status': 'ok', 'filename': custom_name}).encode('utf-8'))
-                        print(f">> [GESTOR] Archivo subido: {custom_name}")
-                        return
-                self.send_error(400, "Error en formulario")
+                msg_bytes = f"Content-Type: {ctype}\r\nMIME-Version: 1.0\r\n\r\n".encode('latin1') + body
+                msg = email.parser.BytesParser().parsebytes(msg_bytes)
+
+                file_data = None
+                file_name_from_upload = ""
+                type_val = "image"
+                custom_name = ""
+
+                for part in msg.walk():
+                    if part.is_multipart():
+                        continue
+                    cdisp = part.get('Content-Disposition', '')
+                    if not cdisp:
+                        continue
+                    name_m = re.search(r'name="([^"]+)"', cdisp)
+                    if not name_m:
+                        continue
+                    field_name = name_m.group(1)
+                    payload = part.get_payload(decode=True)
+
+                    if field_name == 'file':
+                        fn_m = re.search(r'filename="([^"]+)"', cdisp)
+                        if fn_m:
+                            file_name_from_upload = fn_m.group(1)
+                        file_data = payload
+                    elif field_name == 'type' and payload:
+                        type_val = payload.decode('utf-8', errors='ignore').strip()
+                    elif field_name == 'filename' and payload:
+                        custom_name = payload.decode('utf-8', errors='ignore').strip()
+
+                final_name = custom_name if custom_name else file_name_from_upload
+
+                if file_data and final_name:
+                    if type_val == 'image':
+                        dest_folder = 'images'
+                    elif type_val == 'doc':
+                        dest_folder = 'docs'
+                    else:
+                        dest_folder = 'audio'
+
+                    dest_dir = os.path.join(DIRECTORY, 'assets', dest_folder)
+                    os.makedirs(dest_dir, exist_ok=True)
+                    target_path = os.path.join(dest_dir, final_name)
+
+                    with open(target_path, 'wb') as f:
+                        f.write(file_data)
+
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.end_headers()
+                    self.wfile.write(json.dumps({'status': 'ok', 'filename': final_name}).encode('utf-8'))
+                    print(f">> [GESTOR] Archivo guardado con éxito en assets/{dest_folder}/{final_name}")
+                    return
+
+                self.send_error(400, "Archivo o nombre ausente")
             except Exception as e:
                 print(f">> [GESTOR] Error en subida: {e}")
                 self.send_error(500, str(e))

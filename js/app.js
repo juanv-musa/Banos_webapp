@@ -77,29 +77,37 @@ const UI_TEXTS = {
 // INICIALIZACIÓN
 // ========================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Sincronizar con los datos de hitos.js y limpiar caché obsoleta
+  // Sincronizar datos: combinar la base oficial de hitos.js con las personalizaciones locales (coordenadas, logos, fotos)
   try {
-    const savedVer = localStorage.getItem('encina_hitos_version');
-    if (typeof HITOS_VERSION !== 'undefined') {
-      if (savedVer !== HITOS_VERSION) {
-        // La versión oficial en el código ha cambiado: invalidar caché antigua
-        localStorage.removeItem('encina_hitos_data');
-        localStorage.setItem('encina_hitos_version', HITOS_VERSION);
-      } else {
-        const saved = localStorage.getItem('encina_hitos_data');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            // Fusionar inteligentemente: si el hito oficial tiene texto pero el guardado estaba en construcción, usar el oficial
-            parsed.forEach(savedHito => {
-              const orig = HITOS.find(h => h.id === savedHito.id);
-              if (orig && orig.titulo_es && orig.titulo_es !== "En construcción" && (!savedHito.titulo_es || savedHito.titulo_es === "En construcción")) {
-                Object.assign(savedHito, orig);
-              }
-            });
-            HITOS = parsed;
+    const saved = localStorage.getItem('encina_hitos_data');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        parsed.forEach(savedHito => {
+          const target = HITOS.find(h => h.id === savedHito.id);
+          if (target) {
+            // Preservar coordenadas personalizadas del mapa
+            if (savedHito.lat && (savedHito.lat !== 38.1711 || savedHito.lng !== -3.7742)) {
+              target.lat = savedHito.lat;
+              target.lng = savedHito.lng;
+            }
+            // Preservar logotipos asignados
+            if (Array.isArray(savedHito.logos) && savedHito.logos.length > 0) {
+              target.logos = savedHito.logos;
+            }
+            // Preservar imágenes asignadas (como segunda imagen)
+            if (Array.isArray(savedHito.imagenes) && savedHito.imagenes.length > 0) {
+              target.imagenes = savedHito.imagenes;
+            }
+            // Preservar enlaces externos o documentos PDF
+            if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
+            if (savedHito.enlace_texto_es) target.enlace_texto_es = savedHito.enlace_texto_es;
+            if (savedHito.enlace_texto_en) target.enlace_texto_en = savedHito.enlace_texto_en;
+            if (savedHito.texto_subvencion_es) target.texto_subvencion_es = savedHito.texto_subvencion_es;
+            if (savedHito.texto_subvencion_en) target.texto_subvencion_en = savedHito.texto_subvencion_en;
+            if (savedHito.ruta) target.ruta = savedHito.ruta;
           }
-        }
+        });
       }
     }
   } catch (e) {}
@@ -280,7 +288,7 @@ function renderList(rutaFilter = null) {
   let cardsHtml = "";
   hitosToShow.forEach(h => {
     const title = AppState.lang === 'en' ? (h.titulo_en || h.titulo_es) : h.titulo_es;
-    const thumb = h.imagenes && h.imagenes.length > 0 ? `assets/images/${h.imagenes[0]}` : "assets/images/placeholder.png";
+    const thumb = h.imagenes && h.imagenes.length > 0 ? getAppImgSrc(h.imagenes[0]) : "assets/images/placeholder.png";
     const ruta = (typeof RUTAS !== 'undefined' && RUTAS[h.ruta]) ? RUTAS[h.ruta] : RUTAS['paseando'];
     const rutaName = AppState.lang === 'en' ? ruta.nombre_en : ruta.nombre_es;
 
@@ -358,7 +366,7 @@ function renderDetail(id) {
     const dots = hito.imagenes.map((_, i) => `<span class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></span>`).join("");
     carouselHtml = `
       <div class="detail-carousel" id="detail-carousel">
-        <img id="carousel-img" src="assets/images/${hito.imagenes[0]}" alt="${title}" onclick="openLightbox(this.src)">
+        <img id="carousel-img" src="${getAppImgSrc(hito.imagenes[0])}" alt="${title}" onclick="openLightbox(this.src)">
         <div class="carousel-zoom-hint" onclick="openLightbox(document.getElementById('carousel-img').src)">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           <span>${t("tapToZoom")}</span>
@@ -629,12 +637,24 @@ function goToSlide(index) {
   currentSlide = index;
   const imgEl = document.getElementById("carousel-img");
   if (imgEl) {
-    imgEl.src = `assets/images/${AppState.activeDetailHito.imagenes[index]}`;
+    imgEl.src = getAppImgSrc(AppState.activeDetailHito.imagenes[index]);
   }
   const dots = document.querySelectorAll(".carousel-dot");
   dots.forEach((dot, idx) => {
     dot.classList.toggle("active", idx === index);
   });
+}
+
+function getAppImgSrc(name) {
+  if (!name) return "assets/images/placeholder.png";
+  try {
+    const cached = localStorage.getItem('encina_img_cache');
+    if (cached) {
+      const parsed = JSON.parse(cached);
+      if (parsed && parsed[name]) return parsed[name];
+    }
+  } catch (e) {}
+  return `assets/images/${name}`;
 }
 
 // ========================================================

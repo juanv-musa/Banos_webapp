@@ -90,7 +90,7 @@
           <option value="paseando">🟤 Paseando por Baños (Marrón)</option>
           <option value="castillo">🔵 Castillo de Baños (Azul)</option>
           <option value="penalosa">🟣 Peñalosa (Morado)</option>
-          <option value="gr286">🟠 Sendero GR286 (Ocre)</option>
+          <option value="pr289">🟠 Sendero PR289 (Ocre)</option>
           <option value="piedra_viva">🟢 Baños en Piedra Viva (Verde)</option>
         </select>
       </div>
@@ -124,22 +124,36 @@
               <option value="paseando">🟤 Paseando por Baños (Marrón)</option>
               <option value="castillo">🔵 Castillo de Baños (Azul)</option>
               <option value="penalosa">🟣 Peñalosa (Morado)</option>
-              <option value="gr286">🟠 Sendero GR286 (Ocre)</option>
+              <option value="pr289">🟠 Sendero PR289 (Ocre)</option>
               <option value="piedra_viva">🟢 Baños en Piedra Viva (Verde)</option>
             </select>
             <small style="color: var(--admin-text-muted); font-size: 0.75rem;">Color del botón, mapa y lista</small>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="form-imagenes">Nombre de la imagen:</label>
-          <input type="text" id="form-imagenes" class="form-input" placeholder="panel-23_1.jpg">
-          <div style="margin-top: 4px;">
-            <label class="btn btn-outline btn-sm" style="cursor: pointer; display: inline-flex;">
-              📁 Subir foto desde el ordenador
-              <input type="file" id="file-input-image" accept="image/*" style="display: none;" onchange="handleDirectUpload(event, 'image')">
+        <!-- SECCIÓN GALERÍA DE FOTOS (SOPORTE MULTI-IMAGEN, JPG Y PNG) -->
+        <div style="background: #fdfaf8; border: 1px solid var(--admin-border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <h3 style="font-size: 0.95rem; color: var(--admin-primary-dark); font-weight: 800; margin-bottom: 2px;">🖼️ Fotos del Hito (.jpg o .png)</h3>
+            <p style="font-size: 0.78rem; color: var(--admin-text-muted);">Puedes añadir una o varias fotos (carrusel de imágenes). Admite formato JPG y PNG.</p>
+          </div>
+
+          <!-- Contenedor dinámico de fotos agregadas con vista previa -->
+          <div id="imagenes-chips-container" style="display: flex; flex-wrap: wrap; gap: 10px; min-height: 48px; align-items: center;">
+            <!-- Renderizado dinámico en admin.js -->
+          </div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <label class="btn btn-outline btn-sm" style="cursor: pointer; display: inline-flex; border-color: var(--admin-primary); color: var(--admin-primary); font-weight: 700;">
+              ➕ Añadir foto (.jpg o .png)
+              <input type="file" id="file-input-image" accept="image/jpeg,image/png,image/webp,image/*" style="display: none;" onchange="handleImageAddUpload(event)">
             </label>
-            <span id="upload-status-image" style="font-size: 0.75rem; color: var(--admin-success); margin-left: 6px;"></span>
+            <span id="upload-status-image" style="font-size: 0.75rem; color: var(--admin-success); font-weight: 600;"></span>
+          </div>
+
+          <div style="margin-top: 4px;">
+            <label for="form-imagenes" style="font-size: 0.72rem; color: var(--admin-text-muted); font-weight: 600;">Nombres de archivo (separados por coma):</label>
+            <input type="text" id="form-imagenes" class="form-input" style="font-size: 0.8rem; padding: 6px 10px;" placeholder="panel-23_1.jpg, panel-23_2.jpg" oninput="syncImagesFromInput()">
           </div>
         </div>
 
