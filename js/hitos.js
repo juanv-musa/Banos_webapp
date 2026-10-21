@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:27
+ * Fecha de actualización: 21/10/2026, 20:15:35
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:27.450Z";
+const HITOS_VERSION = "2026-10-21T18:15:35.774Z";
 
 const RUTAS = {
   "paseando": {
@@ -97,6 +97,7 @@ let HITOS = [
   },
   {
     "id": 3,
+    "ruta": "paseando",
     "titulo_es": "Portada Casa del Conde",
     "titulo_en": "The Count’s House Gateway",
     "texto_es": "– Esta portada pertenecía a una antigua casería aceitera. ¡Qué rico nuestro aceite de oliva virgen!, ingrediente fundamental de nuestra gastronomía.\n– Por supuesto. Buenos ejemplos de ello es la soba dulce o el cucharro bañusco, que es un plato típico de aquí del pueblo, en el que se utiliza muchísimo el aceite de oliva y el mejor pan bañusco. Luego se le acompañaba, pues bueno, con lo que tú quieras, tomatito, aceitunas, bacalao… todo aquello que estuviera en temporada. Por cierto, ¿tú sabías decirme si el aceite de oliva tiene un papel fundamental aquí en el pueblo?\n– Y tanto, tanto que lo tuvo. Fíjate, desde el siglo XVI favoreció la creación de dos nuevos barrios industriales fundamentados en la obtención del mejor aceite de oliva. Uno de ellos, el de la Cuesta de los Molinos, estaba situado a la entrada actual del pueblo, lo que hoy se conoce como Carretera. Y el otro se extendía por las calles Eras y Trinidad, donde aún podemos observar casonas de interés y algunas viejas mazaras. ¡Te invitamos a pasear por sus calles!",
@@ -112,9 +113,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_03_ES.mp3",
     "audio_en": "webapp_BE_03_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.17002608,
-    "lng": -3.775056197,
-    "ruta": "paseando"
+    "lng": -3.775056197
   },
   {
     "id": 4,
