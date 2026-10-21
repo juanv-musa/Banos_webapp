@@ -97,6 +97,15 @@ async function ensureGitHubToken() {
 }
 
 function utf8ToBase64(str) {
+  if (typeof TextEncoder !== 'undefined') {
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+  }
   return window.btoa(unescape(encodeURIComponent(str)));
 }
 
@@ -962,16 +971,20 @@ async function autoSaveToServer() {
       showToast('☁️ Guardado automáticamente en GitHub');
     } catch (err) {
       console.warn('GitHub auto-save:', err.message);
+      showToast('💾 Guardado en este navegador. Recuerda pulsar "Guardar Cambios" arriba para publicar en GitHub.');
     }
     return;
   }
 
   try {
-    await fetch('api.php?action=save', {
+    const res = await fetch('api.php?action=save', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ jsContent: content })
     });
+    if (res.ok) {
+      showToast('💾 Guardado en el archivo js/hitos.js');
+    }
   } catch (err) {}
 }
 
