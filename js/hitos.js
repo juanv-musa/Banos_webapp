@@ -538,10 +538,10 @@ let HITOS = [
   {
     "id": 24,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "El aljibe del castillo",
+    "titulo_en": "The Castle Cistern",
+    "texto_es": "El término aljibe deriva del vocablo árabe al-yubb, que significa cisterna o pozo para almacenar agua, y que generalmente tiene una cubierta de bóveda de medio cañón.\n\nEn la zona más elevada del Cerro del Cueto encontramos el aljibe que tenemos bajo los pies. Es de planta rectangular y está dividido en dos naves o salas separadas por un muro medianero y cubierto por bóvedas de cañón.\n\nLa superficie interior de sus paredes está revestida por un mortero blanquecino impermeable, llamado opus signinum, que impide que el agua se filtre por las paredes. Las uniones de los muros con el suelo se hacen a través de una media caña hacia el interior del aljibe para evitar igualmente la filtración del agua.",
+    "texto_en": "The term tank derives from the Arabic word al-yubb, which means cistern or well to store water, and that generally has a half barrel-vaulted roof.\n\nIn the highest area of the Cueto Hill is the tank we have underfoot. It is rectangular and is divided into two naves or halls separated by a dividing wall and covered by barrel vaults.\n\nThe interior surface of its walls is coated with a whitish impermeable mortar, called opus signinum, which prevents water from seeping into the walls. The joints of the walls with the floor are made though a half-round into the tank, to also prevent the water seepage.",
     "imagenes": [
       "panel-24_1.jpg"
     ],
@@ -556,10 +556,10 @@ let HITOS = [
   {
     "id": 25,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Las casas de los guerreros almohades",
+    "titulo_en": "The Almohad Warriors' Houses",
+    "texto_es": "Los muros que observas durante todo el recorrido corresponden a las viviendas almohades y a las posteriores ocupaciones cristianas que hubo en el interior del castillo.\n\nLas viviendas almohades se ordenaban partiendo desde la muralla mediante muros adosados perpendiculares y paralelos a ella. Estos muros están hechos de sillarejo irregular y, entre ellos, han aparecido materiales reutilizados de otras épocas.\n\nEl interior de la vivienda giraba en torno a un patio con varias habitaciones. Es posible que algunas viviendas tuvieran una planta superior y una cuadra para los animales.\n\nNormalmente, el interior de la casa estaba más decorado, mientras que el exterior era sencillo y sobrio.",
+    "texto_en": "The walls you observe during the whole tour correspond to the almohad housing and to the later Christian occupations that existed inside the castle.\n\nThe almohads' homes were ordered starting from the wall by attached walls, perpendicular and parallel to it. This walls are made of irregular ashlar and, among them, reused materials from other times have appeared.\n\nThe inside of the house turned around a courtyard with several rooms. It is possible that some houses had an upper floor and a stable for animals.\n\nNormally, the inside was more decorated, where as the outer area was simple and sober.",
     "imagenes": [
       "panel-25_1.jpg"
     ],
@@ -574,10 +574,10 @@ let HITOS = [
   {
     "id": 26,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "La indumentaria del guerrero almohade",
+    "titulo_en": "Almohad Warrior Clothing",
+    "texto_es": "La indumentaria del guerrero musulmán no era tan diferente a la de los caballeros cristianos. Se conoce que los almohades usaron las cotas de malla en sus campañas y los colores más usados en sus ropas eran el blanco y el negro.\n\n• Almófar: Capuchón de mallas que cubría la cabeza, cuello y hombros.\n• Gambax o camisa acolchada: Servía para amortiguar los golpes y evitar el roce de la cota metálica o loriga sobre la piel.\n• Loriga: Cota o túnica de malla que cubría el cuerpo del guerrero, formada por una red de anillos de acero colado.\n• Manoplas de malla: Protegían las manos.\n• Calcillas o peales: Medias de malla que protegían la pierna desde el tobillo a la rodilla.",
+    "texto_en": "It is known that the Almohads wore coats of mail in their campaigns and the most used colours in their clothes were black and white.\n\n• Coif: Mesh piece that protected the head, neck and shoulders.\n• Gambax: Quilted shirt that served to cushion the blows and prevent friction against skin.\n• Breastplate / Hauberk: Coat of mail that protected the warrior's body, made of cast steel rings.\n• Gauntlets: Mesh mittens protecting the hands.\n• Puttees / Ankle socks: Mesh stockings protecting the leg from ankle to knee.",
     "imagenes": [
       "panel-26_1.jpg"
     ],
@@ -592,10 +592,10 @@ let HITOS = [
   {
     "id": 27,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Un poblado argárico en el Cerro del Cueto",
+    "titulo_en": "An Argaric Village in Cerro del Cueto",
+    "texto_es": "Con una cronología de hace más de 4 000 años, en este cerro hubo una primera ocupación relacionada con la Edad del Bronce, muy similar al cercano poblado de Peñalosa.\n\nEn la parte sur del castillo, a tu lado, puedes ver restos de la muralla construida por estos pobladores durante la Edad del Bronce. Sería destruida en gran parte por la nueva traza medieval con la construcción del castillo.\n\nHan aparecido fragmentos de cerámica y materia orgánica de las techumbres de las viviendas de este poblado argárico. Sus habitantes se dedicarían a explotar los filones del mineral de cobre de la zona.",
+    "texto_en": "With a chronology of more than 4,000 years ago, on this hill there was the first occupation related to the Bronze Age, very similar to the nearby village of Peñalosa.\n\nCeramic fragments and organic matter from the roofs of the housing of this argaric village have appeared. Its inhabitants would get involved in the exploitation of the copper seams of the area.",
     "imagenes": [
       "panel-27_1.jpg"
     ],
@@ -610,10 +610,10 @@ let HITOS = [
   {
     "id": 28,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "El alcazarejo cristiano",
+    "titulo_en": "Christian Alcazarejo",
+    "texto_es": "La ocupación castellana del castillo conllevó una serie de reformas internas y externas. A partir de este momento, la técnica constructiva utilizada es la mampostería y el sillar.\n\nLa reordenación del castillo afectó principalmente al sector norte y consistió en reducir el espacio habitado, considerándose ahora el nuevo edificio no sólo como un elemento defensivo y militar, sino también como un lugar residencial y palaciego en algunos casos.\n\nSe construye el alcazarejo y se sustituye la torre islámica principal por la actual Torre del Homenaje, también conocida como \"Almena Gorda\".\n\nDe este periodo se han hallado en las excavaciones arqueológicas piedras de molino y grandes tinajas de almacenamiento de vino o aceite conservadas en bodegas.",
+    "texto_en": "The Castilian occupation of the castle led to a series of internal and external changes. From then on, masonry and ashlar were the constructive methods.\n\nThe alcazarejo is built and the main Islamic tower is replaced by the current Tower of Homage, also known as \"Almena Gorda\".",
     "imagenes": [
       "panel-28_1.jpg"
     ],
@@ -628,10 +628,10 @@ let HITOS = [
   {
     "id": 29,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "La toma del castillo",
+    "titulo_en": "The Seizure of the Castle",
+    "texto_es": "La victoria cristiana en la Batalla de las Navas de Tolosa trajo consigo la ocupación de numerosos castillos -Ferral, Vilches y Tolosa- y la posterior devastación de las ciudades de Úbeda y Baeza. El Castillo de Baños fue tomado sin lucha.\n\nTras la conquista definitiva en 1225, el Castillo de Baños de la Encina pasó a formar parte de un vasto territorio concejil gobernado por la ciudad de Baeza.\n\nEl rey Fernando III de Castilla lo cedió al arzobispo de Toledo Rodrigo Jiménez de Rada y su defensa y guardia fue confiada a la Orden de Santiago, muy implicada en las operaciones militares del sur de la Península Ibérica. Poco tiempo después, Fernando III integra el pueblo de Baños de la Encina en la jurisdicción de la ciudad de Baeza, de la que dependerá hasta 1626, fecha en la que Felipe IV le concede a Baños la condición de villa.\n\nLa poterna:\nEn el lado opuesto de la entrada principal del castillo se abre la segunda puerta de la fortaleza. Se trata de una puerta falsa que sería utilizada como vía de salida en caso de asedio o reyerta.",
+    "texto_en": "The Christian victory at the Battle of Navas de Tolosa brought about the occupation of many castles -Ferral, Vilches and Tolosa- and the subsequent devastation of Úbeda and Baeza. The Castle of Baños was taken without fighting.\n\nThe postern:\nThis is a false door that would be used as way out in case of siege or brawl.\n\nTo find out more:\nThe Council of Baeza was a jurisdictional district in which the bishopric was restored and it became the capital of the conquered territories up to then.",
     "imagenes": [
       "panel-29_1.jpg"
     ],
@@ -646,10 +646,10 @@ let HITOS = [
   {
     "id": 30,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Últimos usos del castillo",
+    "titulo_en": "Last Uses of the Castle",
+    "texto_es": "En los últimos siglos, tras perder su ocupación militar, el Castillo de Baños pasó a tener otras funciones: fue cementerio durante los siglos XIX y XX y, más tarde, sería utilizado como espacio para celebrar fiestas y conciertos e incluso como escenario de películas.\n\nTras un largo abandono, a finales del siglo XIX y hasta 1928, el Castillo de Baños es utilizado por sus vecinos como el cementerio de la localidad, usando el interior de las torres como criptas familiares y adosando los nichos a las murallas.\n\nEn 1945 se construye a las afueras del municipio un nuevo cementerio y, a mediados de los años 50, se lleva a cabo un minucioso trabajo de extracción de las inhumaciones. Finalmente, será en la actuación de 2007 cuando se exhumen completamente los cadáveres enterrados en el castillo.\n\nLa torre circular, donde estamos, fue usada como escenario de conciertos y bailes.",
+    "texto_en": "In the last centuries, after losing its military occupation, the Castle of Baños started to have other functions: it was a cemetery during the 19th and 20th centuries and, later on, it would be used as a space for celebrations and concerts and even as scene for films.\n\nThe circular tower, where we are now, was used as a stage for concerts and dances.",
     "imagenes": [
       "panel-30_1.jpg"
     ],
@@ -664,10 +664,10 @@ let HITOS = [
   {
     "id": 31,
     "ruta": "castillo",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Los guerreros vigía",
+    "titulo_en": "The Lookouts",
+    "texto_es": "Las torres del Castillo de Baños estaban divididas, por suelos de madera, en tres pisos y una terraza desde donde los guerreros almohades tenían una óptima visibilidad.\n\nDesde el tercer cuerpo de las torres, los guerreros no solo veían al enemigo acercarse al castillo, sino que podían atacar y disparar flechas a través de los huecos, conocidos como saeteras. La vigilancia era sumamente importante, ya que de ello dependía la supervivencia de sus habitantes. Sin embargo, tras la Batalla de las Navas de Tolosa, el castillo fue tomado por el ejército cristiano sin necesidad de utilizar las armas.\n\n• Espejo: Pieza de metal para hacer señales al exterior.\n• Lanza y arco: Armas de guerrero.\n• Anafre: Pequeño brasero usado para calentarse y calentar comida.",
+    "texto_en": "The towers of the Castle of Baños de la Encina were divided by wooden floors, three stages and a terrace from where the Almohad warriors had an optimum visibility.\n\n• Mirror: Metal object to signal to the outside.\n• Spear and bow: Warrior weapons.\n• Brazier: Small brazier used to warm up and warm up food.",
     "imagenes": [
       "panel-31_1.jpg"
     ],
