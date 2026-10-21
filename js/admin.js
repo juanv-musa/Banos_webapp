@@ -192,11 +192,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Preservar logotipos asignados por el usuario
             if (Array.isArray(savedHito.logos) && savedHito.logos.length > 0) {
-              target.logos = savedHito.logos;
+              target.logos = savedHito.logos.map(l => l === 'logos_4.png' ? 'logos_04.png' : l);
             }
             // Preservar fotos añadidas por el usuario (segunda imagen, nombres propios, etc.)
             if (Array.isArray(savedHito.imagenes) && savedHito.imagenes.length > 0) {
-              target.imagenes = savedHito.imagenes;
+              target.imagenes = savedHito.imagenes.map(img => img.replace(/^img_(\d+)_0?(\d+)\.(jpg|jpeg|png)$/i, 'panel-$1_$2.$3'));
             }
             // Preservar enlace externo / PDF
             if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
@@ -479,9 +479,11 @@ async function handleImageAddUpload(event) {
     targetName = `panel-${id}_${modalImagenes.length + 1}${cleanExt}`;
   }
 
-  // Si el archivo subido ya tiene un nombre descriptivo limpio, respetarlo
-  if (file.name.startsWith("img_") || file.name.startsWith("panel-")) {
+  // Si el archivo subido ya tiene formato panel-X_X o img_X_0X, normalizar a panel-
+  if (file.name.startsWith("panel-")) {
     targetName = file.name;
+  } else if (/^img_(\d+)_0?(\d+)(\.[a-zA-Z0-9]+)$/i.test(file.name)) {
+    targetName = file.name.replace(/^img_(\d+)_0?(\d+)(\.[a-zA-Z0-9]+)$/i, 'panel-$1_$2$3').toLowerCase();
   }
 
   // 1. Previsualización inmediata mediante Data URL

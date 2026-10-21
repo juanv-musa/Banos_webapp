@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // Preservar logotipos asignados
             if (Array.isArray(savedHito.logos) && savedHito.logos.length > 0) {
-              target.logos = savedHito.logos;
+              target.logos = savedHito.logos.map(l => l === 'logos_4.png' ? 'logos_04.png' : l);
             }
             // Preservar imágenes asignadas (como segunda imagen)
             if (Array.isArray(savedHito.imagenes) && savedHito.imagenes.length > 0) {
-              target.imagenes = savedHito.imagenes;
+              target.imagenes = savedHito.imagenes.map(img => img.replace(/^img_(\d+)_0?(\d+)\.(jpg|jpeg|png)$/i, 'panel-$1_$2.$3'));
             }
             // Preservar enlaces externos o documentos PDF
             if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
@@ -770,7 +770,7 @@ function initLeafletMap(rutaFilter = null) {
 
     const popupContent = `
       <div style="font-family: 'Nunito', sans-serif; text-align: center; max-width: 190px;">
-        ${thumb ? `<img src="${thumb}" style="width: 100%; height: 85px; object-fit: cover; border-radius: 6px; margin-bottom: 6px;">` : ""}
+        ${thumb ? `<img src="${thumb}" style="width: 100%; height: 85px; object-fit: cover; object-position: top center; border-radius: 6px; margin-bottom: 6px;">` : ""}
         <span style="display: block; font-size: 0.72rem; font-weight: 800; color: ${ruta.color}; margin-bottom: 3px;">${rutaName}</span>
         <b style="font-size: 0.9rem; color: #222; display: block; margin-bottom: 8px;">${h.id}. ${title}</b>
         <a href="#/detail/${h.id}" style="display: inline-block; background: ${ruta.color}; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 700;">
