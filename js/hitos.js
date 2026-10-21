@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:50
+ * Fecha de actualización: 21/10/2026, 20:14:53
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:50.274Z";
+const HITOS_VERSION = "2026-10-21T18:14:53.639Z";
 
 const RUTAS = {
   "paseando": {
@@ -244,6 +244,7 @@ let HITOS = [
   },
   {
     "id": 10,
+    "ruta": "paseando",
     "titulo_es": "Antigua muralla exterior o Cerco",
     "titulo_en": "Old outer wall or ‘Cerco’",
     "texto_es": "En las inmediaciones del pueblo hay varios pozos abrevaderos, indispensable para el comercio y las actividades ganaderas. El Pozo Nuevo, de La Vega y Los Charcones. ¿Pero sabías que en el interior de las casonas se pueden contabilizar casi una centena de pozos domésticos?\n Vaya que sí. Casi todas las viviendas tienen un pozo que suministraba agua. A ver, es un agua mucho más dura. Tenía usos higiénicos y ganaderos. Y algunas veces, también culinarios. Lo utilizaban muchas veces los panaderos para hacer el verdadero pan bañusco, el pan de moños.\n Por cierto, sus brocales, si nos fijamos, son muy parecidos, como si lo hubiera cincelado la misma mano. Te invitamos a entrar a uno de ellos, en concreto al Palacete de los Guzmanes, y allí podrás ver cómo era este pozo tan singular.",
@@ -259,9 +260,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_10_ES.mp3",
     "audio_en": "webapp_BE_10_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171060408,
-    "lng": -3.773750192,
-    "ruta": "paseando"
+    "lng": -3.773750192
   },
   {
     "id": 11,
