@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:15
+ * Fecha de actualización: 21/10/2026, 20:14:21
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:15.827Z";
+const HITOS_VERSION = "2026-10-21T18:14:21.240Z";
 
 const RUTAS = {
   "paseando": {
@@ -350,6 +350,7 @@ let HITOS = [
   },
   {
     "id": 15,
+    "ruta": "paseando",
     "titulo_es": "Palacete Molina de la Cerda",
     "titulo_en": "Palacete Molina de la Cerda",
     "texto_es": "¡Vicky! ¿Has visto que buena planta tiene esta casona? ¿Qué curiosa es su portada?\n Está enmarcada entre columnas exentas. Y fíjate, que llamativa la heráldica de su dintel.\n Es súper bonita, es uno de los monumentos más representativos que tiene el pueblo. Perteneció a los Pérez de Vargas, pero el mayor valor de la Casa Grande, como ahora se le conoce por los vecinos, está en lo que representó, ¿no crees?\n Muy cierto, muy cierto. Levantada en el primer tercio del siglo XVIII, la familia que la construyó ocupaba la cúspide del poder local, y así lo refrendo al levantar el edificio. Su tamaño ya lo delata, pues ocupaba todo una manzana completa. Pero lo más llamativo, o lo que más me llama a mi la atención, está en el tondo circular de su clave. Si nos fijamos, veremos un obelisco flanqueado por leones. ¿Sabes lo que representa? El poder.",
@@ -365,9 +366,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_15_ES.mp3",
     "audio_en": "webapp_BE_15_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171650231,
-    "lng": -3.774000961,
-    "ruta": "paseando"
+    "lng": -3.774000961
   },
   {
     "id": 16,
