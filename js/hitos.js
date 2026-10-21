@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:09
+ * Fecha de actualización: 21/10/2026, 20:15:16
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:09.615Z";
+const HITOS_VERSION = "2026-10-21T18:15:16.561Z";
 
 const RUTAS = {
   "paseando": {
@@ -160,6 +160,7 @@ let HITOS = [
   },
   {
     "id": 6,
+    "ruta": "paseando",
     "titulo_es": "Entorno de la Iglesia de San Mateo",
     "titulo_en": "Surroundings of San Mateo Church",
     "texto_es": "– Originalmente esta calle, que llamamos Isidoro Bodson, era muy distinta a como hoy la vemos. ¿Es cierto?\n– Sí, mira. En la margen derecha no existía las viviendas que hoy veamos. Su lugar lo ocupaba el antiguo cementerio parroquial, que luego se traslado al castillo en la segunda mitad del siglo diecinueve. Pero como decías, la calle que se llama Isidoro Bodson, en sus comienzos era conocida como Donosa. Pero lo que no sé, por qué se produjo este cambio.\n– Pues mira. En los años 80 del siglo pasado, del siglo XX, pasó a llamarse Isidoro Bodson en honor a un ingeniero de minas, propietario de tierras, que donó la actual dehesa del Santo Cristo al Ayuntamiento, a los vecinos del pueblo. En cuanto a Donosa, el nombre es sinónimo de garbosa y provenía de lo bien cuidado que estaba el cementerio y lo bonita que era la calle. Bueno, y es que aún lo sigo siendo.",
@@ -175,9 +176,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_06_ES.mp3",
     "audio_en": "webapp_BE_06_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171314809,
-    "lng": -3.774443514,
-    "ruta": "paseando"
+    "lng": -3.774443514
   },
   {
     "id": 7,
