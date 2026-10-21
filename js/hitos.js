@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:46
+ * Fecha de actualización: 21/10/2026, 20:21:23
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:46.454Z";
+const HITOS_VERSION = "2026-10-21T18:21:23.614Z";
 
 const RUTAS = {
   "paseando": {
@@ -887,12 +887,13 @@ let HITOS = [
   {
     "id": 36,
     "ruta": "pr289",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Camino de Piedras Bermejas",
+    "titulo_en": "Piedras Bermejas Path",
+    "texto_es": "El Camino de Piedras Bermejas conserva un tramo de una infraestructura viaria de origen incierto. La técnica constructiva y su implantación en el relieve permiten situarlo en un contexto de organización territorial de época moderna.",
+    "texto_en": "The Camino de Piedras Bermejas preserves a stretch of a road infrastructure of uncertain origin. Its construction technique and integration into the terrain suggest that it belongs to a framework of territorial organization from the Early Modern period.",
     "imagenes": [
-      "panel-36_1.jpg"
+      "panel-36_1.jpg",
+      "panel-36_1.png"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
