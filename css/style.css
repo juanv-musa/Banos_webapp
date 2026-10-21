@@ -612,6 +612,47 @@ body {
   line-height: 1.9;
 }
 
+/* ENLACE EXTERNO O DOCUMENTO PDF */
+.detail-external-container {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.detail-external-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(139, 58, 27, 0.22);
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.detail-external-btn:hover, .detail-external-btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 58, 27, 0.35);
+  background: linear-gradient(135deg, var(--color-primary-dark), #5c200c);
+  color: #ffffff !important;
+}
+
+.external-btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+.external-btn-arrow {
+  font-size: 1.15rem;
+  margin-left: 2px;
+}
+
 /* LOGOTIPOS DE SUBVENCIONES EN CADA HITO */
 .detail-logos {
   margin-top: 36px;

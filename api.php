@@ -72,7 +72,7 @@ if ($action === 'upload') {
     }
 
     $file = $_FILES['file'];
-    $type = $_POST['type'] ?? 'image'; // 'image' o 'audio'
+    $type = $_POST['type'] ?? 'image'; // 'image', 'audio' o 'doc'
     $customName = trim($_POST['filename'] ?? '');
 
     $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
@@ -80,6 +80,7 @@ if ($action === 'upload') {
     // Validar tipo de archivo
     $allowedImg = ['jpg', 'jpeg', 'png', 'webp'];
     $allowedAudio = ['mp3', 'm4a', 'wav'];
+    $allowedDoc = ['pdf'];
 
     if ($type === 'image' && !in_array($ext, $allowedImg)) {
         http_response_code(400);
@@ -93,7 +94,13 @@ if ($action === 'upload') {
         exit;
     }
 
-    $destDir = ($type === 'image') ? __DIR__ . '/assets/images/' : __DIR__ . '/assets/audio/';
+    if ($type === 'doc' && !in_array($ext, $allowedDoc)) {
+        http_response_code(400);
+        echo json_encode(['status' => 'error', 'message' => 'Formato de documento no permitido (solo archivos PDF)']);
+        exit;
+    }
+
+    $destDir = ($type === 'image') ? __DIR__ . '/assets/images/' : (($type === 'doc') ? __DIR__ . '/assets/docs/' : __DIR__ . '/assets/audio/');
     if (!is_dir($destDir)) {
         mkdir($destDir, 0755, true);
     }

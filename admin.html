@@ -189,6 +189,37 @@
           <textarea id="form-texto-en" class="form-textarea" placeholder="Write here the full English historical text..."></textarea>
         </div>
 
+        <!-- SECCIÓN ENLACE EXTERNO O DOCUMENTO PDF (OPCIONAL) -->
+        <div style="background: #fdfaf8; border: 1px solid var(--admin-border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <h3 style="font-size: 0.95rem; color: var(--admin-primary-dark); font-weight: 800; margin-bottom: 2px;">📄 Enlace Externo o Documento PDF (Opcional)</h3>
+            <p style="font-size: 0.78rem; color: var(--admin-text-muted);">Puedes enlazar a una página web externa o subir un folleto / documento PDF para este hito.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="form-enlace-url">Dirección web o ruta del archivo PDF:</label>
+            <input type="text" id="form-enlace-url" class="form-input" placeholder="https://ejemplo.com o assets/docs/folleto.pdf">
+            <div style="margin-top: 6px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <label class="btn btn-outline btn-sm" style="cursor: pointer; display: inline-flex; border-color: var(--admin-primary); color: var(--admin-primary); font-weight: 700;">
+                ➕ Subir archivo PDF desde el ordenador
+                <input type="file" id="file-input-pdf" accept=".pdf,application/pdf" style="display: none;" onchange="handleDirectUpload(event, 'pdf')">
+              </label>
+              <span id="upload-status-pdf" style="font-size: 0.75rem; color: var(--admin-success); font-weight: 600;"></span>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="form-enlace-texto-es">Texto del botón (Español - Opcional):</label>
+              <input type="text" id="form-enlace-texto-es" class="form-input" placeholder="Ej: Ver folleto PDF / Más información">
+            </div>
+            <div class="form-group">
+              <label for="form-enlace-texto-en">Texto del botón (Inglés - Opcional):</label>
+              <input type="text" id="form-enlace-texto-en" class="form-input" placeholder="Ej: View PDF brochure / More info">
+            </div>
+          </div>
+        </div>
+
         <!-- SECCIÓN SUBVENCIONES Y LOGOTIPOS (OPCIONAL) -->
         <div style="background: #fdfaf8; border: 1px solid var(--admin-border); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
           <div>
@@ -266,7 +297,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
   <!-- Datos y lógica -->
-  <script src="js/hitos.js"></script>
-  <script src="js/admin.js"></script>
+  <script src="js/hitos.js?v=20261021_3"></script>
+  <script src="js/admin.js?v=20261021_3"></script>
 </body>
 </html>

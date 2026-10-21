@@ -77,13 +77,29 @@ const UI_TEXTS = {
 // INICIALIZACIÓN
 // ========================================================
 document.addEventListener("DOMContentLoaded", () => {
-  // Sincronizar con los datos guardados en el Gestor (localStorage)
+  // Sincronizar con los datos de hitos.js y limpiar caché obsoleta
   try {
-    const saved = localStorage.getItem('encina_hitos_data');
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        HITOS = parsed;
+    const savedVer = localStorage.getItem('encina_hitos_version');
+    if (typeof HITOS_VERSION !== 'undefined') {
+      if (savedVer !== HITOS_VERSION) {
+        // La versión oficial en el código ha cambiado: invalidar caché antigua
+        localStorage.removeItem('encina_hitos_data');
+        localStorage.setItem('encina_hitos_version', HITOS_VERSION);
+      } else {
+        const saved = localStorage.getItem('encina_hitos_data');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            // Fusionar inteligentemente: si el hito oficial tiene texto pero el guardado estaba en construcción, usar el oficial
+            parsed.forEach(savedHito => {
+              const orig = HITOS.find(h => h.id === savedHito.id);
+              if (orig && orig.titulo_es && orig.titulo_es !== "En construcción" && (!savedHito.titulo_es || savedHito.titulo_es === "En construcción")) {
+                Object.assign(savedHito, orig);
+              }
+            });
+            HITOS = parsed;
+          }
+        }
       }
     }
   } catch (e) {}
@@ -409,6 +425,9 @@ function renderDetail(id) {
         <!-- TEXTO HISTÓRICO -->
         <div class="detail-text font-${AppState.fontSize}" id="detail-narrative-text">${text}</div>
 
+        <!-- ENLACE EXTERNO O DOCUMENTO PDF (OPCIONAL) -->
+        ${renderDetailExternalLink(hito)}
+
         <!-- LOGOTIPOS DE SUBVENCIONES ESPECÍFICOS DE ESTE HITO -->
         ${renderDetailLogos(hito)}
       </div>
@@ -455,6 +474,34 @@ function getLogoSrc(name) {
     }
   } catch (e) {}
   return `assets/images/${name}`;
+}
+
+function renderDetailExternalLink(hito) {
+  const url = (hito.enlace_url || hito.enlace_externo || "").trim();
+  if (!url) return "";
+
+  const isPdf = url.toLowerCase().endsWith(".pdf") || url.toLowerCase().includes(".pdf?");
+  const defaultLabel = isPdf 
+    ? (AppState.lang === 'en' ? "View PDF document" : "Ver documento PDF")
+    : (AppState.lang === 'en' ? "Visit website" : "Visitar enlace web");
+    
+  const customLabel = AppState.lang === 'en'
+    ? (hito.enlace_texto_en || hito.enlace_texto_es || defaultLabel)
+    : (hito.enlace_texto_es || defaultLabel);
+
+  const iconSvg = isPdf
+    ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`
+    : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+
+  return `
+    <div class="detail-external-container">
+      <a href="${url}" target="_blank" rel="noopener noreferrer" class="detail-external-btn">
+        <span class="external-btn-icon">${iconSvg}</span>
+        <span class="external-btn-text">${customLabel}</span>
+        <span class="external-btn-arrow">↗</span>
+      </a>
+    </div>
+  `;
 }
 
 function renderDetailLogos(hito) {

@@ -2,8 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 20/10/2026, 19:37:33
+ * Fecha de actualización: 21/10/2026, 12:00:00
  */
+
+const HITOS_VERSION = "2026.10.21.3";
 
 const RUTAS = {
   "paseando": {
@@ -682,72 +684,84 @@ let HITOS = [
   {
     "id": 32,
     "ruta": "penalosa",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "La cuenca del Rumblar en época romana",
+    "titulo_en": "The Rumblar Basin in Roman Times",
+    "texto_es": "La llegada de Roma transformó la cuenca del Rumblar, hizo de ella un espacio estratégico para la minería y, más tarde, en un territorio agrícola articulado por asentamientos rurales y villae.\n\nTras la conquista de las grandes ciudades ibéricas del valle del Guadalquivir -Cástulo, Isturgi e Iliturgi-, a finales del siglo III a. C., la cuenca del Rumblar volvió a ser ocupada de manera progresiva e intensa. Esta parte de Sierra Morena, conocida en las fuentes clásicas como Saltus Castulonensis, dependía de la ciudad de Cástulo. Primero quedó integrado en la provincia Hispania Ulterior y, tras las reformas de Augusto, en la Tarraconense, dentro del Conventus Carthaginensis.\n\nLa presencia romana estuvo ligada a la explotación minera y metalúrgica, especialmente de galena argentífera y cobre. Surgieron poblados mineros, centros de fundición en El Centenillo y La Carolina, como Cerro del Plomo, La Tejeruela, La Fabriquilla, Fuente Espí y Cerro del Castillo, poblados minero-metalúrgicos fortificados, conocidos como \"castilletes\" y fortines: Salas de Galiarda, Playa del Tamujoso, Salcedo o Retamón, destinados al control de las minas y rutas interiores de la sierra.\n\nDesde finales del siglo I d. C., el declive minero dio paso a un nuevo modelo basado en la agricultura. Se desarrollaron villae y pequeños asentamientos rurales en las zonas más fértiles, tendencia que se intensificó durante el Bajo Imperio y continuó en la antigüedad tardía: Piscina de Guarromán, Santuario de la Virgen de la Encina o Santa Amalia.",
+    "texto_en": "The arrival of Rome transformed the Rumblar basin, turning it into a strategic area for mining and, later, into an agricultural territory organized around rural settlements and villae.\n\nFollowing the conquest of the major Iberian cities of the Guadalquivir valley—Cástulo, Isturgi, and Iliturgi—in the late 3rd century BC, the Rumblar basin was progressively and intensely reoccupied. This sector of Sierra Morena, known in classical sources as Saltus Castulonensis, depended on the city of Cástulo. It was initially integrated into the province of Hispania Ulterior and, following Augustus's administrative reforms, into Tarraconensis within the Conventus Carthaginensis.\n\nThe Roman presence was closely linked to mining and metallurgical exploitation, particularly of argentiferous galena (silver-lead) and copper. Mining villages and smelting centers emerged in El Centenillo and La Carolina, such as Cerro del Plomo, La Tejeruela, La Fabriquilla, Fuente Espí, and Cerro del Castillo, alongside fortified mining-metallurgical settlements known as \"castilletes\" and small forts: Salas de Galiarda, Playa del Tamujoso, Salcedo, or Retamón, designed to control the mines and inland mountain routes.\n\nFrom the end of the 1st century AD, the decline in mining gave way to a new economic model based on agriculture. Villae and small rural settlements developed in the most fertile areas, a trend that intensified during the Late Empire and continued into late antiquity: Piscina de Guarromán, Sanctuary of the Virgen de la Encina, or Santa Amalia.",
     "imagenes": [
       "panel-32_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_32_ES.mp3",
-    "audio_en": "webapp_BE_32_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   },
   {
     "id": 33,
     "ruta": "penalosa",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "La cuenca del Rumblar en época del bronce",
+    "titulo_en": "The Rumblar Basin in the Bronze Age",
+    "texto_es": "Aunque el territorio de la cuenca del río Rumblar presenta ocupación humana desde el Paleolítico, el interior de la sierra no se pobló hasta la Edad del Cobre, vinculado con la explotación de filones de cobre y galena (plomo y plata).\n\nSerá durante la Edad del Bronce (2200 a. C.) cuando se produzca una auténtica colonización mediante nuevos poblados relacionados con la cultura de El Argar: Peñalosa, Cerro del Cueto, La Verónica, Cerro de las Obras o Los Castillejos.\n\nEstos asentamientos se sitúan en cerros aterrazados, con viviendas adaptadas al terreno y una acrópolis fortificada. Su economía se basaba en la explotación minera y el intercambio de metales por excedentes agrícolas. Un rasgo distintivo es el ritual funerario, enterrando a sus familiares difuntos bajo el suelo de las viviendas.\n\nEl territorio presentaba una jerarquía funcional en tres niveles:\n• Poblados centrales, de tamaño medio (≈ 1 ha), como Peñalosa o La Verónica. Situados en posiciones estratégicas, muestran una gran actividad metalúrgica y de gestión del territorio.\n• Fortines, situados en altura y en el entorno de los poblados principales, permitían la comunicación visual y vigilaban los pasos naturales. Uno de los mejores ejemplos es el fortín de Migaldías.\n• Centros mineros, ubicados junto a los afloramientos de mineral para su extracción, destacan El Polígono, Los Castillejos, Mina José Palacios o Piedra Letrera.",
+    "texto_en": "Although the Rumblar river basin has witnessed human presence since the Palaeolithic period, the interior of the mountain range was not settled until the Copper Age, driven by the exploitation of copper and galena (lead and silver) veins.\n\nIt was during the Bronze Age (around 2200 BC) that genuine colonization occurred, establishing settlements linked to the El Argar culture: Peñalosa, Cerro del Cueto, La Verónica, Cerro de las Obras, and Los Castillejos.\n\nThese settlements were built on terraced hillsides, featuring dwellings adapted to the natural topography and a fortified acropolis. Their economy was based on mining and the exchange of processed metals for agricultural surpluses. A defining cultural trait was their funerary ritual: burying their deceased relatives beneath the floors of their homes.\n\nThe territory exhibited a three-tiered functional hierarchy:\n• Central settlements of medium size (approx. 1 ha), such as Peñalosa or La Verónica. Situated in strategic locations, they demonstrate substantial metallurgical production and territorial management.\n• Fortlets, positioned at higher elevations around major settlements, enabling visual communication and guarding natural mountain passes. One of the finest examples is the fortlet of Migaldías.\n• Mining centers, situated right by mineral outcrops for extraction, notably El Polígono, Los Castillejos, Mina José Palacios, and Piedra Letrera.",
     "imagenes": [
       "panel-33_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_33_ES.mp3",
-    "audio_en": "webapp_BE_33_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   },
   {
     "id": 34,
     "ruta": "penalosa",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Peñalosa: Poblado minero-metalúrgico de la Edad del Bronce",
+    "titulo_en": "Peñalosa: Mining-Metallurgical Village of the Bronze Age",
+    "texto_es": "Situado en la cuenca del río Rumblar, Peñalosa forma parte de un conjunto de poblados de la Edad del Bronce (argáricos). Especializado en la extracción y transformación del mineral de cobre, se desarrolla entre 1950 y el 1450 a. C.\n\nEl asentamiento se localiza sobre un escarpado espolón de pizarra, defendido de forma natural por profundos cortados salvo en la zona oriental, que fue protegida por una triple muralla reforzada con bastiones. El poblado se organiza mediante terrazas escalonadas, que dan soporte a viviendas y espacios públicos, como calles, corrales para ganado, cisterna, etc. Se distinguen tres grandes terrazas en descenso y una zona superior definida como Acrópolis o 'alcazarejo'. Hasta el momento se han documentado dos puertas de acceso situadas al sur y norte.\n\nLas casas, de cubierta prácticamente plana, combinan espacios domésticos y productivos con las labores metalúrgicas. Conectadas por pasillos, rampas y calles muy estrechas, canalizaban el agua de lluvia hacia una cisterna situada en la terraza inferior y una capacidad excepcional: unos 400.000 litros.\n\nPara el desarrollo de la vida diaria, la población hizo uso de las materias primas del territorio más inmediato. La actividad metalúrgica está presente en casi todo el poblado, pues se conserva mineral machacado, escorias, crisoles de reducción y de fundición, moldes, así como un vertedero de desechos metalúrgicos fuera de la muralla.",
+    "texto_en": "Located in the Rumblar river basin, Peñalosa is part of a cluster of Bronze Age (Argaric) settlements. Specialized in the extraction and transformation of copper ore, it flourished between 1950 and 1450 BC.\n\nThe settlement is situated on a steep slate spur, naturally defended by precipitous drop-offs except on its eastern flank, which was protected by a triple wall fortified with bastions. The village was arranged across stepped terraces accommodating houses and public spaces, such as streets, livestock pens, a cistern, and more. Three main descending terraces and an upper area designated as the Acropolis or citadel are identified. Two access gates located to the south and north have been documented so far.\n\nThe dwellings, with essentially flat roofs, combined domestic living and workspace with metallurgical duties. Connected by passageways, ramps, and very narrow streets, they channeled rainwater toward a cistern situated on the lower terrace with an extraordinary storage capacity of approximately 400,000 liters.\n\nFor daily life, the inhabitants utilized local raw materials. Metallurgical activity was pervasive throughout the village, as evidenced by crushed ore, slag, reduction and melting crucibles, casting moulds, and a metallurgical waste dump outside the defensive walls.",
     "imagenes": [
       "panel-34_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_34_ES.mp3",
-    "audio_en": "webapp_BE_34_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   },
   {
     "id": 35,
     "ruta": "penalosa",
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "titulo_es": "Acrópolis Este de Peñalosa: Núcleo de poder",
+    "titulo_en": "Eastern Acropolis of Peñalosa: Core of Power",
+    "texto_es": "La Acrópolis se sitúa en la parte central y más elevada del poblado, protegida por un murallón de gran grosor. El acceso se realizaba a través de una puerta abierta en la muralla, mediante peldaños tallados en la roca. Este espacio elevado se organizaba en conexión directa con las terrazas inmediatas y con el resto del asentamiento.\n\nLas viviendas presentan planta rectangular, cuadrangular o ligeramente ovalada con muros de mampostería de pizarra y tierra, enlucidos con una capa de barro y cal. Las techumbres eran de entramado vegetal recubierto de barro y pizarras planas, y una zona al aire libre para las tareas metalúrgicas. Los suelos solían ser de barro apisonado, a veces enlosados con pizarra.\n\nEn el interior de la vivienda se realizaban la mayoría de las actividades cotidianas. Se han identificado áreas destinadas a la molienda de cereal, almacenamiento de alimentos, cocinado y consumo, manufactura textil y fabricación de útiles, además de la actividad metalúrgica. Las pesas de telar aparecen en zonas bien iluminadas.\n\nUn rasgo distintivo de la cultura argárica son los enterramientos en el interior de las viviendas, con ajuar y en posición fetal, lo que refleja un estrecho vínculo entre las personas vivas y muertas. Las sepulturas suelen ser en forma de cista o de mampostería. Las inhumaciones infantiles se realizaban habitualmente en el interior de vasijas cerámicas o pithoi.",
+    "texto_en": "The Acropolis is situated on the highest, central section of the settlement, shielded by a massive stone wall. Access was gained through a gateway cut into the defensive wall via steps carved directly into the living rock. This elevated sanctuary was directly interconnected with the neighboring terraces and the rest of the village.\n\nThe dwellings feature rectangular, quadrangular, or slightly oval floor plans, built with slate masonry and earth mortar plastered with mud and lime wash. Roofs consisted of timber and vegetative frameworks coated with clay and flat slate slabs, alongside an open-air area dedicated to metallurgical work. Floors were typically made of tamped earth, occasionally paved with slate slabs.\n\nMost daily life took place within the home. Specific areas have been documented for grinding grain, storing food, cooking, communal eating, textile production, tool-making, and metallurgy. Loom weights are consistently found in well-lit areas.\n\nA hallmark of Argaric culture is intra-mural burial beneath the dwelling floors, accompanied by grave goods with skeletons placed in a flexed fetal position, reflecting an intimate bond between the living and ancestors. Tombs were typically stone cists or masonry structures, whereas infant burials were commonly placed inside ceramic storage jars or pithoi.",
     "imagenes": [
       "panel-35_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_35_ES.mp3",
-    "audio_en": "webapp_BE_35_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   },
@@ -764,28 +778,34 @@ let HITOS = [
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_36_ES.mp3",
-    "audio_en": "webapp_BE_36_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
     "lng": -3.7742
   },
   {
     "id": 37,
-    "titulo_es": "En construcción",
-    "titulo_en": "",
-    "texto_es": "",
-    "texto_en": "",
+    "ruta": "piedra_viva",
+    "titulo_es": "Baños en Piedra Viva - La piedra seca, un Paisaje Cultural",
+    "titulo_en": "Baños in Living Stone - Dry Stone, a Cultural Landscape",
+    "texto_es": "La piedra seca, un Paisaje Cultural\n\nBienvenido a la ruta \"Baños en Piedra Viva\", un recorrido por uno de los paisajes culturales más singulares de Sierra Morena.\n\nA lo largo del itinerario descubrirás cómo la piedra seca permitió construir pozos, norias, huertos y huertas, bancales, caminos o bardas que facilitaron la vida cotidiana de los vecinos durante generaciones.\n\nNo son construcciones aisladas: formaban parte de un sistema territorial donde agua, agricultura, ganadería y comunicación se articulaban mediante conocimientos transmitidos de forma oral y un sentido práctico.\n\nEl arte de la piedra seca, técnica de construcción ancestral reconocida por la UNESCO como Patrimonio Cultural Inmaterial de la Humanidad, constituye hoy una memoria viva que nos permite comprender formas históricas de habitar el territorio y afrontar los retos actuales de sostenibilidad.\n\nLa piedra seca levantaba muros, pero también construía paisajes y formas de vida.",
+    "texto_en": "Dry Stone, a Cultural Landscape\n\nWelcome to the 'Baños in Living Stone' route, a journey through one of the most distinctive cultural landscapes of Sierra Morena.\n\nAlong the itinerary, you will discover how dry stone construction made it possible to build wells, waterwheels, vegetable gardens and orchards, terraces, paths and boundary walls that made everyday life easier for local residents for generations.\n\nThese are not isolated structures: they formed part of a territorial system in which water, agriculture, livestock farming and paths were interconnected through knowledge transmitted orally and a practical approach.\n\nThe art of Dry Stone construction, an ancestral building technique recognized by UNESCO as Intangible Cultural Heritage of Humanity, is today a living memory that allows us to understand historical ways of inhabiting the territory and addressing today's sustainability challenges.\n\nDry stone construction built walls, but it also shaped landscapes and ways of life.",
     "imagenes": [
       "panel-37_1.jpg"
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [],
-    "audio_es": "webapp_BE_37_ES.mp3",
-    "audio_en": "webapp_BE_37_EN.mp3",
+    "audio_es": "",
+    "audio_en": "",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.1711,
-    "lng": -3.7742,
-    "ruta": "piedra_viva"
+    "lng": -3.7742
   },
   {
     "id": 38,

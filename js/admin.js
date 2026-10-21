@@ -368,6 +368,9 @@ function openCreateModal() {
   document.getElementById("form-imagenes").value = `panel-${nextId}_1.jpg`;
   document.getElementById("form-audio-es").value = "";
   document.getElementById("form-audio-en").value = "";
+  document.getElementById("form-enlace-url").value = "";
+  document.getElementById("form-enlace-texto-es").value = "";
+  document.getElementById("form-enlace-texto-en").value = "";
   document.getElementById("form-lat").value = 38.1711;
   document.getElementById("form-lng").value = -3.7742;
 
@@ -399,6 +402,9 @@ function openEditModal(id) {
   document.getElementById("form-imagenes").value = (hito.imagenes || []).join(", ");
   document.getElementById("form-audio-es").value = hito.audio_es || "";
   document.getElementById("form-audio-en").value = hito.audio_en || "";
+  document.getElementById("form-enlace-url").value = hito.enlace_url || hito.enlace_externo || "";
+  document.getElementById("form-enlace-texto-es").value = hito.enlace_texto_es || "";
+  document.getElementById("form-enlace-texto-en").value = hito.enlace_texto_en || "";
   document.getElementById("form-lat").value = hito.lat || 38.1711;
   document.getElementById("form-lng").value = hito.lng || -3.7742;
 
@@ -505,7 +511,7 @@ async function handleLogoUpload(event) {
 }
 
 function clearUploadStatuses() {
-  ['image', 'logo', 'audio-es', 'audio-en'].forEach(k => {
+  ['image', 'logo', 'audio-es', 'audio-en', 'pdf'].forEach(k => {
     const el = document.getElementById(`upload-status-${k}`);
     if (el) el.textContent = "";
   });
@@ -584,6 +590,11 @@ async function handleDirectUpload(event, typeKey) {
     inputTargetId = 'form-audio-en';
     statusTargetId = 'upload-status-audio-en';
     defaultName = `webapp_BE_${numPad}_EN.mp3`;
+  } else if (typeKey === 'pdf') {
+    targetType = 'doc';
+    inputTargetId = 'form-enlace-url';
+    statusTargetId = 'upload-status-pdf';
+    defaultName = file.name;
   }
 
   const statusEl = document.getElementById(statusTargetId);
@@ -596,7 +607,7 @@ async function handleDirectUpload(event, typeKey) {
     reader.onload = async function(e) {
       const dataUrl = e.target.result;
       const base64Pure = dataUrl.split(',')[1];
-      const folder = (targetType === 'image') ? 'assets/images' : 'assets/audio';
+      const folder = (targetType === 'image') ? 'assets/images' : ((targetType === 'doc') ? 'assets/docs' : 'assets/audio');
       const remotePath = `${folder}/${defaultName}`;
 
       try {
@@ -608,7 +619,7 @@ async function handleDirectUpload(event, typeKey) {
             renderLogosChips();
           }
         } else if (inputTargetId && document.getElementById(inputTargetId)) {
-          document.getElementById(inputTargetId).value = defaultName;
+          document.getElementById(inputTargetId).value = (targetType === 'doc') ? `assets/docs/${defaultName}` : defaultName;
         }
         if (statusEl) statusEl.textContent = `✅ Subido a GitHub (${defaultName})`;
         showToast(`☁️ Archivo ${defaultName} subido directamente a GitHub`);
@@ -641,7 +652,7 @@ async function handleDirectUpload(event, typeKey) {
           renderLogosChips();
         }
       } else if (inputTargetId && document.getElementById(inputTargetId)) {
-        document.getElementById(inputTargetId).value = uploadedName;
+        document.getElementById(inputTargetId).value = (targetType === 'doc' && !uploadedName.startsWith('assets/')) ? `assets/docs/${uploadedName}` : uploadedName;
       }
       if (statusEl) statusEl.textContent = "✅ Subido con éxito";
       showToast(`📁 Archivo subido: ${uploadedName}`);
@@ -680,6 +691,9 @@ function saveHitoForm(event) {
   const imagenesStr = (document.getElementById("form-imagenes")?.value || "").trim();
   const audio_es = (document.getElementById("form-audio-es")?.value || "").trim();
   const audio_en = (document.getElementById("form-audio-en")?.value || "").trim();
+  const enlace_url = (document.getElementById("form-enlace-url")?.value || "").trim();
+  const enlace_texto_es = (document.getElementById("form-enlace-texto-es")?.value || "").trim();
+  const enlace_texto_en = (document.getElementById("form-enlace-texto-en")?.value || "").trim();
 
   if (!titulo_es) {
     alert("Por favor, introduce el título en español.");
@@ -711,6 +725,9 @@ function saveHitoForm(event) {
     logos,
     audio_es,
     audio_en,
+    enlace_url,
+    enlace_texto_es,
+    enlace_texto_en,
     lat: isNaN(lat) ? 38.1711 : lat,
     lng: isNaN(lng) ? -3.7742 : lng
   };
@@ -726,6 +743,9 @@ function saveHitoForm(event) {
   // Guardar en localStorage de inmediato para que los cambios se mantengan al recargar
   try {
     localStorage.setItem('encina_hitos_data', JSON.stringify(hitosData));
+    if (typeof HITOS_VERSION !== 'undefined') {
+      localStorage.setItem('encina_hitos_version', HITOS_VERSION);
+    }
   } catch (e) {}
 
   closeModal();
@@ -905,6 +925,8 @@ function generateHitosJsContent() {
  * Archivo generado automáticamente por el Gestor Visual.
  * Fecha de actualización: ${new Date().toLocaleString()}
  */
+
+const HITOS_VERSION = "${new Date().toISOString()}";
 
 const RUTAS = ${JSON.stringify(rutasObj, null, 2)};
 
