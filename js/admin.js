@@ -1127,7 +1127,6 @@ function generateHitosJsContent() {
     castillo: { id: "castillo", nombre_es: "Castillo de Baños", nombre_en: "Baños Castle", color: "#1565c0", colorBg: "#f0f7ff", colorBorder: "#90caf9" },
     penalosa: { id: "penalosa", nombre_es: "Peñalosa", nombre_en: "Peñalosa", color: "#7b1fa2", colorBg: "#faf4fc", colorBorder: "#ce93d8" },
     pr289: { id: "pr289", nombre_es: "Sendero PR289", nombre_en: "PR289 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
-    gr286: { id: "pr289", nombre_es: "Sendero PR289", nombre_en: "PR289 Trail", color: "#c2883d", colorBg: "#fdf8f0", colorBorder: "#eed5ab" },
     piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7" }
   };
 

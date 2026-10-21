@@ -40,14 +40,6 @@ const RUTAS = {
     "colorBg": "#fdf8f0",
     "colorBorder": "#eed5ab"
   },
-  "gr286": {
-    "id": "pr289",
-    "nombre_es": "Sendero PR289",
-    "nombre_en": "PR289 Trail",
-    "color": "#c2883d",
-    "colorBg": "#fdf8f0",
-    "colorBorder": "#eed5ab"
-  },
   "piedra_viva": {
     "id": "piedra_viva",
     "nombre_es": "Baños en Piedra Viva",

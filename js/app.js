@@ -220,7 +220,7 @@ function renderHome() {
     const r = RUTAS[key];
     const name = AppState.lang === 'en' ? r.nombre_en : r.nombre_es;
     return `
-      <a href="#/list?ruta=${r.id}" class="route-btn route-bg-${r.id}">
+      <a href="#/list?ruta=${r.id}" class="route-btn route-bg-${r.id}" style="background-color: ${r.color || '#c2883d'} !important; color: #ffffff !important;">
         ${name}
       </a>
     `;
