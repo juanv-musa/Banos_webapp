@@ -288,14 +288,19 @@
 
   <!-- MODAL DE GENERACIÓN Y DESCARGA DE CÓDIGO QR -->
   <div class="modal-overlay" id="qr-modal">
-    <div class="modal-box" style="max-width: 440px; text-align: center;">
+    <div class="modal-box" style="max-width: 460px; text-align: center;">
       <div class="modal-header">
         <h2 id="qr-modal-title">Código QR del Hito</h2>
         <button class="modal-close" onclick="closeQrModal()">&times;</button>
       </div>
       <div style="padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div style="width: 100%; text-align: left;">
+          <label style="font-size: 0.8rem; font-weight: 700; color: var(--admin-text-muted); display: block; margin-bottom: 5px;">Dominio / Dirección web base de la app:</label>
+          <input type="text" id="qr-base-url-input" class="form-input" style="font-size: 0.85rem;" placeholder="https://tudominio.es/ruta/" oninput="updateQrCodeLive()">
+          <span style="font-size: 0.72rem; color: var(--admin-text-muted); display: block; margin-top: 3px;">Se adapta automáticamente a cualquier dominio que pongas aquí.</span>
+        </div>
         <div id="qrcode-container" style="background: white; padding: 16px; border-radius: 12px; border: 1px solid var(--admin-border); box-shadow: 0 4px 12px rgba(0,0,0,0.06); min-height: 256px; display: flex; align-items: center; justify-content: center;"></div>
-        <p id="qr-url-text" style="font-size: 0.85rem; color: var(--admin-text-muted); word-break: break-all; font-family: monospace;"></p>
+        <p id="qr-url-text" style="font-size: 0.8rem; color: var(--admin-text-muted); word-break: break-all; font-family: monospace; margin: 0;"></p>
         <button class="btn btn-primary" onclick="downloadQrCodePng()" style="width: 100%; justify-content: center;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Descargar QR para Imprenta (HD)

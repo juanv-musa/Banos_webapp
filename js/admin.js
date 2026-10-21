@@ -1000,6 +1000,23 @@ function deleteHito(id) {
 // ========================================================
 // CÓDIGOS QR (GENERACIÓN Y DESCARGA EN ALTA RESOLUCIÓN)
 // ========================================================
+function getQrBaseUrl() {
+  const saved = localStorage.getItem('encina_qr_base_url');
+  if (saved) return saved;
+  try {
+    const loc = window.location;
+    let path = loc.pathname;
+    if (path.endsWith('admin.html')) {
+      path = path.substring(0, path.lastIndexOf('/') + 1);
+    } else if (!path.endsWith('/')) {
+      path = path + '/';
+    }
+    return `${loc.origin}${path}`;
+  } catch (e) {
+    return 'https://www.banosdelaencina.es/app/';
+  }
+}
+
 function openQrModal(id) {
   currentQrId = id;
   const hito = hitosData.find(h => h.id === id);
@@ -1007,11 +1024,35 @@ function openQrModal(id) {
 
   document.getElementById("qr-modal-title").textContent = `Código QR · Hito ${hito.id}: ${hito.titulo_es}`;
   
-  // URL de destino en la webapp
-  const targetUrl = `https://www.banosdelaencina.es/app/#/detail/${hito.id}`;
-  document.getElementById("qr-url-text").textContent = targetUrl;
+  const baseInput = document.getElementById("qr-base-url-input");
+  if (baseInput) {
+    baseInput.value = getQrBaseUrl();
+  }
+
+  updateQrCodeLive();
+  document.getElementById("qr-modal").classList.add("active");
+}
+
+function updateQrCodeLive() {
+  if (!currentQrId) return;
+  const hito = hitosData.find(h => h.id === currentQrId);
+  if (!hito) return;
+
+  const baseInput = document.getElementById("qr-base-url-input");
+  let baseUrl = baseInput ? baseInput.value.trim() : getQrBaseUrl();
+  if (baseUrl) {
+    localStorage.setItem('encina_qr_base_url', baseUrl);
+  }
+  if (baseUrl && !baseUrl.endsWith('/')) {
+    baseUrl += '/';
+  }
+
+  const targetUrl = `${baseUrl}#/detail/${hito.id}`;
+  const urlText = document.getElementById("qr-url-text");
+  if (urlText) urlText.textContent = targetUrl;
 
   const container = document.getElementById("qrcode-container");
+  if (!container) return;
   container.innerHTML = "";
 
   if (typeof QRCode !== 'undefined') {
@@ -1026,8 +1067,6 @@ function openQrModal(id) {
   } else {
     container.innerHTML = `<p style="color:var(--admin-text-muted);">Cargando generador QR...</p>`;
   }
-
-  document.getElementById("qr-modal").classList.add("active");
 }
 
 function closeQrModal() {
