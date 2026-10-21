@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:21
+ * Fecha de actualización: 21/10/2026, 20:14:27
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:21.240Z";
+const HITOS_VERSION = "2026-10-21T18:14:27.943Z";
 
 const RUTAS = {
   "paseando": {
@@ -329,6 +329,7 @@ let HITOS = [
   },
   {
     "id": 14,
+    "ruta": "paseando",
     "titulo_es": "Caminos históricos de Baños",
     "titulo_en": "Historical Paths of Baños",
     "texto_es": "Oye José María, el edificio de la izquierda es de piedra bien tallada, ¿no? ¿Qué origen tiene?\n Fue construido por la clase trabajadora en los años 30 de siglo XX y, después, fue utilizado como Casa del Pueblo. Para su construcción se utilizaron los mejores sillares de la Iglesia de Santa María del Cueto, la que está situada frente al castillo. Por entonces se encontraba en ruinas, posiblemente desde la desamortización de Mendizabal.\n Claro, por eso luego, a partir del año 50, la zona del edificio, la delantera, se utilizó como Oficina Sindical Agraria. Pero hay otra parte que es una oficina que se usa como usos culturales. Aunque si nos fijamos bien, aún podríamos ver alguna marca lapidaria grabada en los sillas del edificio. ¡Madre mía cuantas vueltas van a dar las piedras de este pueblo!\n Muchas, muchas.",
@@ -344,9 +345,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_14_ES.mp3",
     "audio_en": "webapp_BE_14_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171462938,
-    "lng": -3.775081884,
-    "ruta": "paseando"
+    "lng": -3.775081884
   },
   {
     "id": 15,
