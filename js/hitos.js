@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:35
+ * Fecha de actualización: 21/10/2026, 20:15:38
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:35.774Z";
+const HITOS_VERSION = "2026-10-21T18:15:38.714Z";
 
 const RUTAS = {
   "paseando": {
@@ -75,6 +75,7 @@ let HITOS = [
   },
   {
     "id": 2,
+    "ruta": "paseando",
     "titulo_es": "Iglesia de San Mateo",
     "titulo_en": "Church of San Mateo",
     "texto_es": "–La iglesia de San Mateo es súper importante. ¡Muy imponente!, para un pueblo tan pequeño como éste. ¿Es que podría ser una colegiata o una catedral?\n– Cierto Vicky, es tremendamente monumental. Pero también por sus tallas, pinturas, ofrecería… Pero ahí dentro, en su interior, esconde algo sorprendente que está oculto a la vista.\n– ¿Son unos bichitos muy chiquititos, a que sí?\n– ¡Así es! Mira, el púlpito, la pila bautismal y las escalinatas del altar están elaboradas con un mármol llamativo. Es rojo, traído de las canteras de Cabra, ciudad de la subbética cordobesa. Pues bien, si nos fijamos bien en esa roca, veremos que aparecen numerosos fósiles de diferente tamaño. Son amonites del jurásico, un molusco con concha y más de 150 millones de años.\n– ¡Intenta descubrirlos!",
@@ -91,9 +92,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_02_ES.mp3",
     "audio_en": "webapp_BE_02_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171076663,
-    "lng": -3.774422323,
-    "ruta": "paseando"
+    "lng": -3.774422323
   },
   {
     "id": 3,
