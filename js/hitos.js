@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:16
+ * Fecha de actualización: 21/10/2026, 20:15:19
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:16.561Z";
+const HITOS_VERSION = "2026-10-21T18:15:19.993Z";
 
 const RUTAS = {
   "paseando": {
@@ -155,6 +155,9 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_05_ES.mp3",
     "audio_en": "webapp_BE_05_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170992514,
     "lng": -3.774869541
   },
