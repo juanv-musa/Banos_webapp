@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:27
+ * Fecha de actualización: 21/10/2026, 20:14:39
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:27.943Z";
+const HITOS_VERSION = "2026-10-21T18:14:39.458Z";
 
 const RUTAS = {
   "paseando": {
@@ -307,6 +307,7 @@ let HITOS = [
   },
   {
     "id": 13,
+    "ruta": "paseando",
     "titulo_es": "Ermita del Cristo del Llano",
     "titulo_en": "Ermita del Cristo del Llano",
     "texto_es": "José María ¿te imaginas como tenía que ser el entorno de la Ermita en el primer tercio del siglo XX, cuando este lugar era un amplío descansadero para el ganado trashumante?\n ¡Pues figúrate Vicky! Sólo existía la ermita y el molino de viento, que ya estaba en ruina.\n Por delante del santuario, solo había corrales bajos para encerrar vacas, animales de tiro, cabras y algunos cerdos, todo tipo de ganado. Por detrás existía una docena de eras y canteras abiertas para obtener la piedra. La arenisca que se utilizó para construir nuestros monumentos y casonas. ¡Ahí estaba la esencia de nuestro pueblo!\n Claro, pero además tenía que ser muy impresionante ver pasar los ganados en transhumancia, las ovejas, las vacas bravas, sobre todo a final de la primavera y comienzas del otoño, con un ruido espectacular. ¡Aquello tenía que ser increíble!",
@@ -323,9 +324,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_13_ES.mp3",
     "audio_en": "webapp_BE_13_EN.mp3",
-    "lat": 38.17481555,
-    "lng": -3.774831325,
-    "ruta": "paseando"
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
+    "lat": 38.174757,
+    "lng": -3.774812
   },
   {
     "id": 14,
