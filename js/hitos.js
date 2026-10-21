@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:53
+ * Fecha de actualización: 21/10/2026, 20:14:58
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:53.639Z";
+const HITOS_VERSION = "2026-10-21T18:14:58.004Z";
 
 const RUTAS = {
   "paseando": {
@@ -223,6 +223,7 @@ let HITOS = [
   },
   {
     "id": 9,
+    "ruta": "paseando",
     "titulo_es": "La entrada por la Avenida Linares",
     "titulo_en": "The entrance via Linares Avenue",
     "texto_es": "– José María, en ocasiones es difícil entender el origen histórico de algunos apelativos. Eso es lo que ocurre con los vecinos que habitan en esta calle, que son conocidos como “los vecinos de la carretera”. Sin embargo, la calle pues nunca se llamó así. Su nombre original fue calle del Pozo Vilches, luego se llamó Real y en la actualidad es conocida como la avenida Linares.\n– Cierto Vicky, pero popularmente desde el final del siglo XX, empezó a conocerse como la Carretera, de ahí el apelativo de sus vecinos.\n– Claro, porque era la carretera que unía Arquillos con Baños de la Encina, tras la 3ª guerra Carlista, allá por el 1876. La carretera, cuando llegaba aquí al pueblo, penetraba como una travesía empedrada y de ahí, que se quedara con ese sobrenombre. Si nos fijamos en la fisonomía actual de la calle, conserva su empedrado original y, además, una cosa muy curiosa, porque la calle tiene un perfil alomado, una carretera con cunetas laterales. También son muy llamativas las enormes gradas o escalinatas que podemos ver en la margen izquierda, que seguramente fueron talladas cuando se hizo la obra.",
@@ -238,9 +239,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_09_ES.mp3",
     "audio_en": "webapp_BE_09_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171432217,
-    "lng": -3.773331294,
-    "ruta": "paseando"
+    "lng": -3.773331294
   },
   {
     "id": 10,
