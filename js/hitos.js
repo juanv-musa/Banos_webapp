@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:04
+ * Fecha de actualización: 21/10/2026, 20:14:08
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:04.139Z";
+const HITOS_VERSION = "2026-10-21T18:14:08.755Z";
 
 const RUTAS = {
   "paseando": {
@@ -413,6 +413,7 @@ let HITOS = [
   },
   {
     "id": 18,
+    "ruta": "paseando",
     "titulo_es": "Alquerque",
     "titulo_en": "Alquerque",
     "texto_es": "6, 12, 24, 48. Vicky, cuando de noche caminas por la calle Santa María, ¿no te ha parecido escuchar un eco? ¿Cómo si alguien contara?\n ¡Calla, calla, que me asusta! Pero vamos, que según parece se trata de una leyenda. Se dice que hay un pastor avaricioso cuya alma está recluida en lo más profundo de una piedra, llora su desgracia y cuenta ovejas. ¿Tú te lo crees?\n Bueno, es posible. Lo único cierto es que entre la casona número 14 y la taberna Alcazarejo, a unos dos metros y medio de altura, hay un sillar con marcas lapidarias muy singulares. Se trata de un alquerque de 12, un tablero de juego antiquísimo, predecesor de las damas, que también es un símbolo protector. En Baños era conocido de “los lobos” y fue muy practicado entre pastores y gente de sierra. Pero vamos, que todos los críos hemos jugado a eso.",
@@ -428,9 +429,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_18_ES.mp3",
     "audio_en": "webapp_BE_18_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170271702,
-    "lng": -3.774906123,
-    "ruta": "paseando"
+    "lng": -3.774906123
   },
   {
     "id": 19,
