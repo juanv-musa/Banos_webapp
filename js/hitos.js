@@ -713,7 +713,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_04.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "enlace_url": "",
@@ -734,7 +736,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_04.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "enlace_url": "",
@@ -755,7 +759,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_04.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "enlace_url": "",
@@ -776,7 +782,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_04.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "enlace_url": "",
@@ -797,7 +805,9 @@ let HITOS = [
     ],
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
-    "logos": [],
+    "logos": [
+      "logos_04.png"
+    ],
     "audio_es": "",
     "audio_en": "",
     "enlace_url": "",
