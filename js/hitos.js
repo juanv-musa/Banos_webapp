@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:02
+ * Fecha de actualización: 21/10/2026, 20:15:09
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:02.473Z";
+const HITOS_VERSION = "2026-10-21T18:15:09.615Z";
 
 const RUTAS = {
   "paseando": {
@@ -181,6 +181,7 @@ let HITOS = [
   },
   {
     "id": 7,
+    "ruta": "paseando",
     "titulo_es": "Entorno de la Iglesia de San Mateo",
     "titulo_en": "Surroundings of San Mateo Church",
     "texto_es": "– En una villa con tanta tradición ganadera, no podía faltar el pilar del pueblo. El lugar donde abrevaban las caballerías, los ganados y los animales de tiro.\n– Calla, calla… Que también era el lugar donde mojaban a los forasteros en los días de fiesta. Por cierto, hoy no tiene agua. ¿De dónde se abastecía?\n– Fíjate, el manantial estaba situado unos metros más arriba, donde las calles Mestanzas y Salsipuedes se encuentran frente al Palacete de los Mármol. Aunque ya no emana agua del pilar, aún conserva detalles muy interesantes, como el hueco de piedra bajo el caño, donde se sostenía el cántaro mientras se llenaba de agua, o algunas marcas lapidarias. Se trata de un bonito calvario y una sencilla herradura, ambos símbolos protectores que favorecían la buena salud y la abundancia de bienes. ¿Por qué no intentas descubrirlas?",
@@ -196,9 +197,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_07_ES.mp3",
     "audio_en": "webapp_BE_07_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171452732,
-    "lng": -3.773808941,
-    "ruta": "paseando"
+    "lng": -3.773808941
   },
   {
     "id": 8,
