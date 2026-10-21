@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:15:38
+ * Fecha de actualización: 21/10/2026, 20:15:42
  */
 
-const HITOS_VERSION = "2026-10-21T18:15:38.714Z";
+const HITOS_VERSION = "2026-10-21T18:15:42.899Z";
 
 const RUTAS = {
   "paseando": {
@@ -53,6 +53,7 @@ const RUTAS = {
 let HITOS = [
   {
     "id": 1,
+    "ruta": "paseando",
     "titulo_es": "Plaza Mayor y Casa del Concejo",
     "titulo_en": "Main Square and Council House",
     "texto_es": "– Situado entre Sierra Morena y la Campiña de Jaén, Baños de la Encina es uno de los Pueblos más Bonitos de España. Soy José María Cantarero, historiador, y junto con la arqueóloga Victoria Gutiérrez vamos a conocer los lugares más destacados de esta villa. La visita es libre, solo necesitas escanear los códigos QR de los paneles informativos.\n– José María, ahora que estamos en la Plaza Mayor ¿Qué sabemos de su pasado, de las actividades que aquí se realizaron?\n– Pues mira, hasta bien entrado el siglo XX, la plaza fue un espacio de tierra totalmente abierto, como si se tratara de un enorme corral de ganado. Frente a la iglesia, bajo sus portales, se organizaba el mercado. En un puesto se vendían buñuelos y tortas de aceite, y en otro, carnes de cerdo y sardinas. También había enormes montones de verduras de las huertas locales, atendidos por mujeres en cuclillas que pesaban zanahorias, nabos, ajos, brócolis, calabazas, patatas y pimientos. ¡Todo hortaliza!\n– Y era todo riquísimo, porque encima era de huerta.",
@@ -69,9 +70,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_01_ES.mp3",
     "audio_en": "webapp_BE_01_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.171104932,
-    "lng": -3.774186888,
-    "ruta": "paseando"
+    "lng": -3.774186888
   },
   {
     "id": 2,
