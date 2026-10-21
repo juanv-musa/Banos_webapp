@@ -116,19 +116,18 @@ async function githubGetFileSha(path) {
   try {
     const timestamp = Date.now();
     const res = await fetch(`https://api.github.com/repos/${GH_CONFIG.owner}/${GH_CONFIG.repo}/contents/${path}?ref=${GH_CONFIG.branch}&_t=${timestamp}`, {
-      cache: 'no-store',
       headers: {
-        'Authorization': `Bearer ${token}`,
-        'Accept': 'application/vnd.github.v3+json',
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache'
+        'Authorization': `Bearer ${token}`
       }
     });
     if (res.ok) {
       const data = await res.json();
       return data.sha || null;
     }
-  } catch (e) {}
+    if (res.status === 404) return null;
+  } catch (e) {
+    console.warn("Error obteniendo sha:", e);
+  }
   return null;
 }
 
@@ -156,8 +155,8 @@ async function githubPutFile(path, base64Content, commitMessage, retryCount = 0)
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    // Si hay conflicto de versión/sha (409) debido a guardados consecutivos o caché, reintentar obteniendo el sha en vivo
-    if (res.status === 409 && retryCount < 2) {
+    // Si hay conflicto de versión/sha (409) o error de sha no provisto (422), reintentar obteniendo el sha fresco
+    if ((res.status === 409 || (res.status === 422 && err.message && err.message.includes('sha'))) && retryCount < 2) {
       await new Promise(r => setTimeout(r, 1000));
       return await githubPutFile(path, base64Content, commitMessage, retryCount + 1);
     }
@@ -1077,6 +1076,7 @@ async function saveAllChanges() {
       return;
     } catch (err) {
       alert('Error al publicar en GitHub: ' + err.message);
+      return;
     }
   }
 
