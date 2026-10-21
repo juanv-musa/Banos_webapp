@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:14:01
+ * Fecha de actualización: 21/10/2026, 20:14:04
  */
 
-const HITOS_VERSION = "2026-10-21T18:14:01.274Z";
+const HITOS_VERSION = "2026-10-21T18:14:04.139Z";
 
 const RUTAS = {
   "paseando": {
@@ -434,6 +434,7 @@ let HITOS = [
   },
   {
     "id": 19,
+    "ruta": "paseando",
     "titulo_es": "Las casas de la calle Cestería",
     "titulo_en": "The houses on Cestería Street",
     "texto_es": "Vicky, hoy nos puede parecer imposible, pero en origen, esta calle se originó como un barrio de cuevas. ¡Fíjate! Por desgracia, ya no nos queda nada de eso, pero aún tenemos el recuerdo y la huella de lo que fue.\n Ya verás, aunque la Cestería, que es el nombre original de esta calle, puede parecer la suma de casas sencillas y populares, su evolución histórica ha sido muy, muy interesante.\n ¡Así es! Vemos la vivienda que conocemos como del Percha. Se trata de un magnífico ejemplo de cómo eran este tipo de casonas, la del barrio de la cestería. La planta baja siempre presenta un zócalo de buena piedra, pero la superior es muy, muy distinta, totalmente contrario. Si te fijas bien, verás que las esquinas son de piedra, pero la parte central es de otro tipo de material, una tapia que está encalada. Se trata de un altillo o cámara. En su interior, bajo la protección del barro de sus paredes, su atrojes permitía la conservación de la cosecha anual: granos, legumbres, frutas de huerta y hortalizas. ¡Vamos! La cosecha completa del año.",
@@ -449,9 +450,11 @@ let HITOS = [
     ],
     "audio_es": "webapp_BE_19_ES.mp3",
     "audio_en": "webapp_BE_19_EN.mp3",
+    "enlace_url": "",
+    "enlace_texto_es": "",
+    "enlace_texto_en": "",
     "lat": 38.170135696,
-    "lng": -3.774416142,
-    "ruta": "paseando"
+    "lng": -3.774416142
   },
   {
     "id": 20,
