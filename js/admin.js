@@ -254,6 +254,12 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCards();
   setupSearch();
   checkAuthRequirement();
+
+  // Mostrar botón de GitHub solo si se está ejecutando en GitHub Pages
+  const ghBtn = document.getElementById("btn-nav-github");
+  if (ghBtn) {
+    ghBtn.style.display = isGitHubPages() ? "inline-flex" : "none";
+  }
 });
 
 // ========================================================
