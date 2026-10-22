@@ -2,21 +2,21 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 22/10/2026, 10:34:13
+ * Fecha de actualización: 22/10/2026, 13:03:55
  */
 
-const HITOS_VERSION = "2026-10-22T08:34:13.794Z";
+const HITOS_VERSION = "2026-10-22T11:03:55.242Z";
 
 const APP_CONFIG = {
-  version: "1.0.0",
-  creditos: {
-    desarrollo_es: "Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina",
-    desarrollo_en: "Webapp developed by MUSARAÑA Gestión Integral de Museos S.L., for the City Council of Baños de la Encina",
-    textos_voces: "José María Cantarero\nVictoria Gutiérrez Calderón",
-    locuciones_en: "Sonoarte.net",
-    traducciones: "Cristina Aranda Lobato",
-    copyright_es: "Todos los contenidos publicados en esta audioguía y su copyright son propiedad de sus autores y del Ayuntamiento de Baños de la Encina.",
-    copyright_en: "All contents published in this audio guide and their copyright are the property of their authors and the City Council of Baños de la Encina."
+  "version": "1.0.0",
+  "creditos": {
+    "desarrollo_es": "Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina",
+    "desarrollo_en": "Webapp developed by MUSARAÑA Gestión Integral de Museos S.L., for the City Council of Baños de la Encina",
+    "textos_voces": "José María Cantarero\nVictoria Gutiérrez Calderón",
+    "locuciones_en": "Sonoarte.net",
+    "traducciones": "Cristina Aranda Lobato",
+    "copyright_es": "Todos los contenidos publicados en esta audioguía y su copyright son propiedad de sus autores y del Ayuntamiento de Baños de la Encina.",
+    "copyright_en": "All contents published in this audio guide and their copyright are the property of their authors and the City Council of Baños de la Encina."
   }
 };
 
@@ -289,11 +289,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Antigua muralla exterior o Cerco",
     "titulo_en": "Old outer wall or ‘Cerco’",
-    "texto_es": "En las inmediaciones del pueblo hay varios pozos abrevaderos, indispensable para el comercio y las actividades ganaderas. El Pozo Nuevo, de La Vega y Los Charcones. ¿Pero sabías que en el interior de las casonas se pueden contabilizar casi una centena de pozos domésticos?\n Vaya que sí. Casi todas las viviendas tienen un pozo que suministraba agua. A ver, es un agua mucho más dura. Tenía usos higiénicos y ganaderos. Y algunas veces, también culinarios. Lo utilizaban muchas veces los panaderos para hacer el verdadero pan bañusco, el pan de moños.\n Por cierto, sus brocales, si nos fijamos, son muy parecidos, como si lo hubiera cincelado la misma mano. Te invitamos a entrar a uno de ellos, en concreto al Palacete de los Guzmanes, y allí podrás ver cómo era este pozo tan singular.",
-    "texto_en": "In the vicinity of the village, there are several watering wells, essential for trade and livestock activities like Pozo Nuevo, La Vega, and Los Charcones. But did you know that inside the mansions, you can count almost a hundred domestic wells?\n Indeed, yes. Almost all the houses have a well that supplied water. Let's see, it's much harder water. It had hygienic and livestock uses and sometimes, also culinary. Bakers often used it to make the true Bañusco bread, the “moños” bread.\n By the way, their curbs, if we pay attention, are very similar, as if they had been chiseled by the same hand. We invite you to enter one of them, specifically the Guzmanes Palace, and there you can see what this unique well was like.",
+    "texto_es": "– En las inmediaciones del pueblo hay varios pozos abrevaderos, indispensable para el comercio y las actividades ganaderas. El Pozo Nuevo, de La Vega y Los Charcones. ¿Pero sabías que en el interior de las casonas se pueden contabilizar casi una centena de pozos domésticos?\n– Vaya que sí. Casi todas las viviendas tienen un pozo que suministraba agua. A ver, es un agua mucho más dura. Tenía usos higiénicos y ganaderos. Y algunas veces, también culinarios. Lo utilizaban muchas veces los panaderos para hacer el verdadero pan bañusco, el pan de moños.\n– Por cierto, sus brocales, si nos fijamos, son muy parecidos, como si lo hubiera cincelado la misma mano. Te invitamos a entrar a uno de ellos, en concreto al Palacete de los Guzmanes, y allí podrás ver cómo era este pozo tan singular.",
+    "texto_en": "– In the vicinity of the village, there are several watering wells, essential for trade and livestock activities like Pozo Nuevo, La Vega, and Los Charcones. But did you know that inside the mansions, you can count almost a hundred domestic wells?\n– Indeed, yes. Almost all the houses have a well that supplied water. Let's see, it's much harder water. It had hygienic and livestock uses and sometimes, also culinary. Bakers often used it to make the true Bañusco bread, the “moños” bread.\n– By the way, their curbs, if we pay attention, are very similar, as if they had been chiseled by the same hand. We invite you to enter one of them, specifically the Guzmanes Palace, and there you can see what this unique well was like.",
     "imagenes": [
       "panel-10_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -313,11 +314,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Casa Caridad Zambrana",
     "titulo_en": "Casa Caridad Zambrana",
-    "texto_es": "Aunque hoy no lo parece, estamos en uno de los barrios antiguos e industriales del pueblo. Estaba dedicada a la obtención del mejor aceite de oliva virgen, el bañusco ¡seguro!. Se trata de una barriada que conforma las calles Trinidad, la calle Eras y la travesía Trinidad.\n Muy cierto, Vicky. Si miramos a nuestro alrededor, si miramos con detalle, podríamos observar que en los muros de las casas vecinas hay incrustadas muelas de granito. Ruedas de piedra enormes que formaban parte de aquellas viejas almazaras.\n Y además, este barrio esconde otros secretos. Es muy interesante el Hospital de Transeúntes que encontramos en la calle abajo. También podemos ver la bodega de la hospedería, el antiguo mesón ¡que se excavó en la misma roca! Este espacio estaba destinado a la conservación de los productos, o también era conocido como una zona de fresquera, que tuvo su máximo desarrollo en el siglo XVIII cuando ya se empezaron a utilizar en la calle Mestanza, en la calle Amargura, en la calle Huérfanos o del Pilar.",
-    "texto_en": "Although it doesn't seem like it today, we are in one of the old and industrial neighborhoods of the town. It was dedicated to producing the best virgin olive oil, the one from Baños for sure! It is a neighborhood that comprises Trinidad Street, Eras Street, and Trinidad Passage.\n That is so true, Vicky. If we look around us, if we look closely, we might observe that in the walls of the neighboring houses there are embedded granite millstones. Enormous stone wheels that were part of those old oil mills.\n And besides, this neighborhood hides other secrets. The Hospital of Transients we found down the street is very interesting. We can also see the cellar of the inn, the old tavern that was excavated into the very rock! This space was intended for the preservation of products, and it was also known as a cooling area, which reached its peak development in the 18th century when it began to be used on Mestanza Street, Amargura Street, Huerfanos Street, or del Pilar Street.",
+    "texto_es": "– Aunque hoy no lo parece, estamos en uno de los barrios antiguos e industriales del pueblo. Estaba dedicada a la obtención del mejor aceite de oliva virgen, el bañusco ¡seguro!. Se trata de una barriada que conforma las calles Trinidad, la calle Eras y la travesía Trinidad.\n– Muy cierto, Vicky. Si miramos a nuestro alrededor, si miramos con detalle, podríamos observar que en los muros de las casas vecinas hay incrustadas muelas de granito. Ruedas de piedra enormes que formaban parte de aquellas viejas almazaras.\n– Y además, este barrio esconde otros secretos. Es muy interesante el Hospital de Transeúntes que encontramos en la calle abajo. También podemos ver la bodega de la hospedería, el antiguo mesón ¡que se excavó en la misma roca! Este espacio estaba destinado a la conservación de los productos, o también era conocido como una zona de fresquera, que tuvo su máximo desarrollo en el siglo XVIII cuando ya se empezaron a utilizar en la calle Mestanza, en la calle Amargura, en la calle Huérfanos o del Pilar.",
+    "texto_en": "– Although it doesn't seem like it today, we are in one of the old and industrial neighborhoods of the town. It was dedicated to producing the best virgin olive oil, the one from Baños for sure! It is a neighborhood that comprises Trinidad Street, Eras Street, and Trinidad Passage.\n– That is so true, Vicky. If we look around us, if we look closely, we might observe that in the walls of the neighboring houses there are embedded granite millstones. Enormous stone wheels that were part of those old oil mills.\n– And besides, this neighborhood hides other secrets. The Hospital of Transients we found down the street is very interesting. We can also see the cellar of the inn, the old tavern that was excavated into the very rock! This space was intended for the preservation of products, and it was also known as a cooling area, which reached its peak development in the 18th century when it began to be used on Mestanza Street, Amargura Street, Huerfanos Street, or del Pilar Street.",
     "imagenes": [
       "panel-11_1.jpg"
     ],
+    "ajuste_imagen": "bottom",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -330,19 +332,19 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170378483,
-    "lng": -3.773293234,
-    "ajuste_imagen": "bottom"
+    "lng": -3.773293234
   },
   {
     "id": 12,
     "ruta": "paseando",
     "titulo_es": "Calle Cestería o Conquista",
     "titulo_en": "Cestería or Conquista Street",
-    "texto_es": "Al pasar por la calle Conquista, llama la atención la presencia de unos mojinetes de piedra. Son piedras cilíndricas que hay junto a las puertas de sus casas. ¿Qué es?\n Pues mira, tuvieron una función súper importante. De hecho, la industria que lo usaba era la cestería, que dio nombre luego a la calle. Pero lo que no sé es cómo se elaboraba.\n Pues muy sencillo. Tras conseguir el esparto, seguramente lo traían de un pueblo vecino, de Jódar, en la zona de Mágina, las fibras eran cocidas al sol en las aguas del río Rumblar durante 21 días. Cuando, con una ordenanza municipal, se prohibió este tipo de cocido, pasó a cocerse enterrado en estiércol. Una vez secas y limpias, las hebras se machacaban en estos mojinetes de piedra hasta hacerlas muy flexibles, hasta que podían doblegarse. Después elaboraban pleitas y tomizas, bases de todo tipo de cesta y cordelería, esenciales para la economía local y la construcción. ¡Qué interesante!",
-    "texto_en": "As you walk down Conquista Street, the presence of some stone mortars catches your attention. They are cylindrical stones that are placed next to the doors of their houses. What were they?\n Well, you see, they had a super important function. In fact, the industry that used it was basket weaving, which later gave its name to the street. But what I don't know is how it was made.\n Well, it's very simple. After obtaining the esparto, which they probably brought from a neighboring town, Jodar, in the Magina area, the fibers were soaked in the sun in the waters of the Rumblar River for 21 days. When, with a municipal ordinance, this type of boiling was prohibited, it was then boiled buried in manure. Once dry and clean, the fibers were crushed in these stone mortars until they became very flexible, until they could be bent. Then they made “pleitas” and “tomizas”, the basis for all types of baskets and ropes, essential for the local economy and construction. How interesting!",
+    "texto_es": "– Al pasar por la calle Conquista, llama la atención la presencia de unos mojinetes de piedra. Son piedras cilíndricas que hay junto a las puertas de sus casas. ¿Qué es?\n– Pues mira, tuvieron una función súper importante. De hecho, la industria que lo usaba era la cestería, que dio nombre luego a la calle. Pero lo que no sé es cómo se elaboraba.\n– Pues muy sencillo. Tras conseguir el esparto, seguramente lo traían de un pueblo vecino, de Jódar, en la zona de Mágina, las fibras eran cocidas al sol en las aguas del río Rumblar durante 21 días. Cuando, con una ordenanza municipal, se prohibió este tipo de cocido, pasó a cocerse enterrado en estiércol. Una vez secas y limpias, las hebras se machacaban en estos mojinetes de piedra hasta hacerlas muy flexibles, hasta que podían doblegarse. Después elaboraban pleitas y tomizas, bases de todo tipo de cesta y cordelería, esenciales para la economía local y la construcción. ¡Qué interesante!",
+    "texto_en": "– As you walk down Conquista Street, the presence of some stone mortars catches your attention. They are cylindrical stones that are placed next to the doors of their houses. What were they?\n– Well, you see, they had a super important function. In fact, the industry that used it was basket weaving, which later gave its name to the street. But what I don't know is how it was made.\n– Well, it's very simple. After obtaining the esparto, which they probably brought from a neighboring town, Jodar, in the Magina area, the fibers were soaked in the sun in the waters of the Rumblar River for 21 days. When, with a municipal ordinance, this type of boiling was prohibited, it was then boiled buried in manure. Once dry and clean, the fibers were crushed in these stone mortars until they became very flexible, until they could be bent. Then they made “pleitas” and “tomizas”, the basis for all types of baskets and ropes, essential for the local economy and construction. How interesting!",
     "imagenes": [
       "panel-12_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -362,12 +364,13 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Ermita del Cristo del Llano",
     "titulo_en": "Ermita del Cristo del Llano",
-    "texto_es": "José María ¿te imaginas como tenía que ser el entorno de la Ermita en el primer tercio del siglo XX, cuando este lugar era un amplío descansadero para el ganado trashumante?\n ¡Pues figúrate Vicky! Sólo existía la ermita y el molino de viento, que ya estaba en ruina.\n Por delante del santuario, solo había corrales bajos para encerrar vacas, animales de tiro, cabras y algunos cerdos, todo tipo de ganado. Por detrás existía una docena de eras y canteras abiertas para obtener la piedra. La arenisca que se utilizó para construir nuestros monumentos y casonas. ¡Ahí estaba la esencia de nuestro pueblo!\n Claro, pero además tenía que ser muy impresionante ver pasar los ganados en transhumancia, las ovejas, las vacas bravas, sobre todo a final de la primavera y comienzas del otoño, con un ruido espectacular. ¡Aquello tenía que ser increíble!",
-    "texto_en": "José María Can you imagine what the surroundings of the Hermitage must have been like in the first third of the 20th century, when this place was a vast resting area for transhumant livestock?\n Well, imagine that, Vicky! Only the hermitage and the windmill existed, which was already in ruins. In front of the sanctuary, there were only low pens to enclose cows, draft animals, goats, and some pigs, all kinds of livestock. Behind, there were a dozen threshing fields and open quarries to obtain the stone that was used to build our monuments and mansions. There was the essence of our town!\n Of course, but it must have been very impressive to see the livestock on the move, the sheep, the wild cattle, especially at the end of spring and the beginning of autumn, with a spectacular noise. That must have been incredible!",
+    "texto_es": "– José María ¿te imaginas como tenía que ser el entorno de la Ermita en el primer tercio del siglo XX, cuando este lugar era un amplío descansadero para el ganado trashumante?\n– ¡Pues figúrate Vicky! Sólo existía la ermita y el molino de viento, que ya estaba en ruina. Por delante del santuario, solo había corrales bajos para encerrar vacas, animales de tiro, cabras y algunos cerdos, todo tipo de ganado. Por detrás existía una docena de eras y canteras abiertas para obtener la piedra. La arenisca que se utilizó para construir nuestros monumentos y casonas. ¡Ahí estaba la esencia de nuestro pueblo!\n– Claro, pero además tenía que ser muy impresionante ver pasar los ganados en transhumancia, las ovejas, las vacas bravas, sobre todo a final de la primavera y comienzas del otoño, con un ruido espectacular. ¡Aquello tenía que ser increíble!",
+    "texto_en": "– José María Can you imagine what the surroundings of the Hermitage must have been like in the first third of the 20th century, when this place was a vast resting area for transhumant livestock?\n– Well, imagine that, Vicky! Only the hermitage and the windmill existed, which was already in ruins. In front of the sanctuary, there were only low pens to enclose cows, draft animals, goats, and some pigs, all kinds of livestock. Behind, there were a dozen threshing fields and open quarries to obtain the stone that was used to build our monuments and mansions. There was the essence of our town!\n– Of course, but it must have been very impressive to see the livestock on the move, the sheep, the wild cattle, especially at the end of spring and the beginning of autumn, with a spectacular noise. That must have been incredible!",
     "imagenes": [
       "panel-13_1.jpg",
       "panel-13_2.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -387,11 +390,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Caminos históricos de Baños",
     "titulo_en": "Historical Paths of Baños",
-    "texto_es": "Oye José María, el edificio de la izquierda es de piedra bien tallada, ¿no? ¿Qué origen tiene?\n Fue construido por la clase trabajadora en los años 30 de siglo XX y, después, fue utilizado como Casa del Pueblo. Para su construcción se utilizaron los mejores sillares de la Iglesia de Santa María del Cueto, la que está situada frente al castillo. Por entonces se encontraba en ruinas, posiblemente desde la desamortización de Mendizabal.\n Claro, por eso luego, a partir del año 50, la zona del edificio, la delantera, se utilizó como Oficina Sindical Agraria. Pero hay otra parte que es una oficina que se usa como usos culturales. Aunque si nos fijamos bien, aún podríamos ver alguna marca lapidaria grabada en los sillas del edificio. ¡Madre mía cuantas vueltas van a dar las piedras de este pueblo!\n Muchas, muchas.",
-    "texto_en": "It was built by the working class in the 1930s and later used as a People's House. For its construction, the best stones from the Church of Santa Maria del Cueto were used, the one located in front of the castle. At that time, it was in ruins, possibly since the Mendizabal Disentailment.\n Of course, that's why later, starting from the 1950s, the front part of the building was used as the Agrarian Union Office. But there is another part that is used for cultural purposes. Although if we look closely, we could still see some lapidary marks engraved on the chairs of the building. My goodness, how many times are the stones of this town going to be differently used! Many, many times for real.",
+    "texto_es": "–Oye José María, el edificio de la izquierda es de piedra bien tallada, ¿no? ¿Qué origen tiene?\n– Fue construido por la clase trabajadora en los años 30 de siglo XX y, después, fue utilizado como Casa del Pueblo. Para su construcción se utilizaron los mejores sillares de la Iglesia de Santa María del Cueto, la que está situada frente al castillo. Por entonces se encontraba en ruinas, posiblemente desde la desamortización de Mendizabal.\n– Claro, por eso luego, a partir del año 50, la zona del edificio, la delantera, se utilizó como Oficina Sindical Agraria. Pero hay otra parte que es una oficina que se usa como usos culturales. Aunque si nos fijamos bien, aún podríamos ver alguna marca lapidaria grabada en los sillas del edificio. ¡Madre mía cuantas vueltas van a dar las piedras de este pueblo!\n– Muchas, muchas.",
+    "texto_en": "– It was built by the working class in the 1930s and later used as a People's House. \n– For its construction, the best stones from the Church of Santa Maria del Cueto were used, the one located in front of the castle. At that time, it was in ruins, possibly since the Mendizabal Disentailment.\n– Of course, that's why later, starting from the 1950s, the front part of the building was used as the Agrarian Union Office. But there is another part that is used for cultural purposes. Although if we look closely, we could still see some lapidary marks engraved on the chairs of the building. My goodness, how many times are the stones of this town going to be differently used! \n– Many, many times for real.",
     "imagenes": [
       "panel-14_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -404,19 +408,19 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.171462938,
-    "lng": -3.775081884,
-    "ajuste_imagen": "center"
+    "lng": -3.775081884
   },
   {
     "id": 15,
     "ruta": "paseando",
     "titulo_es": "Palacete Molina de la Cerda",
     "titulo_en": "Palacete Molina de la Cerda",
-    "texto_es": "¡Vicky! ¿Has visto que buena planta tiene esta casona? ¿Qué curiosa es su portada?\n Está enmarcada entre columnas exentas. Y fíjate, que llamativa la heráldica de su dintel.\n Es súper bonita, es uno de los monumentos más representativos que tiene el pueblo. Perteneció a los Pérez de Vargas, pero el mayor valor de la Casa Grande, como ahora se le conoce por los vecinos, está en lo que representó, ¿no crees?\n Muy cierto, muy cierto. Levantada en el primer tercio del siglo XVIII, la familia que la construyó ocupaba la cúspide del poder local, y así lo refrendo al levantar el edificio. Su tamaño ya lo delata, pues ocupaba todo una manzana completa. Pero lo más llamativo, o lo que más me llama a mi la atención, está en el tondo circular de su clave. Si nos fijamos, veremos un obelisco flanqueado por leones. ¿Sabes lo que representa? El poder.",
-    "texto_en": "Vicky! Have you seen how good the façade of this mansion looks? How curious is it? It is framed between free-standing columns. And look, how striking the heraldry on its lintel is.\n It's super beautiful; it's one of the most representative monuments the town has. It belonged to the Pérez de Vargas family, but the greatest value of the “Casa Grande”, as the neighbors now call it, lies in what it represented, don't you think?\n So very true; it was built in the first third of the 18th century, the family that constructed it occupied the pinnacle of local power, and thus reaffirmed it by erecting the building. Its size already gives it away, as it occupied an entire city block. But the most striking thing, or what catches my attention the most, is in the circular “tondo” of its keystone. If we look closely, we will see an obelisk flanked by lions. Do you know what it represents? It represents the power.",
+    "texto_es": "– ¡Vicky! ¿Has visto que buena planta tiene esta casona? ¿Qué curiosa es su portada? Está enmarcada entre columnas exentas. Y fíjate, que llamativa la heráldica de su dintel.\n– Es súper bonita, es uno de los monumentos más representativos que tiene el pueblo. Perteneció a los Pérez de Vargas, pero el mayor valor de la Casa Grande, como ahora se le conoce por los vecinos, está en lo que representó, ¿no crees?\n– Muy cierto, muy cierto. Levantada en el primer tercio del siglo XVIII, la familia que la construyó ocupaba la cúspide del poder local, y así lo refrendo al levantar el edificio. Su tamaño ya lo delata, pues ocupaba todo una manzana completa. Pero lo más llamativo, o lo que más me llama a mi la atención, está en el tondo circular de su clave. Si nos fijamos, veremos un obelisco flanqueado por leones. ¿Sabes lo que representa? El poder.",
+    "texto_en": "– Vicky! Have you seen how good the façade of this mansion looks? How curious is it? It is framed between free-standing columns. And look, how striking the heraldry on its lintel is.\n– It's super beautiful; it's one of the most representative monuments the town has. It belonged to the Pérez de Vargas family, but the greatest value of the “Casa Grande”, as the neighbors now call it, lies in what it represented, don't you think?\n– So very true; it was built in the first third of the 18th century, the family that constructed it occupied the pinnacle of local power, and thus reaffirmed it by erecting the building. Its size already gives it away, as it occupied an entire city block. But the most striking thing, or what catches my attention the most, is in the circular “tondo” of its keystone. If we look closely, we will see an obelisk flanked by lions. Do you know what it represents? It represents the power.",
     "imagenes": [
       "panel-15_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -436,11 +440,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Avenida Linares",
     "titulo_en": "Avenida Linares",
-    "texto_es": "José María, fíjate. Tengo la impresión de que esta… es la calle que no es de las más monumentales del pueblo, sino que es que encima es de las más bonitas que tiene el pueblo.\n Así es, yo tengo la misma sensación. Esta calle, que de antiguas fue llamada del Pozo Vilches por la existencia de un pozo caminero, no cuenta con monumentos muy extraordinarios, pero está formada por casonas de magnífica planta. El Palacete de los Escalantes, el Casino Viejo, los Herrera Cárdenas, la Casa Lechuga y un largo etcétera.\n Y no solamente su fachada, sino que lo más valioso está en el interior. Nada más pasar el zaguán encontramos una sucesión de portales, estancias que están a distintas alturas, unas escaleras que suben, otras que bajan, una doble arcada que separa la parte noble de la antigua zona de servicio. ¡Realmente es un laberinto doméstico! El zaguán de Herrera Cárdenas casi siempre está abierto, así que… podríamos acercarnos y ver lo que te estoy contando.",
-    "texto_en": "José María, look. I am under the impression that this is the street that may not be one of the most monumental in the town, but it is one of the most beautiful ones in here.\n That's right, I have the same feeling. This street, which was once called Pozo Vilches due to the existence of a roadside well, does not have very extraordinary monuments, but it is lined with magnificent mansions. The Palacete de los Escalantes, the Casino Viejo, the Herrera Cárdenas, the Casa Lechuga, and a long etcetera.\n   And it is not only because its façade, but the most valuable part is inside. As soon as we pass the hallway, we find a succession of portals, rooms at different heights, some stairs that go up, others that go down, a double arcade that separates the noble part from the old service area. It's truly a domestic labyrinth! The hallway of Herrera Cardenas is almost always open, so... we could go over and see what I'm telling you about.",
+    "texto_es": "– José María, fíjate. Tengo la impresión de que esta… es la calle que no es de las más monumentales del pueblo, sino que es que encima es de las más bonitas que tiene el pueblo.\n– Así es, yo tengo la misma sensación. Esta calle, que de antiguas fue llamada del Pozo Vilches por la existencia de un pozo caminero, no cuenta con monumentos muy extraordinarios, pero está formada por casonas de magnífica planta. El Palacete de los Escalantes, el Casino Viejo, los Herrera Cárdenas, la Casa Lechuga y un largo etcétera.\n– Y no solamente su fachada, sino que lo más valioso está en el interior. Nada más pasar el zaguán encontramos una sucesión de portales, estancias que están a distintas alturas, unas escaleras que suben, otras que bajan, una doble arcada que separa la parte noble de la antigua zona de servicio. ¡Realmente es un laberinto doméstico! El zaguán de Herrera Cárdenas casi siempre está abierto, así que… podríamos acercarnos y ver lo que te estoy contando.",
+    "texto_en": "– José María, look. I am under the impression that this is the street that may not be one of the most monumental in the town, but it is one of the most beautiful ones in here.\n– That's right, I have the same feeling. This street, which was once called Pozo Vilches due to the existence of a roadside well, does not have very extraordinary monuments, but it is lined with magnificent mansions. The Palacete de los Escalantes, the Casino Viejo, the Herrera Cárdenas, the Casa Lechuga, and a long etcetera.\n– And it is not only because its façade, but the most valuable part is inside. As soon as we pass the hallway, we find a succession of portals, rooms at different heights, some stairs that go up, others that go down, a double arcade that separates the noble part from the old service area. It's truly a domestic labyrinth! The hallway of Herrera Cardenas is almost always open, so... we could go over and see what I'm telling you about.",
     "imagenes": [
       "panel-6_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -460,11 +465,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Palacete José Pérez Caballero",
     "titulo_en": "Palacete José Pérez Caballero",
-    "texto_es": "Oye Vicky, ¡que llamativa esta casona! Siendo tan bonita como todas las del entorno, me llama la atención la singularidad de su puerta. Cierra con un arco de medio punto. Algo singular en este pueblo, ¿no es verdad?\n Claro que sí, porque, mira, realmente este tipo de puertas se ven mucho en los edificios religiosos, en la iglesia o en el propio ayuntamiento, pero en las casas y edificios civiles, pues no es muy característico. Pero que, vamos, no debe extrañarnos que su propietario, José Pérez Caballero, a finales del siglo XIX se convirtió en el mayor terrateniente del pueblo.\n Cierto, cierto. Era todo un personaje. Residente en Madrid y miembro del Consejo Real de Hacienda, invirtió en Baños una suma ¡uff! estratosférica, ¡430.000 reales! Con ello compró 48 olivares pertenecientes a la iglesia y 21 de particulares. ¡Una barbaridad! Sabiendo que por entonces casi toda la tierra de nuestro pueblo estaba sembrada para granos y legumbres. También compró ocho parcelas de granos, dos casas y un molino de aceite. ¡Vamos! una hacienda.",
-    "texto_en": "Hey Vicky, this mansion is so striking! Being as beautiful as all the ones in the area, the uniqueness of its door catches my attention. It closes with a semicircular arch, something unique in this town, isn't it?\n Of course, because, you see, this type of door is really common in religious buildings, in the church or in the town hall itself, but in houses and civil buildings, well, it's not very characteristic. But, well, we shouldn't be surprised that its owner, José Pérez Caballero, became the largest landowner in the village at the end of the 19th century.\n So true; He was quite a character. Resident in Madrid and a member of the Royal Council of Finance, he invested an astronomical sum in Baños, 430,000 reales! With it, he bought 48 olive groves belonging to the church and 21 from private individuals. That´s crazy! Specially, after knowing that by then almost all the land in our village was planted with grains and legumes. He also bought eight plots of grain, two houses, and an oil mill. Come on! That is a complete estate.",
+    "texto_es": "– Oye Vicky, ¡que llamativa esta casona! Siendo tan bonita como todas las del entorno, me llama la atención la singularidad de su puerta. Cierra con un arco de medio punto. Algo singular en este pueblo, ¿no es verdad?\n– Claro que sí, porque, mira, realmente este tipo de puertas se ven mucho en los edificios religiosos, en la iglesia o en el propio ayuntamiento, pero en las casas y edificios civiles, pues no es muy característico. Pero que, vamos, no debe extrañarnos que su propietario, José Pérez Caballero, a finales del siglo XIX se convirtió en el mayor terrateniente del pueblo.\n– Cierto, cierto. Era todo un personaje. Residente en Madrid y miembro del Consejo Real de Hacienda, invirtió en Baños una suma ¡uff! estratosférica, ¡430.000 reales! Con ello compró 48 olivares pertenecientes a la iglesia y 21 de particulares. ¡Una barbaridad! Sabiendo que por entonces casi toda la tierra de nuestro pueblo estaba sembrada para granos y legumbres. También compró ocho parcelas de granos, dos casas y un molino de aceite. ¡Vamos! una hacienda.",
+    "texto_en": "– Hey Vicky, this mansion is so striking! Being as beautiful as all the ones in the area, the uniqueness of its door catches my attention. It closes with a semicircular arch, something unique in this town, isn't it?\n– Of course, because, you see, this type of door is really common in religious buildings, in the church or in the town hall itself, but in houses and civil buildings, well, it's not very characteristic. But, well, we shouldn't be surprised that its owner, José Pérez Caballero, became the largest landowner in the village at the end of the 19th century.\n– So true; He was quite a character. Resident in Madrid and a member of the Royal Council of Finance, he invested an astronomical sum in Baños, 430,000 reales! With it, he bought 48 olive groves belonging to the church and 21 from private individuals. That´s crazy! Specially, after knowing that by then almost all the land in our village was planted with grains and legumes. He also bought eight plots of grain, two houses, and an oil mill. Come on! That is a complete estate.",
     "imagenes": [
       "panel-7_1.jpg"
     ],
+    "ajuste_imagen": "bottom",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -477,19 +483,19 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170632784,
-    "lng": -3.773707537,
-    "ajuste_imagen": "bottom"
+    "lng": -3.773707537
   },
   {
     "id": 18,
     "ruta": "paseando",
     "titulo_es": "Alquerque",
     "titulo_en": "Alquerque",
-    "texto_es": "6, 12, 24, 48. Vicky, cuando de noche caminas por la calle Santa María, ¿no te ha parecido escuchar un eco? ¿Cómo si alguien contara?\n ¡Calla, calla, que me asusta! Pero vamos, que según parece se trata de una leyenda. Se dice que hay un pastor avaricioso cuya alma está recluida en lo más profundo de una piedra, llora su desgracia y cuenta ovejas. ¿Tú te lo crees?\n Bueno, es posible. Lo único cierto es que entre la casona número 14 y la taberna Alcazarejo, a unos dos metros y medio de altura, hay un sillar con marcas lapidarias muy singulares. Se trata de un alquerque de 12, un tablero de juego antiquísimo, predecesor de las damas, que también es un símbolo protector. En Baños era conocido de “los lobos” y fue muy practicado entre pastores y gente de sierra. Pero vamos, que todos los críos hemos jugado a eso.",
-    "texto_en": "6, 12, 24, 48. Vicky, when you walk down Santa Maria Street at night, haven't you thought you heard an echo? Like someone was counting?\n Shut up! shut up! you're scaring me! But come on! apparently it's just a legend. It is said that there was a greedy shepherd whose soul is trapped deep within a stone, crying over his misfortune and counting sheep. Can you believe it?\n Well, it's possible. The only certain thing is that between mansion number 14 and the Alcazarejo tavern, about two and a half meters high, there is a stone block with very unique lapidary marks. It is a twelve-hole alquerque, an ancient game board, predecessor of checkers, which is also a protective symbol. In Baños, it was also known as 'the wolves' and was widely played among shepherds and mountain folks. But come on, all the kids have played that.",
+    "texto_es": "– 6, 12, 24, 48. Vicky, cuando de noche caminas por la calle Santa María, ¿no te ha parecido escuchar un eco? ¿Cómo si alguien contara?\n– ¡Calla, calla, que me asusta! Pero vamos, que según parece se trata de una leyenda. Se dice que hay un pastor avaricioso cuya alma está recluida en lo más profundo de una piedra, llora su desgracia y cuenta ovejas. ¿Tú te lo crees?\n– Bueno, es posible. Lo único cierto es que entre la casona número 14 y la taberna Alcazarejo, a unos dos metros y medio de altura, hay un sillar con marcas lapidarias muy singulares. Se trata de un alquerque de 12, un tablero de juego antiquísimo, predecesor de las damas, que también es un símbolo protector. En Baños era conocido de “los lobos” y fue muy practicado entre pastores y gente de sierra. Pero vamos, que todos los críos hemos jugado a eso.",
+    "texto_en": "– 6, 12, 24, 48. Vicky, when you walk down Santa Maria Street at night, haven't you thought you heard an echo? Like someone was counting?\n– Shut up! shut up! you're scaring me! But come on! apparently it's just a legend. It is said that there was a greedy shepherd whose soul is trapped deep within a stone, crying over his misfortune and counting sheep. Can you believe it?\n– Well, it's possible. The only certain thing is that between mansion number 14 and the Alcazarejo tavern, about two and a half meters high, there is a stone block with very unique lapidary marks. It is a twelve-hole alquerque, an ancient game board, predecessor of checkers, which is also a protective symbol. In Baños, it was also known as 'the wolves' and was widely played among shepherds and mountain folks. But come on, all the kids have played that.",
     "imagenes": [
       "panel-18_1.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -509,11 +515,12 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "Las casas de la calle Cestería",
     "titulo_en": "The houses on Cestería Street",
-    "texto_es": "Vicky, hoy nos puede parecer imposible, pero en origen, esta calle se originó como un barrio de cuevas. ¡Fíjate! Por desgracia, ya no nos queda nada de eso, pero aún tenemos el recuerdo y la huella de lo que fue.\n Ya verás, aunque la Cestería, que es el nombre original de esta calle, puede parecer la suma de casas sencillas y populares, su evolución histórica ha sido muy, muy interesante.\n ¡Así es! Vemos la vivienda que conocemos como del Percha. Se trata de un magnífico ejemplo de cómo eran este tipo de casonas, la del barrio de la cestería. La planta baja siempre presenta un zócalo de buena piedra, pero la superior es muy, muy distinta, totalmente contrario. Si te fijas bien, verás que las esquinas son de piedra, pero la parte central es de otro tipo de material, una tapia que está encalada. Se trata de un altillo o cámara. En su interior, bajo la protección del barro de sus paredes, su atrojes permitía la conservación de la cosecha anual: granos, legumbres, frutas de huerta y hortalizas. ¡Vamos! La cosecha completa del año.",
-    "texto_en": "Vicky, today it may seem impossible to us, but originally, this street originated as a cave neighborhood. Look! Unfortunately, we no longer have any of that, but we still have the memory and the mark of what it once was.\n You'll see, although Cesteria, which is the original name of this street, may seem like a collection of simple and popular houses, its historical evolution has been very, very interesting.\n That's right! We see the house we know as “del Percha”. It is a magnificent example of what these types of mansions were like, the ones in the Cesteria neighborhood. The ground floor always features a good stone base, but the upper one is very, very different, completely opposite. If you look closely, you will see that the corners are made of stone, but the central part is made of another type of material, a wall that is whitewashed; it is an attic or chamber. Inside, under the protection of the mud of its walls, its granaries allowed for the preservation of the annual harvest: grains, legumes, garden fruits, and vegetables. That is the full harvest of the year.",
+    "texto_es": "– Vicky, hoy nos puede parecer imposible, pero en origen, esta calle se originó como un barrio de cuevas. ¡Fíjate! Por desgracia, ya no nos queda nada de eso, pero aún tenemos el recuerdo y la huella de lo que fue.\n– Ya verás, aunque la Cestería, que es el nombre original de esta calle, puede parecer la suma de casas sencillas y populares, su evolución histórica ha sido muy, muy interesante.\n– ¡Así es! Vemos la vivienda que conocemos como del Percha. Se trata de un magnífico ejemplo de cómo eran este tipo de casonas, la del barrio de la cestería. La planta baja siempre presenta un zócalo de buena piedra, pero la superior es muy, muy distinta, totalmente contrario. Si te fijas bien, verás que las esquinas son de piedra, pero la parte central es de otro tipo de material, una tapia que está encalada. Se trata de un altillo o cámara. En su interior, bajo la protección del barro de sus paredes, su atrojes permitía la conservación de la cosecha anual: granos, legumbres, frutas de huerta y hortalizas. ¡Vamos! La cosecha completa del año.",
+    "texto_en": "– Vicky, today it may seem impossible to us, but originally, this street originated as a cave neighborhood. Look! Unfortunately, we no longer have any of that, but we still have the memory and the mark of what it once was.\n– You'll see, although Cesteria, which is the original name of this street, may seem like a collection of simple and popular houses, its historical evolution has been very, very interesting.\n– That's right! We see the house we know as “del Percha”. It is a magnificent example of what these types of mansions were like, the ones in the Cesteria neighborhood. The ground floor always features a good stone base, but the upper one is very, very different, completely opposite. If you look closely, you will see that the corners are made of stone, but the central part is made of another type of material, a wall that is whitewashed; it is an attic or chamber. Inside, under the protection of the mud of its walls, its granaries allowed for the preservation of the annual harvest: grains, legumes, garden fruits, and vegetables. That is the full harvest of the year.",
     "imagenes": [
       "panel-19_1.jpg"
     ],
+    "ajuste_imagen": "bottom",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -526,20 +533,20 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170135696,
-    "lng": -3.774416142,
-    "ajuste_imagen": "bottom"
+    "lng": -3.774416142
   },
   {
     "id": 20,
     "ruta": "paseando",
     "titulo_es": "La Cueva de la Mona, que realmente es de la Niña Bonita",
     "titulo_en": "The Cave of “La Mona”, actually “La Niña Bonita”",
-    "texto_es": "José María, estamos en una zona minera que comenzó a explotarse ¡hace más de 4000 años! Si miramos hacia el oeste, en el cerro que llamamos del Golgota, se observa una franja de terreno como si se tratara de una escombrera alargada, ¿Eso era también una mina? Así es Vicky. Se trata de una rafa o trinchera minera, una mina a cielo abierto con más de 500 metros de longitud que fue abierta en la Edad del Bronce por los habitantes del poblado argárico de Peñalosa. De ella, se obtenía mineral de cobre, concretamente malaquita y azurita. También las investigaciones arqueológicas han podido documentar enormes mazas o martillos mineros fabricados con granito. Y su historia no queda ahí. Fíjate, con Roma se profundizó la trinchera para obtener galena argentífera, un mineral que contiene plomo y plata, y después, ya en el siglo XX, se horadó un pozo minero. Una vez abandonada la explotación, bastantes vecinos, los llamados ‘sacagéneros’, rebuscaron en las antiguas escombreras para conseguir algunos gramos de mineral y un sueldo mísero que les permitía sacar la familia adelante.",
-    "texto_en": "José María, we’re in a mining zone that was already in use more than 4,000 years ago! If we look west, at the hill we call Golgota, there’s a strip of land that looks like an elongated dump. Was that also a mine? That’s right, Vicky. It’s a rafa, an open-pit mine over 500 meters long, opened in the Bronze Age by the people of the Argárico settlement of Peñalosa. They extracted copper minerals like malachite and azurite. Archaeologists have also found huge mining hammers made from granite. Indeed. Later, the Romans deepened the trench to extract argentiferous galena. Then, in the 20th century, a vertical mine shaft was dug. After it was abandoned, many locals—known as sacagéneros—scavenged through the old mine waste, hoping to find a few grams of ore to make a modest living.",
+    "texto_es": "– José María, estamos en una zona minera que comenzó a explotarse ¡hace más de 4000 años! Si miramos hacia el oeste, en el cerro que llamamos del Golgota, se observa una franja de terreno como si se tratara de una escombrera alargada, ¿Eso era también una mina? \n– Así es Vicky. Se trata de una rafa o trinchera minera, una mina a cielo abierto con más de 500 metros de longitud que fue abierta en la Edad del Bronce por los habitantes del poblado argárico de Peñalosa. De ella, se obtenía mineral de cobre, concretamente malaquita y azurita. \n– También las investigaciones arqueológicas han podido documentar enormes mazas o martillos mineros fabricados con granito. \n–Y su historia no queda ahí. Fíjate, con Roma se profundizó la trinchera para obtener galena argentífera, un mineral que contiene plomo y plata, y después, ya en el siglo XX, se horadó un pozo minero. Una vez abandonada la explotación, bastantes vecinos, los llamados ‘sacagéneros’, rebuscaron en las antiguas escombreras para conseguir algunos gramos de mineral y un sueldo mísero que les permitía sacar la familia adelante.",
+    "texto_en": "– José María, we’re in a mining zone that was already in use more than 4,000 years ago! If we look west, at the hill we call Golgota, there’s a strip of land that looks like an elongated dump. Was that also a mine? \n– That’s right, Vicky. It’s a rafa, an open-pit mine over 500 meters long, opened in the Bronze Age by the people of the Argárico settlement of Peñalosa. They extracted copper minerals like malachite and azurite.\n– Archaeologists have also found huge mining hammers made from granite. \n– Indeed. Later, the Romans deepened the trench to extract argentiferous galena. Then, in the 20th century, a vertical mine shaft was dug. After it was abandoned, many locals—known as sacagéneros—scavenged through the old mine waste, hoping to find a few grams of ore to make a modest living.",
     "imagenes": [
       "panel-20_1.jpg",
       "panel-20_2.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -552,20 +559,20 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.169013,
-    "lng": -3.776035,
-    "ajuste_imagen": "center"
+    "lng": -3.776035
   },
   {
     "id": 21,
     "ruta": "paseando",
     "titulo_es": "El viejo ‘camino romano’ del cordel de Bailen",
     "titulo_en": "The old “roman road” of the cordel de Bailen",
-    "texto_es": "Vicky, no lo creerás, pero durante siglos, ya desde el XIII, nuestra sierra fue destino de miles y miles de ovejas merinas que procedían del norte, más concretamente de la Serranía de Cuenca, del Señorío de Molina y las sierras de Albarracín. Claro que lo creo. Y sé, que hasta la segunda mitad del siglo XX, Baños de la Encina fue lo que se llamó “extremo de invernada”, es decir, el lugar donde llegaban del norte pastores y ganados para aprovecharse de los pastos de otoño y la primavera. Muy cierto. Para ello, protegidos por una institución, el Honrado Concejo de la Mesta, se establecieron abrevaderos, como este, y se acondicionaron miles de kilómetros de cañadas, cordeles, veredas y coladas, según el ancho de la vía pecuaria. De tal manera, los ganados podían pastar durante el camino. Es lo que se llama trashumancia o ‘vereda’. Pero fíjate, en el siglo XX, cuando entró en crisis el mercado de la lana merina, nuestro pueblo se especializó en otro tipo de ganado trashumante, la cría del toro bravo. Y tal fue su éxito, que en 1978 llegó a contar con 28 hierros taurinos.",
-    "texto_en": "Vicky, believe it or not, since the 13th century, our mountains were the winter destination for thousands of merino sheep from the north—from Cuenca, Molina, and Albarracín. I do believe it! And I know that until the late 20th century, Baños de la Encina was a key wintering area, where herders brought their flocks to graze. Exactly. Protected by the Honrado Concejo de la Mesta, the kingdom’s livestock guild, thousands of kilometers of trails were prepared—some wide, some narrow—for the animals to graze along the way. This seasonal movement is known as transhumance. And when the wool trade declined in the 20th century, the town shifted to raising fighting bulls. It became so successful that in 1978 there were 28 different cattle brands here!",
+    "texto_es": "– Vicky, no lo creerás, pero durante siglos, ya desde el XIII, nuestra sierra fue destino de miles y miles de ovejas merinas que procedían del norte, más concretamente de la Serranía de Cuenca, del Señorío de Molina y las sierras de Albarracín. \n– Claro que lo creo. Y sé, que hasta la segunda mitad del siglo XX, Baños de la Encina fue lo que se llamó “extremo de invernada”, es decir, el lugar donde llegaban del norte pastores y ganados para aprovecharse de los pastos de otoño y la primavera. \n– Muy cierto. Para ello, protegidos por una institución, el Honrado Concejo de la Mesta, se establecieron abrevaderos, como este, y se acondicionaron miles de kilómetros de cañadas, cordeles, veredas y coladas, según el ancho de la vía pecuaria. De tal manera, los ganados podían pastar durante el camino. Es lo que se llama trashumancia o ‘vereda’. Pero fíjate, en el siglo XX, cuando entró en crisis el mercado de la lana merina, nuestro pueblo se especializó en otro tipo de ganado trashumante, la cría del toro bravo. Y tal fue su éxito, que en 1978 llegó a contar con 28 hierros taurinos.",
+    "texto_en": "– Vicky, believe it or not, since the 13th century, our mountains were the winter destination for thousands of merino sheep from the north—from Cuenca, Molina, and Albarracín. \n– I do believe it! And I know that until the late 20th century, Baños de la Encina was a key wintering area, where herders brought their flocks to graze. \n– Exactly. Protected by the Honrado Concejo de la Mesta, the kingdom’s livestock guild, thousands of kilometers of trails were prepared—some wide, some narrow—for the animals to graze along the way. This seasonal movement is known as transhumance. And when the wool trade declined in the 20th century, the town shifted to raising fighting bulls. It became so successful that in 1978 there were 28 different cattle brands here!",
     "imagenes": [
       "panel-21_1.jpg",
       "panel-21_2.jpg"
     ],
+    "ajuste_imagen": "top",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -585,12 +592,13 @@ let HITOS = [
     "ruta": "paseando",
     "titulo_es": "El puente de los Charcones o del arroyo de Valdeloshuertos",
     "titulo_en": "The bridge of Los Charcones or Valdeloshuertos brook",
-    "texto_es": "José María, hoy, un enorme mar de olivos domina la campiña que descansa a los pies de nuestro pueblo. Pero, ¿siempre fue así? ¡Qué va! Hasta bien entrada la segunda mitad del siglo XX el paisaje agrario fue muy diferente. Siempre hubo olivos, ¡Siempre! Y ademas, ¡muchos! Pero el cereal y las legumbres tuvieron mayor protagonismo económico, sobre todo las habas y los garbanzos. Y en menor número, también hubo tierras dedicadas a la viña. Y justo en este lugar, entre Los Charcones y Cantalasranas, ocupando una franja de buena tierra y agua abundante, se localizaban las huertas que abastecían de verduras al pueblo y que luego vendían las mujeres en la plaza mayor. Así es. Es por eso que aún podemos apreciar un buen número de norias, algunas casi monumentales. Aquí mismo nos rodean varias. Las de Antero, Liborio y Los Cucos, pero a tiro de piedra se alzan las de Zambrana, Matigüelas, Morito o Los Gatos. Tenemos inventariadas más de treinta. ¡Casi ná!",
-    "texto_en": "José María, today the olive groves seem endless, covering the countryside. But was it always like this? Not at all! Until the mid-20th century, the landscape was quite different. There were always olive trees—many, in fact—but cereals and legumes were more economically important, especially broad beans and chickpeas. Yes, and there were vineyards too, though fewer. Right here, between Los Charcones and Cantalasranas, fertile land and water supported market gardens that supplied the village and were managed by local women. Exactly. That’s why we still see so many norias—some are almost monumental. Around here we find those of Antero, Liborio, and Los Cucos, and nearby, Zambrana, Matigüelas, Morito, and Los Gatos. We’ve recorded over thirty in total!",
+    "texto_es": "– José María, hoy, un enorme mar de olivos domina la campiña que descansa a los pies de nuestro pueblo. Pero, ¿siempre fue así? \n– ¡Qué va! Hasta bien entrada la segunda mitad del siglo XX el paisaje agrario fue muy diferente. Siempre hubo olivos, ¡Siempre! Y ademas, ¡muchos! Pero el cereal y las legumbres tuvieron mayor protagonismo económico, sobre todo las habas y los garbanzos. \n– Y en menor número, también hubo tierras dedicadas a la viña. Y justo en este lugar, entre Los Charcones y Cantalasranas, ocupando una franja de buena tierra y agua abundante, se localizaban las huertas que abastecían de verduras al pueblo y que luego vendían las mujeres en la plaza mayor. \n– Así es. Es por eso que aún podemos apreciar un buen número de norias, algunas casi monumentales. Aquí mismo nos rodean varias. Las de Antero, Liborio y Los Cucos, pero a tiro de piedra se alzan las de Zambrana, Matigüelas, Morito o Los Gatos. Tenemos inventariadas más de treinta. ¡Casi ná!",
+    "texto_en": "– José María, today the olive groves seem endless, covering the countryside. But was it always like this? \n– Not at all! Until the mid-20th century, the landscape was quite different. There were always olive trees—many, in fact—but cereals and legumes were more economically important, especially broad beans and chickpeas. \n– Yes, and there were vineyards too, though fewer. Right here, between Los Charcones and Cantalasranas, fertile land and water supported market gardens that supplied the village and were managed by local women.\n– Exactly. That’s why we still see so many norias—some are almost monumental. Around here we find those of Antero, Liborio, and Los Cucos, and nearby, Zambrana, Matigüelas, Morito, and Los Gatos. We’ve recorded over thirty in total!",
     "imagenes": [
       "panel-22_1.jpg",
       "panel-22_2.jpg"
     ],
+    "ajuste_imagen": "top",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -1009,6 +1017,7 @@ let HITOS = [
     "imagenes": [
       "panel-40_1.jpg"
     ],
+    "ajuste_imagen": "top",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
