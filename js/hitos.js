@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 21/10/2026, 20:30:14
+ * Fecha de actualización: 10/22/2026, 10:11:50 AM
  */
 
-const HITOS_VERSION = "2026-10-21T18:30:14.413Z";
+const HITOS_VERSION = "2026-10-22T08:11:50.245Z";
 
 const RUTAS = {
   "paseando": {
@@ -171,7 +171,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170992514,
-    "lng": -3.774869541
+    "lng": -3.774869541,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 6,
@@ -219,7 +220,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.171452732,
-    "lng": -3.773808941
+    "lng": -3.773808941,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 8,
@@ -315,7 +317,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170378483,
-    "lng": -3.773293234
+    "lng": -3.773293234,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 12,
@@ -388,7 +391,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.171462938,
-    "lng": -3.775081884
+    "lng": -3.775081884,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 15,
@@ -460,7 +464,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170632784,
-    "lng": -3.773707537
+    "lng": -3.773707537,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 18,
@@ -508,7 +513,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170135696,
-    "lng": -3.774416142
+    "lng": -3.774416142,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 20,
@@ -533,7 +539,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.169013,
-    "lng": -3.776035
+    "lng": -3.776035,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 21,
@@ -721,7 +728,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170417,
-    "lng": -3.775373
+    "lng": -3.775373,
+    "ajuste_imagen": "bottom"
   },
   {
     "id": 29,
