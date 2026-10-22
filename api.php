@@ -13,7 +13,7 @@ session_start();
 // CONFIGURACIÓN DE SEGURIDAD
 // ========================================================
 // Puedes cambiar esta contraseña por la que tú prefieras:
-define('ADMIN_PASSWORD', 'Banos2026!');
+define('ADMIN_PASSWORD', '23214Banos2026!');
 
 header('Content-Type: application/json; charset=utf-8');
 
