@@ -57,6 +57,10 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
         Copia Seg.
       </button>
+      <button class="btn btn-outline btn-sm" onclick="openCreditsModal()" title="Editar información, créditos y versión de la webapp">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        Créditos
+      </button>
       <button class="btn btn-success" onclick="saveAllChanges()" title="Guardar todos los cambios directamente en el servidor">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
         Guardar Cambios
@@ -317,6 +321,65 @@
           Descargar QR para Imprenta (HD)
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE EDICIÓN DE CRÉDITOS Y VERSIÓN -->
+  <div class="modal-overlay" id="credits-modal">
+    <div class="modal-box" style="max-width: 620px;">
+      <div class="modal-header">
+        <h2>📜 Información, Créditos y Versión</h2>
+        <button class="modal-close" onclick="closeCreditsModal()">&times;</button>
+      </div>
+      <form onsubmit="saveCreditsForm(event)" style="padding: 24px; display: flex; flex-direction: column; gap: 16px; max-height: 75vh; overflow-y: auto;">
+        
+        <div class="form-group">
+          <label for="form-app-version" style="font-weight: 700; color: var(--admin-primary-dark);">Número de Versión de la Webapp:</label>
+          <input type="text" id="form-app-version" class="form-input" placeholder="1.0.0" required style="font-weight: 700;">
+          <span style="font-size: 0.74rem; color: var(--admin-text-muted);">Se muestra de forma discreta al pie de la portada y abre la pantalla de créditos.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="form-cred-desarrollo-es" style="font-weight: 700;">Desarrollo (Español) *:</label>
+          <textarea id="form-cred-desarrollo-es" class="form-textarea" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-cred-desarrollo-en" style="font-weight: 700;">Desarrollo (Inglés):</label>
+          <textarea id="form-cred-desarrollo-en" class="form-textarea" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-cred-voces" style="font-weight: 700;">Textos y voces:</label>
+          <textarea id="form-cred-voces" class="form-textarea" rows="2"></textarea>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="form-cred-locuciones-en" style="font-weight: 700;">Locuciones en Inglés:</label>
+            <input type="text" id="form-cred-locuciones-en" class="form-input">
+          </div>
+          <div class="form-group">
+            <label for="form-cred-traducciones" style="font-weight: 700;">Traducciones:</label>
+            <input type="text" id="form-cred-traducciones" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-cred-copyright-es" style="font-weight: 700;">Copyright (Español):</label>
+          <textarea id="form-cred-copyright-es" class="form-textarea" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="form-cred-copyright-en" style="font-weight: 700;">Copyright (Inglés):</label>
+          <textarea id="form-cred-copyright-en" class="form-textarea" rows="2"></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px; padding-top: 16px; border-top: 1px solid var(--admin-border);">
+          <button type="button" class="btn btn-outline" onclick="closeCreditsModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar Créditos</button>
+        </div>
+      </form>
     </div>
   </div>
 

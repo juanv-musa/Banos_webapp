@@ -10,6 +10,19 @@ let currentRutaFilter = "";
 let modalMap = null;
 let modalMarker = null;
 
+let appConfig = (typeof APP_CONFIG !== 'undefined') ? JSON.parse(JSON.stringify(APP_CONFIG)) : {
+  version: "1.0.0",
+  creditos: {
+    desarrollo_es: "Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina",
+    desarrollo_en: "Webapp developed by MUSARAÑA Gestión Integral de Museos S.L., for the City Council of Baños de la Encina",
+    textos_voces: "José María Cantarero\nVictoria Gutiérrez Calderón",
+    locuciones_en: "Sonoarte.net",
+    traducciones: "Cristina Aranda Lobato",
+    copyright_es: "Todos los contenidos publicados en esta audioguía y su copyright son propiedad de sus autores y del Ayuntamiento de Baños de la Encina.",
+    copyright_en: "All contents published in this audio guide and their copyright are the property of their authors and the City Council of Baños de la Encina."
+  }
+};
+
 // Caché de logotipos locales (Data URLs para previsualización inmediata sin fallos)
 let logoCache = {};
 try {
@@ -209,6 +222,17 @@ document.addEventListener("DOMContentLoaded", () => {
             hitosData.push(savedHito);
           }
         });
+      }
+    }
+  } catch (e) {}
+
+  // 2b. Recuperar créditos y versión guardados
+  try {
+    const savedConfig = localStorage.getItem('encina_app_config');
+    if (savedConfig) {
+      const parsedConfig = JSON.parse(savedConfig);
+      if (parsedConfig && parsedConfig.version) {
+        Object.assign(appConfig, parsedConfig);
       }
     }
   } catch (e) {}
@@ -1178,6 +1202,8 @@ function generateHitosJsContent() {
     piedra_viva: { id: "piedra_viva", nombre_es: "Baños en Piedra Viva", nombre_en: "Baños in Living Stone", color: "#2e7d32", colorBg: "#f1f8f2", colorBorder: "#a5d6a7" }
   };
 
+  const configObj = appConfig;
+
   return `/**
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
@@ -1187,10 +1213,60 @@ function generateHitosJsContent() {
 
 const HITOS_VERSION = "${new Date().toISOString()}";
 
+const APP_CONFIG = ${JSON.stringify(configObj, null, 2)};
+
 const RUTAS = ${JSON.stringify(rutasObj, null, 2)};
 
 let HITOS = ${JSON.stringify(hitosData, null, 2)};
 `;
+}
+
+// ========================================================
+// GESTIÓN DE CRÉDITOS Y VERSIÓN
+// ========================================================
+function openCreditsModal() {
+  const modal = document.getElementById("credits-modal");
+  if (!modal) return;
+
+  const cred = appConfig.creditos || {};
+  document.getElementById("form-app-version").value = appConfig.version || "1.0.0";
+  document.getElementById("form-cred-desarrollo-es").value = cred.desarrollo_es || "";
+  document.getElementById("form-cred-desarrollo-en").value = cred.desarrollo_en || "";
+  document.getElementById("form-cred-voces").value = cred.textos_voces || "";
+  document.getElementById("form-cred-locuciones-en").value = cred.locuciones_en || "";
+  document.getElementById("form-cred-traducciones").value = cred.traducciones || "";
+  document.getElementById("form-cred-copyright-es").value = cred.copyright_es || "";
+  document.getElementById("form-cred-copyright-en").value = cred.copyright_en || "";
+
+  modal.classList.add("active");
+}
+
+function closeCreditsModal() {
+  const modal = document.getElementById("credits-modal");
+  if (modal) modal.classList.remove("active");
+}
+
+function saveCreditsForm(event) {
+  event.preventDefault();
+
+  appConfig.version = (document.getElementById("form-app-version").value || "1.0.0").trim();
+  appConfig.creditos = {
+    desarrollo_es: (document.getElementById("form-cred-desarrollo-es").value || "").trim(),
+    desarrollo_en: (document.getElementById("form-cred-desarrollo-en").value || "").trim(),
+    textos_voces: (document.getElementById("form-cred-voces").value || "").trim(),
+    locuciones_en: (document.getElementById("form-cred-locuciones-en").value || "").trim(),
+    traducciones: (document.getElementById("form-cred-traducciones").value || "").trim(),
+    copyright_es: (document.getElementById("form-cred-copyright-es").value || "").trim(),
+    copyright_en: (document.getElementById("form-cred-copyright-en").value || "").trim()
+  };
+
+  try {
+    localStorage.setItem('encina_app_config', JSON.stringify(appConfig));
+  } catch (e) {}
+
+  closeCreditsModal();
+  autoSaveToServer();
+  showToast("✅ Créditos y versión guardados correctamente.");
 }
 
 function downloadFile(filename, content, mime) {

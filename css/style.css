@@ -983,3 +983,21 @@ body {
   margin-bottom: 10px;
 }
 
+/* ========================================================
+   PIE DE PÁGINA Y PANTALLA DE CRÉDITOS
+   ======================================================== */
+.version-badge-link:hover,
+.version-badge-link:active {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.credits-view {
+  background-image: url('../assets/images/fondo.png') !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+

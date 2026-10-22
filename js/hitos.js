@@ -7,6 +7,19 @@
 
 const HITOS_VERSION = "2026-10-22T08:34:13.794Z";
 
+const APP_CONFIG = {
+  version: "1.0.0",
+  creditos: {
+    desarrollo_es: "Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina",
+    desarrollo_en: "Webapp developed by MUSARAÑA Gestión Integral de Museos S.L., for the City Council of Baños de la Encina",
+    textos_voces: "José María Cantarero\nVictoria Gutiérrez Calderón",
+    locuciones_en: "Sonoarte.net",
+    traducciones: "Cristina Aranda Lobato",
+    copyright_es: "Todos los contenidos publicados en esta audioguía y su copyright son propiedad de sus autores y del Ayuntamiento de Baños de la Encina.",
+    copyright_en: "All contents published in this audio guide and their copyright are the property of their authors and the City Council of Baños de la Encina."
+  }
+};
+
 const RUTAS = {
   "paseando": {
     "id": "paseando",

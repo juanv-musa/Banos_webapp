@@ -113,6 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   } catch (e) {}
 
+  // Recuperar versión y créditos personalizados si fueron editados en el panel admin
+  try {
+    const savedConfig = localStorage.getItem('encina_app_config');
+    if (savedConfig) {
+      const parsedConfig = JSON.parse(savedConfig);
+      if (parsedConfig && parsedConfig.version && typeof APP_CONFIG !== 'undefined') {
+        Object.assign(APP_CONFIG, parsedConfig);
+      }
+    }
+  } catch (e) {}
+
   setupHeaderEvents();
   setupRouting();
   setupLightbox();
@@ -152,6 +163,8 @@ function handleRoute() {
     renderDetail(id);
   } else if (path === "#/map") {
     renderMap(rutaParam);
+  } else if (path === "#/credits") {
+    renderCredits();
   } else {
     renderHome();
   }
@@ -190,6 +203,8 @@ function setLanguage(lang) {
     renderList(rutaParam);
   } else if (path === "#/map") {
     renderMap(rutaParam);
+  } else if (path === "#/credits") {
+    renderCredits();
   } else {
     renderHome();
   }
@@ -227,6 +242,8 @@ function renderHome() {
     `;
   }).join("");
 
+  const appVersion = (typeof APP_CONFIG !== 'undefined' && APP_CONFIG.version) ? APP_CONFIG.version : "1.0.0";
+
   container.innerHTML = `
     <div class="home-hero">
       <img src="assets/images/cabecera.png" alt="Baños de la Encina" onerror="this.src='assets/images/cabecera_2.png'">
@@ -240,6 +257,12 @@ function renderHome() {
 
       <div class="home-logos">
         <img src="assets/images/logo_ayto_banos.png" alt="Ayuntamiento de Baños de la Encina">
+      </div>
+
+      <div class="home-footer-version" style="text-align: center; margin-top: 14px; padding-bottom: 22px;">
+        <a href="#/credits" class="version-badge-link" title="${t('credits')}" style="display: inline-block; font-size: 0.74rem; color: var(--color-text-muted); opacity: 0.65; text-decoration: none; font-weight: 700; padding: 4px 12px; border-radius: 12px; transition: all 0.2s;">
+          v${appVersion}
+        </a>
       </div>
     </div>
   `;
@@ -555,38 +578,56 @@ function renderDetailLogos(hito) {
 function setupAudioElement(src) {
   stopCurrentAudio();
 
-  const audio = new Audio(src);
+  const audio = new Audio();
   AppState.currentAudio = audio;
   AppState.isPlaying = false;
+  updatePlayButtonUI();
+
+  // Reset visual del temporizador
+  const currEl = document.getElementById("audio-curr-time");
+  const fillEl = document.getElementById("audio-progress-fill");
+  const totalEl = document.getElementById("audio-total-time");
+  if (currEl) currEl.textContent = "0:00";
+  if (fillEl) fillEl.style.width = "0%";
+  if (totalEl) totalEl.textContent = "--:--";
 
   audio.addEventListener("error", () => {
-    // Si el archivo de audio no existe en el servidor o da error de carga, ocultar el reproductor
+    // Si ya no es el audio activo o se está limpiando/navegando a otro hito, ignorar
+    if (AppState.currentAudio !== audio) return;
+    if (!audio.getAttribute('src') && !audio.src) return;
+
+    console.warn("No se pudo cargar el archivo de audio:", src);
     const playerCard = document.querySelector(".audio-player-card");
     if (playerCard) playerCard.style.display = "none";
-    stopCurrentAudio();
   });
 
   audio.addEventListener("loadedmetadata", () => {
-    const totalEl = document.getElementById("audio-total-time");
-    if (totalEl) totalEl.textContent = formatTime(audio.duration);
+    if (AppState.currentAudio !== audio) return;
+    const total = document.getElementById("audio-total-time");
+    if (total) total.textContent = formatTime(audio.duration);
   });
 
   audio.addEventListener("timeupdate", () => {
-    const currEl = document.getElementById("audio-curr-time");
-    const fillEl = document.getElementById("audio-progress-fill");
-    if (currEl) currEl.textContent = formatTime(audio.currentTime);
-    if (fillEl && audio.duration) {
+    if (AppState.currentAudio !== audio) return;
+    const curr = document.getElementById("audio-curr-time");
+    const fill = document.getElementById("audio-progress-fill");
+    if (curr) curr.textContent = formatTime(audio.currentTime);
+    if (fill && audio.duration) {
       const pct = (audio.currentTime / audio.duration) * 100;
-      fillEl.style.width = pct + "%";
+      fill.style.width = pct + "%";
     }
   });
 
   audio.addEventListener("ended", () => {
+    if (AppState.currentAudio !== audio) return;
     AppState.isPlaying = false;
     updatePlayButtonUI();
-    const fillEl = document.getElementById("audio-progress-fill");
-    if (fillEl) fillEl.style.width = "0%";
+    const fill = document.getElementById("audio-progress-fill");
+    if (fill) fill.style.width = "0%";
   });
+
+  audio.src = src;
+  audio.load();
 }
 
 function togglePlayPause() {
@@ -627,10 +668,25 @@ function seekAudio(e) {
 
 function stopCurrentAudio() {
   if (AppState.currentAudio) {
-    AppState.currentAudio.pause();
-    AppState.currentAudio.src = "";
+    const audio = AppState.currentAudio;
+    // Anular referencia activa primero para aislar de callbacks asíncronos
     AppState.currentAudio = null;
     AppState.isPlaying = false;
+
+    audio.onerror = null;
+    audio.onended = null;
+    audio.ontimeupdate = null;
+    audio.onloadedmetadata = null;
+
+    try {
+      audio.pause();
+      // En móviles Safari/Chrome, cambiar src a "" emite un error async MEDIA_ELEMENT_ERROR.
+      // Al vaciar mediante removeAttribute evitamos disparar el handler sobre la nueva tarjeta de hito.
+      audio.removeAttribute("src");
+      audio.load();
+    } catch (e) {}
+
+    updatePlayButtonUI();
   }
 }
 
@@ -856,4 +912,78 @@ function updateHeaderBar({ showBack, backHash, showMap, title }) {
   if (titleEl) {
     titleEl.textContent = title !== undefined && title !== null ? title : "";
   }
+}
+
+// ========================================================
+// VISTA: CRÉDITOS Y DESARROLLO
+// ========================================================
+function renderCredits() {
+  AppState.activeDetailHito = null;
+  const container = document.getElementById("app-content");
+  updateHeaderBar({ showBack: true, backHash: "#/", showMap: false, title: t("credits") });
+
+  const config = (typeof APP_CONFIG !== 'undefined' && APP_CONFIG) ? APP_CONFIG : {
+    version: "1.0.0",
+    creditos: {
+      desarrollo_es: "Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina",
+      desarrollo_en: "Webapp developed by MUSARAÑA Gestión Integral de Museos S.L., for the City Council of Baños de la Encina",
+      textos_voces: "José María Cantarero\nVictoria Gutiérrez Calderón",
+      locuciones_en: "Sonoarte.net",
+      traducciones: "Cristina Aranda Lobato",
+      copyright_es: "Todos los contenidos publicados en esta audioguía y su copyright son propiedad de sus autores y del Ayuntamiento de Baños de la Encina.",
+      copyright_en: "All contents published in this audio guide and their copyright are the property of their authors and the City Council of Baños de la Encina."
+    }
+  };
+
+  const cred = config.creditos || {};
+  const isEn = AppState.lang === 'en';
+
+  const desarrollo = isEn ? (cred.desarrollo_en || cred.desarrollo_es) : cred.desarrollo_es;
+  const copyright = isEn ? (cred.copyright_en || cred.copyright_es) : cred.copyright_es;
+
+  container.innerHTML = `
+    <div class="credits-view" style="min-height: calc(100vh - 65px); background: url('assets/images/fondo.png') center/cover no-repeat fixed; padding: 24px 16px 44px; display: flex; justify-content: center; align-items: flex-start;">
+      <div class="credits-card" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; padding: 32px 22px; max-width: 520px; width: 100%; box-shadow: 0 10px 30px rgba(44, 37, 35, 0.16); border: 1px solid rgba(255, 255, 255, 0.85);">
+        
+        <div style="text-align: center; margin-bottom: 24px;">
+          <img src="assets/images/logo_ayto_banos.png" alt="Ayuntamiento de Baños de la Encina" style="max-height: 60px; max-width: 180px; object-fit: contain; margin-bottom: 12px;">
+          <h1 style="font-size: 1.55rem; font-weight: 800; color: var(--color-primary-dark); margin: 0;">${t("credits")}</h1>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
+          
+          <div>
+            <h2 style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); margin: 0 0 6px 0;">${isEn ? 'Development' : 'Desarrollo'}</h2>
+            <p style="font-size: 0.92rem; line-height: 1.5; color: var(--color-text); margin: 0;">${desarrollo || ''}</p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); margin: 0 0 6px 0;">${isEn ? 'Texts and voices' : 'Textos y voces'}</h2>
+            <p style="font-size: 0.92rem; line-height: 1.55; color: var(--color-text); margin: 0; white-space: pre-line;">${cred.textos_voces || ''}</p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); margin: 0 0 6px 0;">${isEn ? 'English Voice-Over' : 'Locuciones en Inglés'}</h2>
+            <p style="font-size: 0.92rem; line-height: 1.5; color: var(--color-text); margin: 0;">${cred.locuciones_en || ''}</p>
+          </div>
+
+          <div>
+            <h2 style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); margin: 0 0 6px 0;">${isEn ? 'Translations' : 'Traducciones'}</h2>
+            <p style="font-size: 0.92rem; line-height: 1.5; color: var(--color-text); margin: 0;">${cred.traducciones || ''}</p>
+          </div>
+
+          <div style="padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.06);">
+            <h2 style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); margin: 0 0 6px 0;">Copyright</h2>
+            <p style="font-size: 0.85rem; line-height: 1.5; color: var(--color-text-muted); margin: 0;">${copyright || ''}</p>
+          </div>
+
+          <div style="margin-top: 10px; padding-top: 14px; border-top: 1px dashed var(--color-border); font-size: 0.78rem; color: var(--color-text-muted);">
+            <span>Baños de la Encina · Versión ${config.version || '1.0.0'}</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  `;
 }
