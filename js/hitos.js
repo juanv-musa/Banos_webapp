@@ -2,10 +2,10 @@
  * GUÍA Y BASE DE DATOS DE HITOS TURÍSTICOS - BAÑOS DE LA ENCINA
  * ==============================================================
  * Archivo generado automáticamente por el Gestor Visual.
- * Fecha de actualización: 22/10/2026, 10:27:06
+ * Fecha de actualización: 22/10/2026, 10:32:40
  */
 
-const HITOS_VERSION = "2026-10-22T08:27:06.856Z";
+const HITOS_VERSION = "2026-10-22T08:32:40.146Z";
 
 const RUTAS = {
   "paseando": {
@@ -159,7 +159,6 @@ let HITOS = [
     "imagenes": [
       "panel-5_1.jpg"
     ],
-    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -172,7 +171,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.170992514,
-    "lng": -3.774869541
+    "lng": -3.774869541,
+    "ajuste_imagen": "center"
   },
   {
     "id": 6,
@@ -379,7 +379,6 @@ let HITOS = [
     "imagenes": [
       "panel-14_1.jpg"
     ],
-    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -392,7 +391,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.171462938,
-    "lng": -3.775081884
+    "lng": -3.775081884,
+    "ajuste_imagen": "center"
   },
   {
     "id": 15,
@@ -527,7 +527,6 @@ let HITOS = [
       "panel-20_1.jpg",
       "panel-20_2.jpg"
     ],
-    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
@@ -540,7 +539,8 @@ let HITOS = [
     "enlace_texto_es": "",
     "enlace_texto_en": "",
     "lat": 38.169013,
-    "lng": -3.776035
+    "lng": -3.776035,
+    "ajuste_imagen": "center"
   },
   {
     "id": 21,
@@ -946,8 +946,10 @@ let HITOS = [
     "texto_es": "Estamos ante el molino de estilo manchego situado más al sur de la Península. Construido en sillares de arenisca de la zona, interiormente se divide en tres niveles: cuadra, camareta y sala de molienda.\nEn lo alto de la villa de Baños de la Encina, aprovechando la fuerza del viento y cercano a las antiguas eras donde se aventaba el grano, se encuentra el molino de harina. Se sabe que es anterior al siglo XVIII, ya que en el catastro del Marqués de Ensenada de 1752 ya aparecía en desuso.\nEl cultivo de cereales fue la base de la agricultura local hasta la llegada del monocultivo del olivar. Las cosechas de grano, en parte gracias a la regulación de los usos de la tierra establecida por las \"Ordenanzas Municipales de 1742\", y los lazos culturales con los vecinos de la Mancha influyeron en la construcción de este ingenio de molienda.",
     "texto_en": "We are in front of the mill of La Mancha style located more to the south of the Peninsula. Built in sandstone ashlars of the area, the interior is divided into three levels: stable, chamber and milling room.\nAt the top of the village of Baños de la Encina, taking advantage of the force of the wind and close to the old threshing floors where the grain was winnowed, is the flour mill. It is known to predate the eighteenth century, since in the land registry of the Marquis of Ensenada of 1752 it appears in disuse.\nThe cultivation of cereals was the basis of local agriculture until the arrival of olive monoculture. The grain crops, partly thanks to the regulation of land uses established by the “Ordenanzas Municipales de 1742”, and the cultural ties with the neighbors of La Mancha influenced the construction of this milling mill.",
     "imagenes": [
-      "panel-38_1.jpg"
+      "panel-38_1.jpg",
+      "panel-38_2.jpg"
     ],
+    "ajuste_imagen": "center",
     "texto_subvencion_es": "",
     "texto_subvencion_en": "",
     "logos": [
