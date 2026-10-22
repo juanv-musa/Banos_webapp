@@ -318,6 +318,19 @@ async function handleLoginSubmit(event) {
   }
 }
 
+function logoutAdmin() {
+  if (confirm("¿Deseas cerrar la sesión del gestor?")) {
+    if (isRunningOnServer()) {
+      fetch('api.php?action=logout', { method: 'POST' })
+        .finally(() => {
+          window.location.reload();
+        });
+    } else {
+      window.location.reload();
+    }
+  }
+}
+
 // ========================================================
 function handleRutaFilterChange() {
   const sel = document.getElementById("filter-ruta");
