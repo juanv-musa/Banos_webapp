@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual Técnico y de Usuario - WebApp Oficial Baños de la Encina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 8pt;
+        color: #8c827a;
+      }
+      @bottom-left {
+        content: "Ayuntamiento de Baños de la Encina · WebApp Oficial";
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 8pt;
+        color: #8c827a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #2c2523;
+      background: #ffffff;
+      line-height: 1.55;
+      font-size: 9.5pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* PORTADA */
+    .cover-page {
+      page-break-after: always;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 10px 10px;
+    }
+
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #8b3a1b;
+      padding-bottom: 18px;
+    }
+
+    .cover-header img {
+      max-height: 55px;
+      object-fit: contain;
+    }
+
+    .cover-header-tag {
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8b3a1b;
+      background: #fbf5f2;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #eed5ab;
+    }
+
+    .cover-hero {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cover-hero img.hero-banner {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .cover-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26pt;
+      font-weight: 700;
+      color: #2c2523;
+      margin: 0 0 10px 0;
+      line-height: 1.15;
+    }
+
+    .cover-title span {
+      color: #8b3a1b;
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: #5c504a;
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto 25px auto;
+      line-height: 1.4;
+    }
+
+    .cover-badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .cover-badge {
+      font-size: 9pt;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: #f3ece7;
+      color: #4a3429;
+    }
+
+    .cover-footer {
+      border-top: 1px solid #e2d9d2;
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      font-size: 8.5pt;
+    }
+
+    .cover-footer-col strong {
+      color: #8b3a1b;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SALTOS DE PÁGINA */
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* ÍNDICE */
+    .toc-container {
+      background: #faf6f3;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 30px;
+      border: 1px solid #ecdcd2;
+    }
+
+    .toc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14pt;
+      color: #8b3a1b;
+      margin: 0 0 16px 0;
+      border-bottom: 2px solid #8b3a1b;
+      padding-bottom: 8px;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5pt;
+      font-weight: 600;
+      border-bottom: 1px dotted #d8cbbf;
+      padding-bottom: 4px;
+    }
+
+    .toc-item span:first-child {
+      color: #2c2523;
+    }
+
+    .toc-item span:last-child {
+      color: #8b3a1b;
+      font-weight: 700;
+    }
+
+    /* TITULARES Y SECCIONES */
+    h1.sec-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16pt;
+      color: #8b3a1b;
+      border-left: 5px solid #8b3a1b;
+      padding-left: 12px;
+      margin: 28px 0 14px 0;
+      line-height: 1.2;
+    }
+
+    h2.sub-title {
+      font-size: 11.5pt;
+      color: #2c2523;
+      margin: 18px 0 8px 0;
+      font-weight: 700;
+      border-bottom: 1px solid #f0e6e0;
+      padding-bottom: 4px;
+    }
+
+    h3.minor-title {
+      font-size: 10pt;
+      color: #5c504a;
+      margin: 12px 0 4px 0;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 0 0 12px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* CAJAS DESTACADAS */
+    .callout {
+      background: #fbf5f2;
+      border-left: 4px solid #8b3a1b;
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+
+    .callout-title {
+      font-weight: 800;
+      color: #8b3a1b;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .callout-success {
+      background: #f1f8f2;
+      border-left-color: #2e7d32;
+    }
+    .callout-success .callout-title { color: #2e7d32; }
+
+    .callout-warning {
+      background: #fff8e1;
+      border-left-color: #f57f17;
+    }
+    .callout-warning .callout-title { color: #f57f17; }
+
+    /* TABLAS */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 8.5pt;
+    }
+
+    table.data-table th, table.data-table td {
+      border: 1px solid #e5dbd3;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background: #f4eae4;
+      color: #8b3a1b;
+      font-weight: 700;
+    }
+
+    table.data-table tr:nth-child(even) {
+      background: #fdfbf9;
+    }
+
+    /* GALERÍAS Y PANTALLAZOS */
+    .screenshot-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .screenshot-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .screenshot-card {
+      background: #fdfcfb;
+      border: 1px solid #e8ded7;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      background: #222;
+    }
+
+    .screenshot-card img.desktop {
+      max-height: 180px;
+      background: #fff;
+    }
+
+    .screenshot-caption {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: #716259;
+      margin-top: 6px;
+    }
+
+    /* CÓDIGO Y CREDENCIALES */
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 8.5pt;
+    }
+
+    code {
+      background: #f5ede6;
+      color: #8b3a1b;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .credentials-box {
+      background: #2c2523;
+      color: #ffffff;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      font-size: 9pt;
+    }
+
+    .credentials-box .item strong {
+      color: #e2a87a;
+      display: block;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .credentials-box .item span {
+      font-family: monospace;
+      font-size: 10pt;
+      color: #ffffff;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="cover-page">
+    <div class="cover-header">
+      <img src="img/logo_ayto_banos.png" alt="Ayuntamiento de Baños de la Encina">
+      <span class="cover-header-tag">Documento Oficial de Entrega</span>
+    </div>
+
+    <div class="cover-hero">
+      <img src="img/cabecera.png" class="hero-banner" alt="Baños de la Encina">
+      <h1 class="cover-title">Manual Técnico y de Usuario</h1>
+      <div class="cover-subtitle">WebApp y Audioguía Oficial de Turismo, Patrimonio y Senderos</div>
+      
+      <div class="cover-badge-row">
+        <span class="cover-badge">Versión 1.0.0 (Oficial)</span>
+        <span class="cover-badge">41 Hitos Turísticos</span>
+        <span class="cover-badge">Bilingüe (Español / Inglés)</span>
+        <span class="cover-badge">Sin Descargas (PWA)</span>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-col">
+        <strong>Entidad Promotora:</strong>
+        Ayuntamiento de Baños de la Encina (Jaén)<br>
+        Concejalía de Turismo y Patrimonio Histórico
+      </div>
+      <div class="cover-footer-col">
+        <strong>Empresa Desarrolladora:</strong>
+        MUSARAÑA Gestión Integral de Museos S.L.<br>
+        Fecha de Entrega: Octubre 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- PÁGINA 2: ÍNDICE Y RESUMEN EJECUTIVO -->
+  <div class="page-break"></div>
+
+  <div class="toc-container">
+    <div class="toc-title">Índice de Contenidos</div>
+    <ul class="toc-list">
+      <li class="toc-item"><span>1. Resumen Ejecutivo y Ficha Técnica del Proyecto</span><span>Pág. 2</span></li>
+      <li class="toc-item"><span>2. Credenciales, Seguridad y Accesos al Sistema</span><span>Pág. 3</span></li>
+      <li class="toc-item"><span>3. Manual de Usuario: WebApp Turística (index.html)</span><span>Pág. 4</span></li>
+      <li class="toc-item"><span>4. Pantalla de Créditos y Reconocimientos Institucionales</span><span>Pág. 5</span></li>
+      <li class="toc-item"><span>5. Manual de Administración: Gestor Visual de Monumentos (admin.html)</span><span>Pág. 6</span></li>
+      <li class="toc-item"><span>6. Generación de Códigos QR para Imprenta y Placas (qr.php)</span><span>Pág. 8</span></li>
+      <li class="toc-item"><span>7. Protocolo de Mantenimiento, Copias de Seguridad y Hosting</span><span>Pág. 9</span></li>
+    </ul>
+  </div>
+
+  <h1 class="sec-title">1. Resumen Ejecutivo y Ficha Técnica del Proyecto</h1>
+  <p>
+    El presente proyecto tiene como objetivo dotar al municipio de <strong>Baños de la Encina</strong> de una herramienta digital moderna, accesible, rápida e interactiva para la divulgación turística y patrimonial de sus monumentos, castillos, ermitas y rutas senderistas.
+  </p>
+  <p>
+    Esta nueva solución reemplaza de forma definitiva a la antigua aplicación móvil basada en Flutter (que requería pesadas descargas y presentaba problemas de caché en navegadores móviles), sustituyéndola por una <strong>Progressive Web App (PWA) de última generación</strong> que se ejecuta al instante directamente desde cualquier teléfono inteligente mediante el escaneo de códigos QR colocados en los paneles municipales.
+  </p>
+
+  <h2 class="sub-title">Ficha Técnica de la Solución</h2>
+  <table class="data-table">
+    <tr>
+      <th style="width: 30%;">Parámetro</th>
+      <th>Descripción y Detalle</th>
+    </tr>
+    <tr>
+      <td><strong>Tipo de Aplicación</strong></td>
+      <td>Web-App interactiva bilingüe (PWA) adaptada a cualquier móvil, tableta u ordenador.</td>
+    </tr>
+    <tr>
+      <td><strong>Frontend de Visitante</strong></td>
+      <td>HTML5 semántico, CSS3 modular (diseño responsive móvil-first), Vanilla JavaScript ES6+.</td>
+    </tr>
+    <tr>
+      <td><strong>Tiempo de Carga</strong></td>
+      <td>Ultra rápido (< 0,8 segundos). Sin frameworks externos pesados que ralenticen la red 4G.</td>
+    </tr>
+    <tr>
+      <td><strong>Backend y API</strong></td>
+      <td>PHP 8.x nativo para la persistencia de datos y subida de archivos multimedia sin FTP.</td>
+    </tr>
+    <tr>
+      <td><strong>Cartografía y GIS</strong></td>
+      <td>Librería Leaflet GIS con cartografía OpenStreetMap / CartoDB y geolocalización GPS real.</td>
+    </tr>
+    <tr>
+      <td><strong>Sistema de Audioguías</strong></td>
+      <td>Reproductor HTML5 Audio nativo con control de progreso táctil y audios MP3 en Español e Inglés.</td>
+    </tr>
+    <tr>
+      <td><strong>Generación de QR</strong></td>
+      <td>Motor vectorial QRCode.js integrado para descargar códigos en Alta Resolución (PNG HD) para imprenta.</td>
+    </tr>
+    <tr>
+      <td><strong>Contenidos Incluidos</strong></td>
+      <td>41 hitos geolocalizados, divididos en 5 rutas temáticas con logotipos institucionales y subvenciones.</td>
+    </tr>
+  </table>
+
+  <!-- PÁGINA 3: CREDENCIALES Y ACCESOS -->
+  <div class="page-break"></div>
+
+  <h1 class="sec-title">2. Credenciales, Seguridad y Accesos al Sistema</h1>
+  <p>
+    El sistema se compone de dos áreas claramente diferenciadas: la <strong>zona pública</strong> para turistas y visitantes, y la <strong>zona de administración</strong> protegida para el personal técnico del Ayuntamiento.
+  </p>
+
+  <div class="credentials-box">
+    <div class="item">
+      <strong>URL WebApp Pública (Turistas)</strong>
+      <span>https://tudominio.es/</span>
+    </div>
+    <div class="item">
+      <strong>URL Gestor Visual de Monumentos</strong>
+      <span>https://tudominio.es/admin.html</span>
+    </div>
+    <div class="item">
+      <strong>Contraseña de Administración</strong>
+      <span>23214Banos2026!</span>
+    </div>
+    <div class="item">
+      <strong>Archivo de Configuración de Clave</strong>
+      <span>api.php (Línea 16)</span>
+    </div>
+  </div>
+
+  <h2 class="sub-title">Política de Sesión y Seguridad</h2>
+  <ul>
+    <li><strong>Protección contra accesos no autorizados:</strong> Todas las acciones de guardado de datos o subida de imágenes y audios al servidor están verificadas mediante sesiones protegidas en el backend PHP.</li>
+    <li><strong>Gestión de sesiones:</strong> Cuando el técnico municipal introduce la contraseña en <code>admin.html</code>, el servidor emite una cookie de sesión cifrada que permite trabajar cómodamente sin tener que reintroducir la clave a cada instante.</li>
+    <li><strong>Cierre de sesión seguro:</strong> Se dispone de un botón rojo <code>Salir</code> en la barra superior del gestor. Al pulsarlo, la sesión en el servidor se destruye inmediatamente.</li>
+  </ul>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ Cómo cambiar la contraseña de administración en el futuro</div>
+    Si en el futuro el Ayuntamiento desea cambiar la clave de acceso al gestor, solo es necesario abrir el archivo <code>api.php</code> con cualquier editor de texto y modificar la línea 16:
+    <pre><code>define('ADMIN_PASSWORD', 'TuNuevaContraseña123!');</code></pre>
+    Una vez guardado y subido ese archivo al hosting, la nueva contraseña entrará en vigor de forma inmediata.
+  </div>
+
+  <!-- PÁGINA 4: MANUAL DE USUARIO / INDEX -->
+  <div class="page-break"></div>
+
+  <h1 class="sec-title">3. Manual de Usuario: WebApp para Visitantes (index.html)</h1>
+  <p>
+    La interfaz para el turista ha sido concebida con criterios de <strong>máxima usabilidad, rapidez y accesibilidad</strong> para que cualquier persona, independientemente de su edad o conocimientos tecnológicos, pueda consultar la guía en la calle.
+  </p>
+
+  <div class="screenshot-grid-3">
+    <div class="screenshot-card">
+      <img src="img/screen_home.png" alt="Portada de la WebApp">
+      <div class="screenshot-caption">1. Portada y selección de Rutas</div>
+    </div>
+    <div class="screenshot-card">
+      <img src="img/screen_list.png" alt="Listado de Hitos">
+      <div class="screenshot-caption">2. Listado con filtros y buscador</div>
+    </div>
+    <div class="screenshot-card">
+      <img src="img/screen_detail.png" alt="Ficha del Hito con Audioguía">
+      <div class="screenshot-caption">3. Ficha con audioguía y zoom</div>
+    </div>
+  </div>
+
+  <h2 class="sub-title">Funcionalidades Destacadas de la WebApp</h2>
+  <ol>
+    <li>
+      <strong>Selección de Rutas Temáticas:</strong> Desde la portada el visitante puede elegir directamente la ruta que desea explorar:
+      <ul>
+        <li><span style="color: #8b3a1b; font-weight:700;">●</span> <strong>Paseando por Baños</strong> (Ruta urbana monumental).</li>
+        <li><span style="color: #1565c0; font-weight:700;">●</span> <strong>Castillo de Baños</strong> (Conjunto del Castillo de Burgalimar).</li>
+        <li><span style="color: #7b1fa2; font-weight:700;">●</span> <strong>Peñalosa</strong> (Yacimiento arqueológico de la Edad del Bronce).</li>
+        <li><span style="color: #c2883d; font-weight:700;">●</span> <strong>Sendero PR289</strong> (Ruta de naturaleza y senderismo).</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Ficha Interactiva de Hito:</strong> Al entrar a un hito (escaneando el QR o desde el listado), el usuario dispone de:
+      <ul>
+        <li><strong>Fotografía principal:</strong> Con encuadre específico adaptado a cada monumento y posibilidad de pulsar para abrir el visor ampliado a pantalla completa (<em>Lightbox Zoom</em>).</li>
+        <li><strong>Audioguía integrada:</strong> Reproducción fluida y accesible con barra de tiempo interactiva.</li>
+        <li><strong>Selector de Idioma instantáneo:</strong> Botones <code>ES</code> y <code>EN</code> en la cabecera para cambiar al instante entre español e inglés sin perder la posición del recorrido.</li>
+        <li><strong>Barra de Accesibilidad Visual:</strong> Botones <code>A</code>, <code>A+</code> y <code>A++</code> que permiten agrandar la tipografía del texto a personas mayores o con visión reducida.</li>
+        <li><strong>Enlaces externos a folletos / PDFs:</strong> Cuando un hito cuenta con un documento complementario (por ejemplo, el folleto de un sendero o plano), aparece un botón directo para su apertura.</li>
+        <li><strong>Logotipos de Subvención Oficial:</strong> Zona reservada al pie de la ficha con las marcas reglamentarias de la Junta de Andalucía, Gobierno de España y Fondos Europeos.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- PÁGINA 5: MAPA Y CRÉDITOS -->
+  <div class="page-break"></div>
+
+  <h2 class="sub-title">Mapa Turístico con Geolocalización GPS en Tiempo Real</h2>
+  <p>
+    Pulsando el icono de mapa en la cabecera, el visitante accede a la cartografía interactiva del término municipal. Los hitos aparecen representados con marcadores identificados por el color oficial de su ruta. Al pulsar el botón <strong>«Mi Ubicación»</strong>, el navegador solicita permiso de GPS y sitúa un punto azul sobre la posición exacta del turista para orientarle paso a paso.
+  </p>
+
+  <div class="screenshot-grid-2">
+    <div class="screenshot-card">
+      <img src="img/screen_map.png" alt="Mapa interactivo de hitos">
+      <div class="screenshot-caption">Mapa interactivo con GPS en tiempo real</div>
+    </div>
+    <div class="screenshot-card">
+      <img src="img/screen_credits.png" alt="Pantalla de Créditos oficiales">
+      <div class="screenshot-caption">Pantalla de Créditos oficiales y autoría</div>
+    </div>
+  </div>
+
+  <h1 class="sec-title">4. Pantalla de Créditos y Reconocimientos Institucionales</h1>
+  <p>
+    En cumplimiento de los requerimientos de autoría y transparencia municipal, en la parte inferior de la portada aparece de manera discreta el indicador <strong><code>v1.0.0</code></strong>. Al pulsar sobre él, se abre la pantalla oficial de reconocimientos con el fondo fotográfico municipal (<code>fondo.png</code>), donde se detallan los créditos completos del proyecto:
+  </p>
+  <ul>
+    <li><strong>Desarrollo:</strong> Webapp desarrollada por MUSARAÑA Gestión Integral de Museos S.L., para el Ayuntamiento de Baños de la Encina.</li>
+    <li><strong>Textos y voces:</strong> José María Cantarero y Victoria Gutiérrez Calderón.</li>
+    <li><strong>Locuciones en Inglés:</strong> Sonoarte.net.</li>
+    <li><strong>Traducciones:</strong> Cristina Aranda Lobato.</li>
+    <li><strong>Copyright:</strong> Propiedad exclusiva de sus autores y del Ayuntamiento de Baños de la Encina.</li>
+  </ul>
+
+  <!-- PÁGINA 6: MANUAL DE ADMINISTRACIÓN / GESTOR -->
+  <div class="page-break"></div>
+
+  <h1 class="sec-title">5. Manual de Administración: Gestor Visual de Monumentos (admin.html)</h1>
+  <p>
+    Para que el Ayuntamiento no dependa de programadores ni de empresas externas para mantener la webapp, se ha creado el <strong>Gestor Visual de Monumentos</strong> (<code>admin.html</code>). Desde este entorno gráfico es posible dar de alta nuevos hitos, corregir textos, cambiar fotos, reasignar audios o mover coordenadas geográficas.
+  </p>
+
+  <div class="screenshot-card" style="margin-bottom: 16px;">
+    <img src="img/screen_admin.png" class="desktop" alt="Panel de Administración">
+    <div class="screenshot-caption">Vista general del Panel de Control de Hitos (admin.html)</div>
+  </div>
+
+  <h2 class="sub-title">Barra de Herramientas Superior</h2>
+  <ul>
+    <li><strong>Ver Webapp:</strong> Abre en una pestaña nueva la aplicación pública para comprobar de inmediato cómo lo ve el turista.</li>
+    <li><strong>Copia Seg.:</strong> Descarga a tu ordenador un archivo <code>.json</code> con la copia de seguridad de toda la base de datos municipal.</li>
+    <li><strong>Créditos:</strong> Abre un formulario modal para modificar los textos de autoría o el número de versión si en el futuro se desea.</li>
+    <li><strong>Guardar Cambios:</strong> Publica de forma definitiva en el servidor todos los cambios introducidos con un solo clic.</li>
+    <li><strong>Salir (Rojo):</strong> Cierra la sesión activa de administración de forma inmediata.</li>
+  </ul>
+
+  <h2 class="sub-title">Cómo Editar o Crear un Hito Turístico</h2>
+  <ol>
+    <li>En la tarjeta del hito que deseas modificar, pulsa el botón <strong>Editar</strong> (o pulsa <strong>«Añadir Nuevo Hito»</strong> en la cabecera).</li>
+    <li>Se desplegará el modal editor con los siguientes campos configurables:
+      <ul>
+        <li><strong>Título y Descripción:</strong> En español y en inglés.</li>
+        <li><strong>Ruta asignada:</strong> Selecciona en qué ruta temática aparecerá clasificado.</li>
+        <li><strong>Encuadre / Posición en la ficha (🎯 Novedad):</strong>
+          Permite elegir cómo se encuadra la fotografía en la cabecera cuando el visitante abre el monumento:
+          <em>⬆️ Arriba</em> (para paneles verticales donde interesa ver el título superior), <em>⏺️ Centrado</em> (para fachadas y paisajes), <em>⬇️ Abajo</em> (para suelos o detalles inferiores), o <em>🔍 Foto completa</em> (muestra la foto entera sin recortes).</li>
+        <li><strong>Archivos de Audio:</strong> Nombre del archivo MP3 en español y en inglés situado en <code>assets/audio/</code>.</li>
+        <li><strong>Logotipos de Subvención:</strong> Asigna los sellos institucionales obligatorios de cada hito.</li>
+        <li><strong>Ubicación en el Mapa:</strong> Puedes escribir la latitud y longitud numéricamente, o simplemente <strong>hacer clic y arrastrar el marcador sobre el mapa interactivo</strong> que incluye el propio modal.</li>
+      </ul>
+    </li>
+    <li>Pulsa <strong>«Guardar Hito»</strong>. Los cambios se aplicarán al instante.</li>
+  </ol>
+
+  <!-- PÁGINA 7: CÓDIGOS QR Y QR.PHP -->
+  <div class="page-break"></div>
+
+  <h1 class="sec-title">6. Generación de Códigos QR para Imprenta y Placas (qr.php)</h1>
+  <p>
+    Cada hito cuenta con un botón directo <strong>«Código QR»</strong> en su tarjeta del panel de control. Al pulsarlo, el gestor abre un módulo generador de códigos QR vectoriales de alta definición.
+  </p>
+
+  <div class="screenshot-grid-2">
+    <div class="screenshot-card">
+      <img src="img/screen_qr.png" alt="Generador de Código QR en HD">
+      <div class="screenshot-caption">Generador vectorial de Códigos QR con base URL ajustable</div>
+    </div>
+    <div style="font-size: 8.5pt;">
+      <h3 class="minor-title">Ventajas del Sistema QR Propio:</h3>
+      <ul>
+        <li><strong>Sin suscripciones de pago:</strong> Los códigos generados no caducan jamás ni dependen de cuotas mensuales a plataformas privadas.</li>
+        <li><strong>Ajuste dinámico de dominio:</strong> El campo «Dominio / Dirección web base» permite adaptar el código a cualquier subdominio o carpeta donde esté alojada la app.</li>
+        <li><strong>Descarga en Alta Resolución (HD):</strong> Al pulsar <em>«Descargar QR para Imprenta»</em> se genera un archivo PNG limpio a gran escala, perfecto para ser vectorizado o enviado directamente a los talleres de señalética, carpintería metálica o serigrafía.</li>
+      </ul>
+
+      <div class="callout callout-success">
+        <div class="callout-title">💡 El Redireccionador Inteligente: qr.php</div>
+        La webapp incluye en su raíz un script llamado <code>qr.php</code>. Cuando imprimes una placa con la dirección <code>tudominio.es/qr.php?id=5</code>, el servidor redirige de forma automática al turista al hito 5 (<code>/#/detail/5</code>). Si en el futuro se amplían hitos o cambia la estructura interna, las placas físicas en la calle seguirán funcionando sin necesidad de reimprimirlas.
+      </div>
+    </div>
+  </div>
+
+  <h1 class="sec-title">7. Protocolo de Mantenimiento, Copias de Seguridad y Hosting</h1>
+  <h2 class="sub-title">Requisitos del Servidor Web (Hosting)</h2>
+  <ul>
+    <li><strong>Tipo de servidor:</strong> Cualquier hosting compartido, VPS o servidor dedicado estándar con soporte para PHP 7.4, 8.0, 8.1, 8.2 o superior (Apache o Nginx).</li>
+    <li><strong>Permisos recomendados en el servidor:</strong>
+      <ul>
+        <li>Carpetas: Permisos <code>755</code> (especialmente <code>js/</code>, <code>assets/images/</code> y <code>assets/audio/</code> para permitir guardado desde el panel).</li>
+        <li>Archivos: Permisos <code>644</code> (especialmente <code>js/hitos.js</code> y <code>api.php</code>).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 class="sub-title">Recomendación para Mejorar el Posicionamiento en Google (SEO)</h2>
+  <p>
+    La webapp ya cuenta con todas las etiquetas meta oficiales y el marcado <em>Schema.org</em> institucional. Para que Google sitúe la WebApp oficial en el primer lugar absoluto al buscar <em>«webapp baños de la encina»</em>:
+  </p>
+  <ul>
+    <li>Colocar un enlace o banner directo en la portada de la web municipal (<code>bdelaencina.es</code>) que apunte a la WebApp.</li>
+    <li>En la ficha de Google Maps de la <strong>Oficina de Turismo</strong> y del <strong>Castillo de Burgalimar</strong>, agregar el enlace en el apartado de <em>Sitio Web</em> o <em>Audioguía Oficial</em>.</li>
+  </ul>
+
+  <div style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #8b3a1b; text-align: center; font-size: 8pt; color: #8c827a;">
+    Documentación oficial entregada por MUSARAÑA Gestión Integral de Museos S.L. al Excmo. Ayuntamiento de Baños de la Encina.<br>
+    Todos los derechos reservados © 2026.
+  </div>
+
+</body>
+</html>
