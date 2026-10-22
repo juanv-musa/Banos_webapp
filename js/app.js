@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
             if (savedHito.enlace_texto_es) target.enlace_texto_es = savedHito.enlace_texto_es;
             if (savedHito.enlace_texto_en) target.enlace_texto_en = savedHito.enlace_texto_en;
+            if (savedHito.ajuste_imagen) target.ajuste_imagen = savedHito.ajuste_imagen;
             if (savedHito.texto_subvencion_es) target.texto_subvencion_es = savedHito.texto_subvencion_es;
             if (savedHito.texto_subvencion_en) target.texto_subvencion_en = savedHito.texto_subvencion_en;
             if (savedHito.ruta) target.ruta = savedHito.ruta;
@@ -364,9 +365,21 @@ function renderDetail(id) {
   let carouselHtml = "";
   if (hito.imagenes && hito.imagenes.length > 0) {
     const dots = hito.imagenes.map((_, i) => `<span class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></span>`).join("");
+    
+    // Encuadre personalizado de la imagen (arriba, centro, abajo o foto completa)
+    const ajuste = hito.ajuste_imagen || (hito.id >= 20 && hito.id <= 37 ? "top" : "center");
+    let imgStyle = "object-fit: cover; object-position: center center;";
+    if (ajuste === "top") {
+      imgStyle = "object-fit: cover; object-position: top center;";
+    } else if (ajuste === "bottom") {
+      imgStyle = "object-fit: cover; object-position: bottom center;";
+    } else if (ajuste === "contain") {
+      imgStyle = "object-fit: contain; object-position: center center; background: #1a1615;";
+    }
+
     carouselHtml = `
       <div class="detail-carousel" id="detail-carousel">
-        <img id="carousel-img" src="${getAppImgSrc(hito.imagenes[0])}" alt="${title}" onclick="openLightbox(this.src)">
+        <img id="carousel-img" src="${getAppImgSrc(hito.imagenes[0])}" alt="${title}" style="${imgStyle}" onclick="openLightbox(this.src)">
         <div class="carousel-zoom-hint" onclick="openLightbox(document.getElementById('carousel-img').src)">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           <span>${t("tapToZoom")}</span>

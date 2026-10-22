@@ -155,6 +155,17 @@
             <label for="form-imagenes" style="font-size: 0.72rem; color: var(--admin-text-muted); font-weight: 600;">Nombres de archivo (separados por coma):</label>
             <input type="text" id="form-imagenes" class="form-input" style="font-size: 0.8rem; padding: 6px 10px;" placeholder="panel-23_1.jpg, panel-23_2.jpg" oninput="syncImagesFromInput()">
           </div>
+
+          <div style="margin-top: 8px; border-top: 1px dashed var(--admin-border); padding-top: 10px;">
+            <label for="form-ajuste-imagen" style="font-size: 0.8rem; font-weight: 700; color: var(--admin-primary-dark); display: block; margin-bottom: 4px;">🎯 Encuadre / Posición en la ficha:</label>
+            <select id="form-ajuste-imagen" class="form-input" style="font-size: 0.82rem; font-weight: 700; cursor: pointer;">
+              <option value="top">⬆️ Arriba (para cabezas, personajes o títulos superiores)</option>
+              <option value="center">⏺️ Centrado (para monumentos, fachadas y paisajes)</option>
+              <option value="bottom">⬇️ Abajo (para suelos, escaleras o detalles inferiores)</option>
+              <option value="contain">🔍 Foto completa (mostrar entera sin recortar)</option>
+            </select>
+            <span style="font-size: 0.72rem; color: var(--admin-text-muted); display: block; margin-top: 3px;">Cómo se encuadra la imagen en la cabecera cuando el visitante lee el hito.</span>
+          </div>
         </div>
 
         <div class="form-grid-2">

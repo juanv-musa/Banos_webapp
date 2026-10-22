@@ -201,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (savedHito.enlace_url) target.enlace_url = savedHito.enlace_url;
             if (savedHito.enlace_texto_es) target.enlace_texto_es = savedHito.enlace_texto_es;
             if (savedHito.enlace_texto_en) target.enlace_texto_en = savedHito.enlace_texto_en;
+            if (savedHito.ajuste_imagen) target.ajuste_imagen = savedHito.ajuste_imagen;
             if (savedHito.texto_subvencion_es) target.texto_subvencion_es = savedHito.texto_subvencion_es;
             if (savedHito.texto_subvencion_en) target.texto_subvencion_en = savedHito.texto_subvencion_en;
             if (savedHito.ruta) target.ruta = savedHito.ruta;
@@ -566,6 +567,8 @@ function openCreateModal() {
   document.getElementById("form-imagenes").value = `panel-${nextId}_1.jpg`;
   modalImagenes = [`panel-${nextId}_1.jpg`];
   renderImagesChips();
+  const ajusteCreateSelect = document.getElementById("form-ajuste-imagen");
+  if (ajusteCreateSelect) ajusteCreateSelect.value = "center";
 
   document.getElementById("form-audio-es").value = "";
   document.getElementById("form-audio-en").value = "";
@@ -604,6 +607,10 @@ function openEditModal(id) {
   modalImagenes = rawImgs;
   renderImagesChips();
   document.getElementById("form-imagenes").value = rawImgs.join(", ");
+  const ajusteEditSelect = document.getElementById("form-ajuste-imagen");
+  if (ajusteEditSelect) {
+    ajusteEditSelect.value = hito.ajuste_imagen || (hito.id >= 20 && hito.id <= 37 ? "top" : "center");
+  }
   document.getElementById("form-audio-es").value = hito.audio_es || "";
   document.getElementById("form-audio-en").value = hito.audio_en || "";
   document.getElementById("form-enlace-url").value = hito.enlace_url || hito.enlace_externo || "";
@@ -912,6 +919,7 @@ function saveHitoForm(event) {
   const texto_subvencion_es = subEspEl ? subEspEl.value.trim() : "";
   const texto_subvencion_en = subEnEl ? subEnEl.value.trim() : "";
   const logos = [...modalLogos];
+  const ajuste_imagen = (document.getElementById("form-ajuste-imagen")?.value || "center").trim();
 
   const latRaw = (document.getElementById("form-lat")?.value || "").toString().replace(',', '.');
   const lngRaw = (document.getElementById("form-lng")?.value || "").toString().replace(',', '.');
@@ -926,6 +934,7 @@ function saveHitoForm(event) {
     texto_es,
     texto_en,
     imagenes,
+    ajuste_imagen,
     texto_subvencion_es,
     texto_subvencion_en,
     logos,
